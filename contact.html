@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"
+    />
+    <title>Contact - Petal Hair Designs | Luxury Hair Salon Sydney</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-black: #000000;
+        --luxury-gold: #d4af37;
+        --soft-white: #fefefe;
+        --pearl-white: #f8f8f8;
+        --charcoal: #1a1a1a;
+        --silver: #c0c0c0;
+        --shadow-light: rgba(0, 0, 0, 0.05);
+        --shadow-medium: rgba(0, 0, 0, 0.15);
+        --shadow-heavy: rgba(0, 0, 0, 0.25);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.7;
+        color: var(--charcoal);
+        background: var(--soft-white);
+        overflow-x: hidden;
+      }
+
+      /* Ultra-Luxury Header */
+      header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        background: #1a1a1a;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .header-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.8rem 3rem;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+
+      .logo img {
+        height: 108px;
+        width: auto;
+        filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(35deg);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .logo:hover img {
+        filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(35deg)
+          brightness(1.1);
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      nav a {
+        color: var(--soft-white);
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 0.95rem !important;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        position: relative;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      nav a::before {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: var(--luxury-gold);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: translateX(-50%);
+      }
+
+      nav a:hover::before,
+      nav a.active::before {
+        width: 100%;
+      }
+
+      nav a:hover {
+        color: var(--luxury-gold);
+      }
+
+      .mobile-menu {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 5px;
+        background: transparent;
+        border: 0;
+      }
+
+      .mobile-menu span {
+        width: 28px;
+        height: 2px;
+        background: var(--soft-white);
+        margin: 4px 0;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border-radius: 2px;
+      }
+
+      /* Ultra-Premium Hero Section - Base */
+      .hero {
+        height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      /* Home Page Hero with Background Image */
+      .hero-home {
+        background: linear-gradient(
+            135deg,
+            rgba(0, 0, 0, 0.7) 0%,
+            rgba(26, 26, 26, 0.5) 50%,
+            rgba(0, 0, 0, 0.8) 100%
+          ),
+          url("Photos/Behind Hero.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+
+      /* Other Pages Hero with Gradient Background */
+      .hero-page {
+        height: 70svh; /* Improved mobile viewport handling */
+        min-height: 480px; /* Reduce excessive height on small devices */
+        background: linear-gradient(
+          135deg,
+          var(--primary-black) 0%,
+          var(--charcoal) 50%,
+          var(--primary-black) 100%
+        );
+        /* Ensure perfect centering */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="0.5" fill="rgba(255,255,255,0.02)"/><circle cx="75" cy="75" r="0.3" fill="rgba(255,255,255,0.01)"/><circle cx="50" cy="10" r="0.4" fill="rgba(255,255,255,0.015)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        opacity: 0.3;
+        animation: grain 20s linear infinite;
+      }
+
+      @keyframes grain {
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+        10% {
+          transform: translate(-5%, -10%);
+        }
+        20% {
+          transform: translate(-15%, 5%);
+        }
+        30% {
+          transform: translate(7%, -25%);
+        }
+        40% {
+          transform: translate(-5%, 25%);
+        }
+        50% {
+          transform: translate(-15%, 10%);
+        }
+        60% {
+          transform: translate(15%, 0%);
+        }
+        70% {
+          transform: translate(0%, 15%);
+        }
+        80% {
+          transform: translate(3%, 35%);
+        }
+        90% {
+          transform: translate(-10%, 10%);
+        }
+      }
+
+      .hero-content {
+        text-align: center;
+        z-index: 2;
+        max-width: 900px;
+        padding: 0 2rem;
+        animation: heroFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        opacity: 0;
+        /* Ensure content is perfectly centered */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      @keyframes heroFadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(60px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-subtitle {
+        font-family: "Inter", sans-serif;
+        font-size: 0.95rem;
+        font-weight: 400;
+        color: var(--luxury-gold);
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+        animation: slideInFromTop 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s
+          forwards;
+        opacity: 0;
+      }
+
+      @keyframes slideInFromTop {
+        0% {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        100% {
+          opacity: 0.9;
+          transform: translateY(0);
+        }
+      }
+
+      .hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(3rem, 6vw, 5rem);
+        font-weight: 300;
+        color: var(--soft-white);
+        letter-spacing: 3px;
+        line-height: 1.1;
+        margin-bottom: 2.5rem;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        animation: slideInFromBottom 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s
+          forwards;
+        opacity: 0;
+      }
+
+      @keyframes slideInFromBottom {
+        0% {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-description {
+        font-family: "Inter", sans-serif;
+        font-size: 1.25rem;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.8;
+        margin-bottom: 2.5rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
+        opacity: 0;
+      }
+
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        100% {
+          opacity: 0.85;
+          transform: translateY(0);
+        }
+      }
+
+      /* Clean Contact Section */
+      .contact-section {
+        padding: 8rem 0;
+        background: var(--soft-white);
+        position: relative;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 3rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: start;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      /* Clean Map Section */
+      .map-section {
+        background: var(--soft-white);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        margin: 4rem auto;
+        max-width: 1200px;
+        position: relative;
+      }
+
+      .map-header {
+        background: var(--primary-black);
+        color: var(--soft-white);
+        padding: 2rem;
+        text-align: center;
+      }
+
+      .map-title {
+        font-family: "Playfair Display", serif;
+        font-size: 1.8rem;
+        font-weight: 400;
+        margin-bottom: 0.5rem;
+      }
+
+      .map-subtitle {
+        font-size: 0.9rem;
+        opacity: 0.8;
+        color: var(--luxury-gold);
+      }
+
+      .map-container {
+        position: relative;
+        height: 400px;
+        background: var(--pearl-white);
+      }
+
+      .interactive-map {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      /* Allow Google Maps default controls */
+      .interactive-map iframe {
+        pointer-events: auto;
+      }
+
+      .map-info {
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        background: rgba(0, 0, 0, 0.8);
+        color: var(--soft-white);
+        padding: 0.8rem;
+        border-radius: 6px;
+        max-width: 200px;
+        z-index: 10;
+      }
+
+      .map-info h4 {
+        font-family: "Playfair Display", serif;
+        font-size: 0.9rem;
+        color: var(--luxury-gold);
+        margin-bottom: 0.2rem;
+      }
+
+      .map-info p {
+        font-size: 0.75rem;
+        line-height: 1.3;
+        opacity: 0.9;
+      }
+
+      /* Clean Contact Form */
+      .contact-form {
+        background: var(--soft-white);
+        padding: 3rem;
+        border-radius: 15px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .form-header {
+        text-align: center;
+        margin-bottom: 2.5rem;
+      }
+
+      .form-title {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        font-weight: 400;
+        color: var(--primary-black);
+        margin-bottom: 0.5rem;
+      }
+
+      .form-subtitle {
+        color: var(--charcoal);
+        opacity: 0.7;
+        font-size: 1rem;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        font-weight: 500;
+        color: var(--charcoal);
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 1.2rem;
+        min-height: 44px;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+        font-family: "Inter", sans-serif;
+        font-size: 1rem;
+        background: var(--soft-white);
+        transition: all 0.3s ease;
+        outline: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+      }
+
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        border-color: var(--luxury-gold);
+        box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.1);
+      }
+
+      .form-group textarea {
+        height: 100px;
+        resize: vertical;
+      }
+
+      .submit-btn {
+        width: 100%;
+        background: var(--primary-black);
+        color: var(--soft-white);
+        border: none;
+        padding: 1rem 2rem;
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .submit-btn:hover {
+        background: var(--luxury-gold);
+        color: var(--primary-black);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Clean Contact Information */
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .info-card {
+        background: var(--soft-white);
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        text-align: center;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .info-card:hover {
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        border-color: var(--luxury-gold);
+      }
+
+      .info-icon {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: var(--luxury-gold);
+      }
+
+      .info-card h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.3rem;
+        font-weight: 400;
+        color: var(--primary-black);
+        margin-bottom: 0.8rem;
+      }
+
+      .info-card p {
+        color: var(--charcoal);
+        line-height: 1.6;
+        opacity: 0.8;
+        font-size: 0.95rem;
+      }
+
+      .info-card a {
+        color: var(--luxury-gold);
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .info-card a:hover {
+        color: var(--primary-black);
+      }
+
+      /* Clean Hours Table */
+      .hours-table {
+        width: 100%;
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hours-table .hours-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        font-size: 0.9rem;
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+      }
+
+      .hours-table .hours-row:last-child {
+        border-bottom: none;
+      }
+
+      .hours-table .day {
+        font-weight: 500;
+        color: var(--charcoal);
+        text-align: left;
+        flex: 1;
+      }
+
+      .hours-table .time {
+        color: var(--luxury-gold);
+        opacity: 1;
+        text-align: right;
+        font-weight: 500;
+        flex: 1;
+      }
+
+      /* Desktop Navigation Font Size Consistency */
+      @media (min-width: 769px) {
+        nav a {
+          font-size: 0.95rem !important;
+        }
+      }
+
+      /* Mobile Responsive */
+      @media (max-width: 768px) {
+        .header-container {
+          padding: 1rem 2rem;
+        }
+
+        .logo img {
+          height: 70px;
+        }
+
+        .hero {
+          padding-top: 120px;
+          height: 100vh;
+          min-height: 100vh;
+          background-attachment: scroll;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .hero-content {
+          padding: 1rem 2rem;
+          max-width: 100%;
+          gap: 1rem;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+        }
+
+        .hero-subtitle {
+          font-size: 0.8rem;
+          letter-spacing: 2px;
+          margin-bottom: 0.5rem;
+        }
+
+        .hero h1 {
+          font-size: clamp(2rem, 7vw, 3.2rem);
+          letter-spacing: 1px;
+          line-height: 1.1;
+          margin-bottom: 1rem;
+          text-align: center;
+        }
+
+        .hero-description {
+          font-size: 0.95rem;
+          line-height: 1.5;
+          margin-bottom: 1.5rem;
+          text-align: center;
+          max-width: 90%;
+        }
+
+        nav ul {
+          display: none;
+          position: fixed;
+          top: 100px;
+          left: 0;
+          right: 0;
+          width: 100vw;
+          background: #1a1a1a;
+          flex-direction: column;
+          gap: 0;
+          padding: 1rem 0;
+          z-index: 999;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+          margin: 0;
+          max-height: calc(100vh - 100px);
+          overflow-y: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+
+        nav ul.active {
+          display: flex;
+        }
+
+        /* Reorder navigation for mobile - Book Now first */
+        nav ul li:nth-child(1) {
+          order: 2;
+        } /* Home */
+        nav ul li:nth-child(2) {
+          order: 3;
+        } /* About */
+        nav ul li:nth-child(3) {
+          order: 4;
+        } /* Services */
+        nav ul li:nth-child(4) {
+          order: 5;
+        } /* Gallery */
+        nav ul li:nth-child(5) {
+          order: 6;
+        } /* Contact */
+        nav ul li:nth-child(6) {
+          order: 1;
+        } /* Book Now - first */
+
+        /* Ensure mobile navigation links display like Book Now */
+        nav ul li a {
+          display: block;
+          padding: 1rem 2rem;
+          text-align: center;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+          width: 100%;
+          box-sizing: border-box;
+        }
+        nav ul li:last-child a {
+          border-bottom: none;
+        }
+
+        /* Align hover highlight with separator lines */
+        nav a::before {
+          display: none;
+        }
+        nav ul li a {
+          transition: border-color 0.3s ease, border-bottom-width 0.2s ease;
+        }
+        nav ul li a:hover,
+        nav ul li a:focus,
+        nav ul li a.active {
+          border-bottom-color: var(--luxury-gold);
+          border-bottom-width: 2px;
+        }
+        nav ul li:last-child a {
+          border-bottom: none !important;
+        }
+
+        .mobile-menu {
+          display: flex;
+        }
+
+        .container {
+          padding: 0 2rem;
+        }
+
+        .contact-section {
+          padding: 4rem 0;
+        }
+
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+
+        .contact-form {
+          padding: 2rem;
+        }
+
+        .contact-info {
+          gap: 1.5rem;
+        }
+
+        .info-card {
+          padding: 1.5rem;
+          text-align: center;
+        }
+
+        .hours-table {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          max-width: 280px;
+          margin: 1rem auto 0 auto;
+          text-align: center;
+        }
+
+        .map-section {
+          margin: 3rem auto;
+        }
+
+        .map-container {
+          height: 300px;
+        }
+
+        .map-header {
+          padding: 1.5rem;
+        }
+
+        .map-title {
+          font-size: 1.5rem;
+        }
+
+        .map-info {
+          bottom: 8px;
+          left: 8px;
+          padding: 0.6rem;
+          max-width: 160px;
+        }
+
+        .map-info h4 {
+          font-size: 0.8rem;
+        }
+
+        .map-info p {
+          font-size: 0.7rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .contact-form {
+          padding: 1.5rem;
+        }
+
+        .info-card {
+          padding: 1.2rem;
+        }
+
+        .map-container {
+          height: 250px;
+        }
+
+        .map-header {
+          padding: 1rem;
+        }
+
+        .map-title {
+          font-size: 1.3rem;
+        }
+      }
+
+      /* Ultra-Premium Footer */
+      footer {
+        background: #1a1a1a;
+        color: var(--soft-white);
+        position: relative;
+        overflow: hidden;
+      }
+
+      footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--luxury-gold),
+          transparent
+        );
+      }
+
+      .footer-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 2.5rem 3rem 1.5rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .footer-brand {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-logo img {
+        height: 80px;
+        width: auto;
+        filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(35deg);
+        transition: all 0.3s ease;
+      }
+
+      .footer-description {
+        font-size: 1rem;
+        line-height: 1.8;
+        opacity: 0.9;
+        max-width: 300px;
+      }
+
+      .footer-section h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: var(--luxury-gold);
+        margin-bottom: 1rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .footer-links {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+
+      .footer-links a {
+        color: var(--soft-white);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        opacity: 0.8;
+      }
+
+      .footer-links a:hover {
+        color: var(--luxury-gold);
+        opacity: 1;
+        transform: translateX(5px);
+      }
+
+      .footer-contact p {
+        margin-bottom: 0.6rem;
+        font-size: 0.95rem;
+        opacity: 0.9;
+      }
+
+      .footer-contact a {
+        color: var(--luxury-gold);
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .footer-contact a:hover {
+        color: var(--soft-white);
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 0.8rem;
+        margin-top: 1rem;
+      }
+
+      .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: var(--soft-white);
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .social-link:hover {
+        background: var(--luxury-gold);
+        color: var(--primary-black);
+        transform: translateY(-3px);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 1.5rem;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .footer-copyright {
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+
+      .footer-credits {
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+
+      .footer-credits a {
+        color: var(--luxury-gold);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .footer-credits a:hover {
+        color: var(--soft-white);
+      }
+
+      /* Opening Hours Styling */
+      .opening-hours {
+        margin-top: 1rem;
+      }
+
+      .hours-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.4rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .hours-row:last-child {
+        border-bottom: none;
+      }
+
+      .day {
+        font-size: 0.95rem;
+        opacity: 0.9;
+      }
+
+      .time {
+        font-size: 0.95rem;
+        color: var(--luxury-gold);
+        font-weight: 500;
+        text-align: center;
+      }
+
+      @media (max-width: 768px) {
+        .footer-content {
+          padding: 2rem 2rem 1rem;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+          text-align: center;
+        }
+
+        .footer-brand {
+          align-items: center;
+        }
+
+        .footer-description {
+          max-width: 100%;
+        }
+
+        .footer-bottom {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        /* Mobile opening hours styling */
+        .hours-row {
+          padding: 0.6rem 0;
+          font-size: 0.9rem;
+          justify-content: center;
+        }
+
+        .day,
+        .time {
+          font-size: 0.9rem;
+          text-align: center;
+          flex: 1;
+        }
+      }
+
+      /* Scroll to Top Button - Mobile Only, Small Circle Design */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background: rgba(26, 26, 26, 0.9);
+        color: var(--luxury-gold);
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: 600;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px) scale(0.9);
+      }
+
+      .scroll-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) scale(1);
+      }
+
+      .scroll-to-top:hover {
+        background: rgba(212, 175, 55, 0.9);
+        color: var(--primary-black);
+        border-color: var(--luxury-gold);
+        transform: translateY(-2px) scale(1.05);
+        box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+      }
+
+      .scroll-to-top:active {
+        transform: translateY(0) scale(0.95);
+      }
+
+      /* Show only on mobile devices */
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <a href="index.html">
+            <img
+              src="Photos/Logo (2).png"
+              alt="Petal Hair Designs"
+              width="160"
+              height="80"
+            />
+          </a>
+        </div>
+        <nav>
+          <ul id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+            <li><a href="book-now.html">Book Now</a></li>
+          </ul>
+          <button
+            class="mobile-menu"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-controls="nav-menu"
+            aria-expanded="false"
+            onclick="toggleMenu()"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero hero-page">
+      <div class="hero-content">
+        <div class="hero-subtitle">Get In Touch</div>
+        <h1>Contact Us</h1>
+        <p class="hero-description">
+          Begin your transformation journey with a luxury consultation. Our
+          expert team is ready to create your perfect look and provide an
+          unparalleled salon experience.
+        </p>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- Revolutionary Contact Form -->
+          <div class="contact-form">
+            <div class="form-header">
+              <h2 class="form-title">Book Consultation</h2>
+              <p class="form-subtitle">
+                Schedule your luxury hair experience today
+              </p>
+            </div>
+
+            <form id="contact-form">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  autocomplete="name"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  autocomplete="email"
+                  inputmode="email"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  inputmode="tel"
+                  autocomplete="tel"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="service">Preferred Service</label>
+                <select id="service" name="service">
+                  <option value="">Select a service</option>
+                  <option value="consultation">Consultation</option>
+                  <option value="cut-style">Hair Cut & Styling</option>
+                  <option value="coloring">Hair Coloring</option>
+                  <option value="bridal">Bridal & Events</option>
+                  <option value="treatments">Hair Treatments</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Tell us about your hair goals and any specific requests..."
+                ></textarea>
+              </div>
+
+              <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+          </div>
+
+          <!-- Premium Contact Information -->
+          <div class="contact-info">
+            <div class="info-card">
+              <div class="info-icon">📍</div>
+              <h3>Visit Our Salon</h3>
+              <p>125 George Street<br />Sydney NSW 2000<br />Australia</p>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">📞</div>
+              <h3>Call Us</h3>
+              <p><a href="tel:0270104829">(02) 7010 4829</a></p>
+              <p>Call to book your appointment or consultation</p>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">✉️</div>
+              <h3>Email Us</h3>
+              <p>
+                <a href="mailto:petalhairdesigns@gmail.com"
+                  >petalhairdesigns@gmail.com</a
+                >
+              </p>
+              <p>We respond within 24 hours</p>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">🕒</div>
+              <h3>Opening Hours</h3>
+              <div class="hours-table">
+                <div class="hours-row">
+                  <span class="day">Sunday</span>
+                  <span class="time">CLOSED</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day">Monday</span>
+                  <span class="time">CLOSED</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day">Tuesday</span>
+                  <span class="time">9:00am - 5:30pm</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day">Wednesday</span>
+                  <span class="time">9:00am - 5:30pm</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day">Thursday</span>
+                  <span class="time">9:00am - 7:00pm</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day">Friday</span>
+                  <span class="time">9:00am - 5:30pm</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day">Saturday</span>
+                  <span class="time">9:00am - 3:00pm</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Map Section -->
+    <section class="map-section">
+      <div class="map-header">
+        <h3 class="map-title">Find Our Salon</h3>
+        <p class="map-subtitle">Located in the heart of Sydney</p>
+      </div>
+      <div class="map-container">
+        <iframe
+          class="interactive-map"
+          id="salon-map"
+          src="https://maps.google.com/maps?q=125%20George%20Street,%20Sydney%20NSW%202000,%20Australia&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+
+        <div class="map-info">
+          <h4>Petal Hair Designs</h4>
+          <p>125 George Street<br />Sydney NSW 2000<br />Premium Hair Salon</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-grid">
+          <!-- Brand Section -->
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <a href="index.html">
+                <img
+                  src="Photos/Logo (2).png"
+                  alt="Petal Hair Designs"
+                  width="160"
+                  height="80"
+                />
+              </a>
+            </div>
+            <p class="footer-description">
+              Sydney's most prestigious hair salon, where luxury meets
+              expertise. Experience the pinnacle of hair artistry and
+              personalized beauty services.
+            </p>
+            <div class="footer-social">
+              <a href="#" class="social-link" aria-label="Facebook">📘</a>
+              <a href="#" class="social-link" aria-label="Instagram">📷</a>
+              <a href="#" class="social-link" aria-label="Google">🌐</a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Services -->
+          <div class="footer-section">
+            <h3>Services</h3>
+            <ul class="footer-links">
+              <li><a href="services.html">Hair Cutting</a></li>
+              <li><a href="services.html">Hair Coloring</a></li>
+              <li><a href="services.html">Bridal Styling</a></li>
+              <li><a href="services.html">Hair Treatments</a></li>
+              <li><a href="contact.html">Consultation</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="footer-section">
+            <h3>Contact</h3>
+            <div class="footer-contact">
+              <p>125 George Street<br />Sydney NSW 2000</p>
+              <p><a href="tel:0270104829">(02) 7010 4829</a></p>
+              <p>
+                <a href="mailto:petalhairdesigns@gmail.com"
+                  >petalhairdesigns@gmail.com</a
+                >
+              </p>
+              <div class="opening-hours">
+                <div class="hours-row">
+                  <span class="day"><strong>Sunday:</strong></span>
+                  <span class="time">CLOSED</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day"><strong>Monday:</strong></span>
+                  <span class="time">CLOSED</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day"><strong>Tuesday:</strong></span>
+                  <span class="time">9am-5:30pm</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day"><strong>Wednesday:</strong></span>
+                  <span class="time">9am-5:30pm</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day"><strong>Thursday:</strong></span>
+                  <span class="time">9am-7pm</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day"><strong>Friday:</strong></span>
+                  <span class="time">9am-5:30pm</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day"><strong>Saturday:</strong></span>
+                  <span class="time">9am-3pm</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-copyright">
+            &copy; 2025 Petal Hair Designs. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function toggleMenu() {
+        const navMenu = document.getElementById("nav-menu");
+        const menuButton = document.querySelector(".mobile-menu");
+        const isActive = navMenu.classList.toggle("active");
+        if (menuButton) {
+          menuButton.setAttribute("aria-expanded", isActive ? "true" : "false");
+        }
+      }
+
+      // Enhanced scroll effects
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 100) {
+          header.style.background = "rgba(26,26,26,0.98)";
+        } else {
+          header.style.background = "rgba(26,26,26,0.95)";
+        }
+      });
+
+      // Luxury form submission
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const formData = new FormData(this);
+          const name = formData.get("name");
+          const email = formData.get("email");
+          const phone = formData.get("phone");
+          const service = formData.get("service");
+          const message = formData.get("message");
+
+          // Enhanced validation
+          if (!name || !email || !phone) {
+            alert("Please fill in all required fields.");
+            return;
+          }
+
+          // Simulate luxury form processing
+          const submitBtn = this.querySelector(".submit-btn");
+          const originalText = submitBtn.textContent;
+
+          submitBtn.textContent = "Sending...";
+          submitBtn.disabled = true;
+          submitBtn.style.opacity = "0.7";
+
+          setTimeout(() => {
+            alert(
+              `Thank you ${name}! We've received your luxury consultation request. Our team will contact you within 24 hours at ${phone} or ${email} to schedule your appointment.`
+            );
+
+            submitBtn.textContent = "Message Sent!";
+            submitBtn.style.background =
+              "linear-gradient(135deg, #D4AF37 0%, #B8941F 100%)";
+            submitBtn.style.color = "#000";
+
+            setTimeout(() => {
+              submitBtn.textContent = originalText;
+              submitBtn.disabled = false;
+              submitBtn.style.opacity = "1";
+              submitBtn.style.background =
+                "linear-gradient(135deg, var(--primary-black) 0%, var(--charcoal) 100%)";
+              submitBtn.style.color = "var(--soft-white)";
+              this.reset();
+            }, 3000);
+          }, 2000);
+        });
+
+      // Simple animations
+      document.addEventListener("DOMContentLoaded", function () {
+        // Fade in elements on scroll
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = "1";
+              entry.target.style.transform = "translateY(0)";
+            }
+          });
+        });
+
+        // Apply fade-in animation to key elements
+        document
+          .querySelectorAll(".info-card, .contact-form, .map-section")
+          .forEach((el, index) => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(20px)";
+            el.style.transition = `all 0.6s ease ${index * 0.1}s`;
+            observer.observe(el);
+          });
+      });
+    </script>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+      <span>↑</span>
+    </button>
+
+    <script>
+      // Scroll to top button functionality
+      const scrollBtn = document.getElementById("scrollToTop");
+
+      function toggleScrollButton() {
+        if (window.scrollY > 100) {
+          scrollBtn.classList.add("visible");
+        } else {
+          scrollBtn.classList.remove("visible");
+        }
+      }
+
+      scrollBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      window.addEventListener("scroll", toggleScrollButton);
+      document.addEventListener("DOMContentLoaded", toggleScrollButton);
+    </script>
+  </body>
+</html>

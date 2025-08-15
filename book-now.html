@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"
+    />
+    <title>Book Now - Petal Hair Designs | Luxury Hair Salon Sydney</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="booking-styles.css" />
+    <style>
+      :root {
+        --primary-black: #000000;
+        --luxury-gold: #d4af37;
+        --soft-white: #fefefe;
+        --pearl-white: #f8f8f8;
+        --charcoal: #1a1a1a;
+        --silver: #c0c0c0;
+        --shadow-light: rgba(0, 0, 0, 0.05);
+        --shadow-medium: rgba(0, 0, 0, 0.15);
+        --shadow-heavy: rgba(0, 0, 0, 0.25);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.7;
+        color: var(--charcoal);
+        background: var(--soft-white);
+        overflow-x: hidden;
+      }
+
+      /* Hero Styles */
+      .hero {
+        height: 70svh;
+        min-height: 480px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background: linear-gradient(
+          135deg,
+          var(--primary-black) 0%,
+          var(--charcoal) 50%,
+          var(--primary-black) 100%
+        );
+      }
+
+      .hero-content {
+        text-align: center;
+        color: var(--soft-white);
+        z-index: 2;
+        max-width: 800px;
+        padding: 0 2rem;
+      }
+
+      .hero-subtitle {
+        font-size: 0.9rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--luxury-gold);
+        margin-bottom: 2rem;
+        font-weight: 500;
+      }
+
+      .hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        font-weight: 400;
+        margin-bottom: 2rem;
+        line-height: 1.2;
+      }
+
+      .hero-description {
+        font-size: 1.2rem;
+        line-height: 1.7;
+        opacity: 0.9;
+        margin-bottom: 3rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Basic container styles */
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      /* Import header styles directly from working page */
+      header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        background: #1a1a1a;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .header-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.8rem 3rem;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+
+      .logo img {
+        height: 108px;
+        width: auto;
+        filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(35deg);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .logo:hover img {
+        filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(35deg)
+          brightness(1.1);
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      nav a {
+        color: var(--soft-white);
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 0.95rem !important;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        position: relative;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      nav a::before {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: var(--luxury-gold);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: translateX(-50%);
+      }
+
+      nav a:hover::before,
+      nav a.active::before {
+        width: 100%;
+      }
+
+      nav a:hover {
+        color: var(--luxury-gold);
+      }
+
+      .mobile-menu {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 5px;
+        background: transparent;
+        border: 0;
+      }
+
+      .mobile-menu span {
+        width: 28px;
+        height: 2px;
+        background: var(--soft-white);
+        margin: 4px 0;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border-radius: 2px;
+      }
+
+      /* Desktop Navigation Font Size Consistency */
+      @media (min-width: 769px) {
+        nav a {
+          font-size: 0.95rem !important;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .header-container {
+          padding: 1rem 2rem;
+        }
+
+        .logo img {
+          height: 70px;
+        }
+        .hero {
+          padding-top: 120px;
+          height: 100vh;
+          min-height: 100vh;
+          background-attachment: scroll;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .hero-content {
+          padding: 1rem 2rem;
+          max-width: 100%;
+          gap: 1rem;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+        }
+
+        .hero-subtitle {
+          font-size: 0.8rem;
+          letter-spacing: 2px;
+          margin-bottom: 0.5rem;
+        }
+
+        .hero h1 {
+          font-size: clamp(2rem, 7vw, 3.2rem);
+          letter-spacing: 1px;
+          line-height: 1.1;
+          margin-bottom: 1rem;
+          text-align: center;
+        }
+
+        .hero-description {
+          font-size: 0.95rem;
+          line-height: 1.5;
+          margin-bottom: 1.5rem;
+          text-align: center;
+          max-width: 90%;
+        }
+
+        nav ul {
+          display: none;
+          position: fixed;
+          top: 100px;
+          left: 0;
+          right: 0;
+          width: 100vw;
+          background: #1a1a1a;
+          flex-direction: column;
+          gap: 0;
+          padding: 1rem 0;
+          z-index: 999;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+          margin: 0;
+          max-height: calc(100vh - 100px);
+          overflow-y: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+
+        nav ul.active {
+          display: flex;
+        }
+
+        /* Reorder navigation for mobile - Book Now first */
+        nav ul li:nth-child(1) {
+          order: 2;
+        } /* Home */
+        nav ul li:nth-child(2) {
+          order: 3;
+        } /* About */
+        nav ul li:nth-child(3) {
+          order: 4;
+        } /* Services */
+        nav ul li:nth-child(4) {
+          order: 5;
+        } /* Gallery */
+        nav ul li:nth-child(5) {
+          order: 6;
+        } /* Contact */
+        nav ul li:nth-child(6) {
+          order: 1;
+        } /* Book Now - first */
+
+        .mobile-menu {
+          display: flex;
+        }
+
+        /* Ensure mobile navigation links display like Book Now */
+        nav ul li a {
+          display: block;
+          padding: 1rem 2rem;
+          text-align: center;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        nav ul li:last-child a {
+          border-bottom: none;
+        }
+        /* Align hover highlight with separator lines */
+        nav a::before {
+          display: none;
+        }
+        nav ul li a {
+          transition: border-color 0.3s ease, border-bottom-width 0.2s ease;
+        }
+        nav ul li a:hover,
+        nav ul li a:focus,
+        nav ul li a.active {
+          border-bottom-color: var(--luxury-gold);
+          border-bottom-width: 2px;
+        }
+        nav ul li:last-child a {
+          border-bottom: none !important;
+        }
+      }
+
+      /* Scroll to Top Button - Mobile Only, Small Circle Design */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background: rgba(26, 26, 26, 0.9);
+        color: var(--luxury-gold);
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: 600;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px) scale(0.9);
+      }
+
+      .scroll-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) scale(1);
+      }
+
+      .scroll-to-top:hover {
+        background: rgba(212, 175, 55, 0.9);
+        color: var(--primary-black);
+        border-color: var(--luxury-gold);
+        transform: translateY(-2px) scale(1.05);
+        box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+      }
+
+      .scroll-to-top:active {
+        transform: translateY(0) scale(0.95);
+      }
+
+      /* Show only on mobile devices */
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <a href="index.html">
+            <img
+              src="Photos/Logo (2).png"
+              alt="Petal Hair Designs"
+              width="160"
+              height="80"
+            />
+          </a>
+        </div>
+        <nav>
+          <ul id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="book-now.html" class="active">Book Now</a></li>
+          </ul>
+          <button
+            class="mobile-menu"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-controls="nav-menu"
+            aria-expanded="false"
+            onclick="toggleMenu()"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero hero-page">
+      <div class="hero-content">
+        <div class="hero-subtitle">Luxury Appointment</div>
+        <h1>Book Your Experience</h1>
+        <p class="hero-description">
+          Reserve your appointment for an exceptional hair design experience.
+          Our expert stylists are ready to create your perfect look.
+        </p>
+      </div>
+    </section>
+
+    <section class="booking-section">
+      <div class="booking-container">
+        <div class="booking-header">
+          <div class="booking-subtitle">Appointment Booking</div>
+          <h2 class="booking-title">Schedule Your Visit</h2>
+          <p class="booking-description">
+            Complete the form below to book your appointment. We'll confirm your
+            booking within 24 hours.
+          </p>
+        </div>
+
+        <div class="booking-content">
+          <div class="booking-form-container">
+            <form
+              id="bookingForm"
+              class="booking-form"
+              novalidate
+              role="form"
+              aria-label="Appointment booking form"
+            >
+              <!-- Service Selection Section -->
+              <div class="form-section">
+                <h3 class="section-title">
+                  <span class="section-number" aria-hidden="true">1</span>
+                  Select Your Service
+                </h3>
+                <div
+                  class="service-selection"
+                  role="group"
+                  aria-labelledby="service-selection-title"
+                  aria-required="true"
+                >
+                  <!-- Service options will be populated by JavaScript -->
+                </div>
+                <div class="selected-services">
+                  <h4>Selected Services:</h4>
+                  <div class="service-list"></div>
+                  <div class="total-price">
+                    <span class="price-label">Total:</span>
+                    <span class="price-amount">$0</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Staff Selection Section -->
+              <div class="form-section">
+                <h3 class="section-title">
+                  <span class="section-number" aria-hidden="true">2</span>
+                  Choose Your Stylist
+                </h3>
+                <div
+                  class="staff-selection"
+                  role="radiogroup"
+                  aria-labelledby="staff-selection-title"
+                  aria-required="true"
+                >
+                  <!-- Staff options will be populated by JavaScript -->
+                </div>
+              </div>
+
+              <!-- Date & Time Selection Section -->
+              <div class="form-section">
+                <h3 class="section-title">
+                  <span class="section-number" aria-hidden="true">3</span>
+                  Select Date & Time
+                </h3>
+                <div class="datetime-selection">
+                  <div class="date-picker-container">
+                    <label for="appointmentDate">Preferred Date</label>
+                    <input
+                      type="date"
+                      id="appointmentDate"
+                      name="appointmentDate"
+                      required
+                      aria-describedby="date-help"
+                    />
+                    <div id="date-help" class="sr-only">
+                      Select your preferred appointment date. Dates are
+                      available from tomorrow onwards.
+                    </div>
+                  </div>
+                  <div class="time-slots">
+                    <label id="time-slots-label">Available Times</label>
+                    <div
+                      class="time-grid"
+                      role="radiogroup"
+                      aria-labelledby="time-slots-label"
+                      aria-required="true"
+                    >
+                      <!-- Time slots will be populated by JavaScript -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Customer Information Section -->
+              <div class="form-section">
+                <h3 class="section-title">
+                  <span class="section-number">4</span>
+                  Your Information
+                </h3>
+                <div class="customer-info">
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="firstName">First Name *</label>
+                      <input
+                        type="text"
+                        id="firstName"
+                        name="firstName"
+                        required
+                      />
+                      <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="lastName">Last Name *</label>
+                      <input
+                        type="text"
+                        id="lastName"
+                        name="lastName"
+                        required
+                      />
+                      <span class="error-message"></span>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="email">Email Address *</label>
+                      <input type="email" id="email" name="email" required />
+                      <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="phone">Phone Number *</label>
+                      <input type="tel" id="phone" name="phone" required />
+                      <span class="error-message"></span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="specialRequests"
+                      >Special Requests or Notes</label
+                    >
+                    <textarea
+                      id="specialRequests"
+                      name="specialRequests"
+                      rows="4"
+                      placeholder="Any specific requests, allergies, or preferences..."
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Submit Section -->
+              <div class="form-section">
+                <div class="booking-summary">
+                  <h4>Booking Summary</h4>
+                  <div class="summary-details" aria-live="polite">
+                    <!-- Summary will be populated by JavaScript -->
+                  </div>
+                </div>
+                <button type="submit" class="submit-btn" disabled>
+                  <span class="btn-text">Book Appointment</span>
+                  <span class="btn-loader"></span>
+                </button>
+                <p class="booking-note">
+                  * We'll contact you within 24 hours to confirm your
+                  appointment
+                </p>
+              </div>
+            </form>
+          </div>
+
+          <!-- Booking Information Sidebar -->
+          <div class="booking-info">
+            <div class="info-card">
+              <div class="info-icon">📞</div>
+              <h4>Need Help?</h4>
+              <p>Call us directly to book or ask questions</p>
+              <a href="tel:0270104829" class="info-link">(02) 7010 4829</a>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">⏰</div>
+              <h4>Opening Hours</h4>
+              <div class="hours-list">
+                <div class="hours-item">
+                  <span>Monday - Friday</span>
+                  <span>9:00 AM - 7:00 PM</span>
+                </div>
+                <div class="hours-item">
+                  <span>Saturday</span>
+                  <span>8:00 AM - 5:00 PM</span>
+                </div>
+                <div class="hours-item">
+                  <span>Sunday</span>
+                  <span>10:00 AM - 4:00 PM</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">📍</div>
+              <h4>Location</h4>
+              <p>125 George Street<br />Sydney NSW 2000</p>
+              <a href="#" class="info-link">Get Directions</a>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">💎</div>
+              <h4>Cancellation Policy</h4>
+              <p>
+                Please provide 24 hours notice for cancellations to avoid fees.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="success-icon">✓</div>
+          <h3>Booking Request Sent!</h3>
+        </div>
+        <div class="modal-body">
+          <p>
+            Thank you for choosing Petal Hair Designs. We've received your
+            booking request and will contact you within 24 hours to confirm your
+            appointment.
+          </p>
+          <div class="booking-reference">
+            <strong>Reference: <span id="bookingRef"></span></strong>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="modal-btn" onclick="closeSuccessModal()">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-grid">
+          <!-- Brand Section -->
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <a href="index.html">
+                <img
+                  src="Photos/Logo (2).png"
+                  alt="Petal Hair Designs"
+                  width="160"
+                  height="80"
+                />
+              </a>
+            </div>
+            <p class="footer-description">
+              Sydney's most prestigious hair salon, where luxury meets
+              expertise. Experience the pinnacle of hair artistry and
+              personalized beauty services.
+            </p>
+            <div class="footer-social">
+              <a href="#" class="social-link" aria-label="Facebook">📘</a>
+              <a href="#" class="social-link" aria-label="Instagram">📷</a>
+              <a href="#" class="social-link" aria-label="Google">🌐</a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Services -->
+          <div class="footer-section">
+            <h3>Services</h3>
+            <ul class="footer-links">
+              <li><a href="services.html">Hair Cutting</a></li>
+              <li><a href="services.html">Hair Coloring</a></li>
+              <li><a href="services.html">Bridal Styling</a></li>
+              <li><a href="services.html">Hair Treatments</a></li>
+              <li><a href="contact.html">Consultation</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="footer-section">
+            <h3>Contact</h3>
+            <div class="footer-contact">
+              <p>125 George Street<br />Sydney NSW 2000</p>
+              <p><a href="tel:0270104829">(02) 7010 4829</a></p>
+              <p>
+                <a href="mailto:petalhairdesigns@gmail.com"
+                  >petalhairdesigns@gmail.com</a
+                >
+              </p>
+              <div class="opening-hours">
+                <div class="hours-row">
+                  <span class="day"><strong>Sunday:</strong></span>
+                  <span class="time">CLOSED</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day"><strong>Monday:</strong></span>
+                  <span class="time">CLOSED</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day"><strong>Tuesday:</strong></span>
+                  <span class="time">9am-5:30pm</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day"><strong>Wednesday:</strong></span>
+                  <span class="time">9am-5:30pm</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day"><strong>Thursday:</strong></span>
+                  <span class="time">9am-7pm</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day"><strong>Friday:</strong></span>
+                  <span class="time">9am-5:30pm</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day"><strong>Saturday:</strong></span>
+                  <span class="time">9am-3pm</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-copyright">
+            © 2025 Petal Hair Designs. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function toggleMenu() {
+        const navMenu = document.getElementById("nav-menu");
+        const menuButton = document.querySelector(".mobile-menu");
+        const isActive = navMenu.classList.toggle("active");
+        if (menuButton) {
+          menuButton.setAttribute("aria-expanded", isActive ? "true" : "false");
+        }
+      }
+
+      // Enhanced scroll effects
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 100) {
+          header.style.background = "rgba(26,26,26,0.98)";
+        } else {
+          header.style.background = "rgba(26,26,26,0.95)";
+        }
+      });
+
+      // Intersection Observer for animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      }, observerOptions);
+
+      // Observe cards for animation
+      const cards = document.querySelectorAll(".luxury-card");
+      cards.forEach((card) => {
+        card.style.opacity = "0";
+        card.style.transform = "translateY(30px)";
+        card.style.transition = "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)";
+        observer.observe(card);
+      });
+    </script>
+    <script src="booking.js"></script>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+      <span>↑</span>
+    </button>
+
+    <script>
+      // Scroll to top button functionality
+      const scrollBtn = document.getElementById("scrollToTop");
+
+      function toggleScrollButton() {
+        if (window.scrollY > 100) {
+          scrollBtn.classList.add("visible");
+        } else {
+          scrollBtn.classList.remove("visible");
+        }
+      }
+
+      scrollBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      window.addEventListener("scroll", toggleScrollButton);
+      document.addEventListener("DOMContentLoaded", toggleScrollButton);
+    </script>
+  </body>
+</html>

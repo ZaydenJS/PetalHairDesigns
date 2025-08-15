@@ -1,0 +1,2488 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"
+    />
+    <title>Gallery - Petal Hair Designs | Luxury Hair Salon Sydney</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-black: #000000;
+        --luxury-gold: #d4af37;
+        --soft-white: #fefefe;
+        --pearl-white: #f8f8f8;
+        --charcoal: #1a1a1a;
+        --silver: #c0c0c0;
+        --shadow-light: rgba(0, 0, 0, 0.05);
+        --shadow-medium: rgba(0, 0, 0, 0.15);
+        --shadow-heavy: rgba(0, 0, 0, 0.25);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.7;
+        color: var(--charcoal);
+        background: var(--soft-white);
+        overflow-x: hidden;
+      }
+
+      /* Ultra-Luxury Header */
+      header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        background: #1a1a1a;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .header-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.8rem 3rem;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+
+      .logo img {
+        height: 108px;
+        width: auto;
+        filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(35deg);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .logo:hover img {
+        filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(35deg)
+          brightness(1.1);
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      nav a {
+        color: var(--soft-white);
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 0.95rem !important;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        position: relative;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      nav a::before {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: var(--luxury-gold);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: translateX(-50%);
+      }
+
+      nav a:hover::before,
+      nav a.active::before {
+        width: 100%;
+      }
+
+      nav a:hover {
+        color: var(--luxury-gold);
+      }
+
+      .mobile-menu {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 5px;
+        background: transparent;
+        border: 0;
+      }
+
+      .mobile-menu span {
+        width: 28px;
+        height: 2px;
+        background: var(--soft-white);
+        margin: 4px 0;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border-radius: 2px;
+      }
+
+      /* Ultra-Premium Hero Section - Base */
+      .hero {
+        height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      /* Home Page Hero with Background Image */
+      .hero-home {
+        background: linear-gradient(
+            135deg,
+            rgba(0, 0, 0, 0.7) 0%,
+            rgba(26, 26, 26, 0.5) 50%,
+            rgba(0, 0, 0, 0.8) 100%
+          ),
+          url("Photos/Temp.png");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+
+      /* Other Pages Hero with Gradient Background */
+      .hero-page {
+        height: 70vh; /* Increased height for better centering */
+        min-height: 600px; /* Increased minimum height for content */
+        background: linear-gradient(
+          135deg,
+          var(--primary-black) 0%,
+          var(--charcoal) 50%,
+          var(--primary-black) 100%
+        );
+        /* Ensure perfect centering */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="0.5" fill="rgba(255,255,255,0.02)"/><circle cx="75" cy="75" r="0.3" fill="rgba(255,255,255,0.01)"/><circle cx="50" cy="10" r="0.4" fill="rgba(255,255,255,0.015)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        opacity: 0.3;
+        animation: grain 20s linear infinite;
+      }
+
+      @keyframes grain {
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+        10% {
+          transform: translate(-5%, -10%);
+        }
+        20% {
+          transform: translate(-15%, 5%);
+        }
+        30% {
+          transform: translate(7%, -25%);
+        }
+        40% {
+          transform: translate(-5%, 25%);
+        }
+        50% {
+          transform: translate(-15%, 10%);
+        }
+        60% {
+          transform: translate(15%, 0%);
+        }
+        70% {
+          transform: translate(0%, 15%);
+        }
+        80% {
+          transform: translate(3%, 35%);
+        }
+        90% {
+          transform: translate(-10%, 10%);
+        }
+      }
+
+      .hero-content {
+        text-align: center;
+        z-index: 2;
+        max-width: 900px;
+        padding: 0 2rem;
+        animation: heroFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        opacity: 0;
+        /* Ensure content is perfectly centered */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      @keyframes heroFadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(60px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-subtitle {
+        font-family: "Inter", sans-serif;
+        font-size: 0.95rem;
+        font-weight: 400;
+        color: var(--luxury-gold);
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+        animation: slideInFromTop 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s
+          forwards;
+        opacity: 0;
+      }
+
+      @keyframes slideInFromTop {
+        0% {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        100% {
+          opacity: 0.9;
+          transform: translateY(0);
+        }
+      }
+
+      .hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(3rem, 6vw, 5rem);
+        font-weight: 300;
+        color: var(--soft-white);
+        letter-spacing: 3px;
+        line-height: 1.1;
+        margin-bottom: 2.5rem;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        animation: slideInFromBottom 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s
+          forwards;
+        opacity: 0;
+      }
+
+      @keyframes slideInFromBottom {
+        0% {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-description {
+        font-family: "Inter", sans-serif;
+        font-size: 1.25rem;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.8;
+        margin-bottom: 2.5rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
+        opacity: 0;
+      }
+
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        100% {
+          opacity: 0.85;
+          transform: translateY(0);
+        }
+      }
+
+      /* Ultra-Premium Filter Section */
+      .filter-section {
+        padding: 6rem 0 4rem;
+        background: linear-gradient(
+          180deg,
+          var(--soft-white) 0%,
+          var(--pearl-white) 100%
+        );
+        position: relative;
+      }
+
+      .filter-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--luxury-gold),
+          transparent
+        );
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 3rem;
+      }
+
+      .filter-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+
+      .filter-title {
+        font-family: "Playfair Display", serif;
+        font-size: 2.5rem;
+        font-weight: 300;
+        color: var(--primary-black);
+        letter-spacing: 2px;
+        margin-bottom: 1rem;
+      }
+
+      .filter-subtitle {
+        color: var(--charcoal);
+        opacity: 0.8;
+        font-size: 1.1rem;
+      }
+
+      .filter-buttons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+      }
+
+      .filter-btn {
+        background: transparent;
+        color: var(--charcoal);
+        border: 2px solid var(--charcoal);
+        padding: 1rem 2.5rem;
+        min-height: 44px;
+        min-width: 120px;
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.15s ease;
+        border-radius: 0;
+      }
+
+      .filter-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--primary-black);
+        transition: left 0.15s ease;
+        z-index: -1;
+      }
+
+      .filter-btn:hover::before,
+      .filter-btn.active::before {
+        left: 0;
+      }
+
+      .filter-btn:hover,
+      .filter-btn.active {
+        color: var(--soft-white);
+        border-color: var(--primary-black);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px var(--shadow-medium);
+      }
+
+      /* Modern Gallery Grid */
+      .gallery-section {
+        padding: 6rem 0 10rem;
+        background: var(--soft-white);
+        position: relative;
+      }
+
+      .gallery-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="gallery-bg" width="60" height="60" patternUnits="userSpaceOnUse"><circle cx="30" cy="30" r="1" fill="rgba(212,175,55,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23gallery-bg)"/></svg>');
+        opacity: 0.4;
+      }
+
+      .gallery-container {
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        margin-top: 4rem;
+      }
+
+      .gallery-item {
+        background: var(--soft-white);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        position: relative;
+        border: 1px solid rgba(212, 175, 55, 0.1);
+      }
+
+      .gallery-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(212, 175, 55, 0.1),
+          transparent
+        );
+        opacity: 0;
+        transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        border-radius: 20px;
+        z-index: 1;
+      }
+
+      .gallery-item:hover::before {
+        opacity: 1;
+      }
+
+      .gallery-item:hover {
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+        border-color: var(--luxury-gold);
+      }
+
+      .gallery-image {
+        width: 100%;
+        height: 280px;
+        background: linear-gradient(
+          135deg,
+          #f8f8f8 0%,
+          #f0f0f0 50%,
+          #e8e8e8 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--charcoal);
+        font-size: 1rem;
+        font-weight: 500;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .gallery-image::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="image-texture" width="25" height="25" patternUnits="userSpaceOnUse"><circle cx="12.5" cy="12.5" r="0.5" fill="rgba(212,175,55,0.15)"/><circle cx="6" cy="6" r="0.3" fill="rgba(212,175,55,0.1)"/><circle cx="19" cy="19" r="0.4" fill="rgba(212,175,55,0.12)"/></pattern></defs><rect width="100" height="100" fill="url(%23image-texture)"/></svg>');
+        opacity: 0.6;
+      }
+
+      .gallery-image .image-icon {
+        font-size: 3rem;
+        color: var(--luxury-gold);
+        margin-bottom: 1rem;
+        z-index: 2;
+        position: relative;
+      }
+
+      .gallery-image .image-text {
+        z-index: 2;
+        position: relative;
+        text-align: center;
+      }
+
+      .gallery-info {
+        padding: 2rem;
+        text-align: left;
+        position: relative;
+        z-index: 2;
+      }
+
+      .gallery-info h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: var(--primary-black);
+        margin-bottom: 0.8rem;
+        letter-spacing: 0.5px;
+        line-height: 1.3;
+      }
+
+      .gallery-info p {
+        color: var(--charcoal);
+        opacity: 0.8;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        font-size: 0.95rem;
+      }
+
+      .category-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: linear-gradient(135deg, var(--luxury-gold), #b8941f);
+        color: var(--primary-black);
+        padding: 0.6rem 1.2rem;
+        font-family: "Inter", sans-serif;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        border-radius: 25px;
+        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .category-tag::before {
+        content: "✨";
+        font-size: 0.8rem;
+      }
+
+      .gallery-item:hover .category-tag {
+        box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        background: var(--luxury-gold);
+        color: var(--primary-black);
+      }
+
+      /* Hidden class for filtering */
+      .hidden {
+        display: none !important;
+      }
+
+      /* Desktop Navigation Font Size Consistency */
+      @media (min-width: 769px) {
+        nav a {
+          font-size: 0.95rem !important;
+        }
+      }
+
+      /* Mobile Responsive */
+      @media (max-width: 768px) {
+        .header-container {
+          padding: 1rem 2rem;
+        }
+
+        .logo img {
+          height: 70px;
+        }
+
+        .hero {
+          padding-top: 120px;
+          height: 100vh;
+          min-height: 100vh;
+          background-attachment: scroll;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .hero-content {
+          padding: 1rem 2rem;
+          max-width: 100%;
+          gap: 1rem;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+        }
+
+        .hero-subtitle {
+          font-size: 0.8rem;
+          letter-spacing: 2px;
+          margin-bottom: 0.5rem;
+        }
+
+        .hero h1 {
+          font-size: clamp(2rem, 7vw, 3.2rem);
+          letter-spacing: 1px;
+          line-height: 1.1;
+          margin-bottom: 1rem;
+          text-align: center;
+        }
+
+        .hero-description {
+          font-size: 0.95rem;
+          line-height: 1.5;
+          margin-bottom: 1.5rem;
+          text-align: center;
+          max-width: 90%;
+        }
+
+        nav ul {
+          display: none;
+          position: fixed;
+          top: 100px;
+          left: 0;
+          right: 0;
+          width: 100vw;
+          background: #1a1a1a;
+          flex-direction: column;
+          gap: 0;
+          padding: 1rem 0;
+          z-index: 999;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+          margin: 0;
+          max-height: calc(100vh - 100px);
+          overflow-y: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+
+        nav ul.active {
+          display: flex;
+        }
+
+        /* Ensure mobile navigation links display like Book Now */
+        nav ul li a {
+          display: block;
+          padding: 1rem 2rem;
+          text-align: center;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+          width: 100%;
+          box-sizing: border-box;
+        }
+        nav ul li:last-child a {
+          border-bottom: none;
+        }
+        /* Align hover highlight with separator lines */
+        nav a::before {
+          display: none;
+        }
+        nav ul li a {
+          transition: border-color 0.3s ease, border-bottom-width 0.2s ease;
+        }
+        nav ul li a:hover,
+        nav ul li a:focus,
+        nav ul li a.active {
+          border-bottom-color: var(--luxury-gold);
+          border-bottom-width: 2px;
+        }
+        nav ul li:last-child a {
+          border-bottom: none !important;
+        }
+
+        /* Reorder navigation for mobile - Book Now first */
+        nav ul li:nth-child(1) {
+          order: 2;
+        } /* Home */
+        nav ul li:nth-child(2) {
+          order: 3;
+        } /* About */
+        nav ul li:nth-child(3) {
+          order: 4;
+        } /* Services */
+        nav ul li:nth-child(4) {
+          order: 5;
+        } /* Gallery */
+        nav ul li:nth-child(5) {
+          order: 6;
+        } /* Contact */
+        nav ul li:nth-child(6) {
+          order: 1;
+        } /* Book Now - first */
+
+        .mobile-menu {
+          display: flex;
+        }
+
+        .container {
+          padding: 0 2rem;
+        }
+
+        .filter-section {
+          padding: 4rem 0 3rem;
+        }
+
+        .filter-buttons {
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+        }
+
+        .filter-btn {
+          width: 100%;
+          max-width: 250px;
+          min-height: 48px;
+          padding: 1.2rem 1.5rem;
+          font-size: 0.95rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .filter-buttons {
+          flex-direction: column;
+          align-items: center;
+          gap: 0.75rem;
+        }
+
+        .gallery-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .gallery-section {
+          padding: 3rem 0 5rem;
+        }
+      }
+
+      /* Ultra-Premium Footer */
+      footer {
+        background: #1a1a1a;
+        color: var(--soft-white);
+        position: relative;
+        overflow: hidden;
+      }
+
+      footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--luxury-gold),
+          transparent
+        );
+      }
+
+      .footer-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 2.5rem 3rem 1.5rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .footer-brand {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-logo img {
+        height: 80px;
+        width: auto;
+        filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(35deg);
+        transition: all 0.3s ease;
+      }
+
+      .footer-logo:hover img {
+        filter: brightness(1.5) contrast(1.6)
+          drop-shadow(0 3px 10px rgba(212, 175, 55, 0.5));
+      }
+
+      .footer-description {
+        font-size: 1rem;
+        line-height: 1.8;
+        opacity: 0.9;
+        max-width: 300px;
+      }
+
+      .footer-section h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: var(--luxury-gold);
+        margin-bottom: 1rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .footer-links {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+
+      .footer-links a {
+        color: var(--soft-white);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        opacity: 0.8;
+      }
+
+      .footer-links a:hover {
+        color: var(--luxury-gold);
+        opacity: 1;
+        transform: translateX(5px);
+      }
+
+      .footer-contact p {
+        margin-bottom: 0.6rem;
+        font-size: 0.95rem;
+        opacity: 0.9;
+      }
+
+      .footer-contact a {
+        color: var(--luxury-gold);
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .footer-contact a:hover {
+        color: var(--soft-white);
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 0.8rem;
+        margin-top: 1rem;
+      }
+
+      .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: var(--soft-white);
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .social-link:hover {
+        background: var(--luxury-gold);
+        color: var(--primary-black);
+        transform: translateY(-3px);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 1.5rem;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .footer-copyright {
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+
+      .footer-credits {
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+
+      .footer-credits a {
+        color: var(--luxury-gold);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .footer-credits a:hover {
+        color: var(--soft-white);
+      }
+
+      /* Opening Hours Styling */
+      .opening-hours {
+        margin-top: 1rem;
+      }
+
+      .hours-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.4rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .hours-row:last-child {
+        border-bottom: none;
+      }
+
+      .day {
+        font-size: 0.95rem;
+        opacity: 0.9;
+      }
+
+      .time {
+        font-size: 0.95rem;
+        color: var(--luxury-gold);
+        font-weight: 500;
+        text-align: center;
+      }
+
+      /* Image Modal Styles */
+      .image-modal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        animation: modalFadeIn 0.3s ease;
+      }
+
+      .modal-content {
+        position: relative;
+        margin: auto;
+        padding: 10px;
+        width: 95%;
+        max-width: 1600px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .modal-content img {
+        max-width: 98%;
+        max-height: 95vh;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        border-radius: 8px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 20px;
+        right: 35px;
+        color: #fff;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 10000;
+        transition: all 0.3s ease;
+      }
+
+      .modal-close:hover {
+        color: var(--luxury-gold);
+        background: rgba(212, 175, 55, 0.1);
+      }
+
+      .modal-caption {
+        text-align: center;
+        color: #fff;
+        padding: 15px 20px;
+        font-size: 1.1rem;
+        font-weight: 300;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.7);
+        border-radius: 8px;
+        max-width: 80%;
+      }
+
+      .modal-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        pointer-events: none;
+      }
+
+      .modal-nav-btn {
+        background: rgba(255, 255, 255, 0.2);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        color: #fff;
+        font-size: 30px;
+        padding: 15px 20px;
+        cursor: pointer;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        pointer-events: all;
+      }
+
+      .modal-nav-btn:hover {
+        background: var(--luxury-gold);
+        border-color: var(--luxury-gold);
+        color: var(--primary-black);
+      }
+
+      @keyframes modalFadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .footer-content {
+          padding: 2rem 2rem 1rem;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+          text-align: center;
+        }
+
+        .footer-brand {
+          align-items: center;
+        }
+
+        .footer-description {
+          max-width: 100%;
+        }
+
+        .footer-bottom {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        /* Mobile opening hours styling */
+        .hours-row {
+          padding: 0.6rem 0;
+          font-size: 0.9rem;
+          justify-content: center;
+        }
+
+        .day,
+        .time {
+          font-size: 0.9rem;
+          text-align: center;
+          flex: 1;
+        }
+
+        /* Mobile modal styles */
+        .modal-content {
+          padding: 10px;
+          width: 95%;
+          height: 85vh;
+        }
+
+        .modal-content img {
+          max-width: 95%;
+          max-height: 80vh;
+          min-height: 60vh;
+          width: auto;
+          height: auto;
+        }
+
+        .modal-close {
+          top: 10px;
+          right: 20px;
+          font-size: 35px;
+        }
+
+        .modal-nav-btn {
+          font-size: 25px;
+          padding: 12px 15px;
+        }
+
+        .modal-caption {
+          font-size: 0.9rem;
+          padding: 10px 15px;
+          bottom: 10px;
+          max-width: 90%;
+        }
+      }
+
+      /* Scroll to Top Button - Mobile Only, Small Circle Design */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background: rgba(26, 26, 26, 0.9);
+        color: var(--luxury-gold);
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: 600;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px) scale(0.9);
+      }
+
+      .scroll-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) scale(1);
+      }
+
+      .scroll-to-top:hover {
+        background: rgba(212, 175, 55, 0.9);
+        color: var(--primary-black);
+        border-color: var(--luxury-gold);
+        transform: translateY(-2px) scale(1.05);
+        box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+      }
+
+      .scroll-to-top:active {
+        transform: translateY(0) scale(0.95);
+      }
+
+      /* Show only on mobile devices */
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <a href="index.html">
+            <img
+              src="Photos/Logo (2).png"
+              alt="Petal Hair Designs"
+              width="160"
+              height="80"
+            />
+          </a>
+        </div>
+        <nav>
+          <ul id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html" class="active">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="book-now.html">Book Now</a></li>
+          </ul>
+          <button
+            class="mobile-menu"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-controls="nav-menu"
+            aria-expanded="false"
+            onclick="toggleMenu()"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero hero-page">
+      <div class="hero-content">
+        <div class="hero-subtitle">Our Portfolio</div>
+        <h1>Gallery</h1>
+        <p class="hero-description">
+          Explore our stunning transformations and artistic creations. Each
+          image tells a story of beauty, elegance, and the artistry that defines
+          Petal Hair Designs.
+        </p>
+      </div>
+    </section>
+
+    <section class="filter-section">
+      <div class="container">
+        <div class="filter-header">
+          <h2 class="filter-title">Browse Our Work</h2>
+          <p class="filter-subtitle">
+            Filter by category to discover the perfect inspiration for your next
+            transformation
+          </p>
+        </div>
+
+        <div class="filter-buttons">
+          <button
+            class="filter-btn active"
+            data-filter="all"
+            aria-pressed="true"
+          >
+            All Work
+          </button>
+          <button class="filter-btn" data-filter="styling">
+            Hair Cuts & Styling
+          </button>
+          <button class="filter-btn" data-filter="coloring">
+            Hair Coloring
+          </button>
+          <button class="filter-btn" data-filter="bridal">
+            Bridal & Events
+          </button>
+          <button class="filter-btn" data-filter="photoshoots">
+            Photo Shoots
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-section">
+      <div class="gallery-container">
+        <div class="gallery-grid" id="gallery-grid">
+          <!-- Hair Cuts & Styling -->
+          <div class="gallery-item" data-category="styling">
+            <div class="gallery-image">
+              <img
+                src="Styling/1.jpg"
+                alt="Professional Hair Styling"
+                loading="lazy"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Sophisticated Styling</h3>
+              <p>
+                Expert hair styling with precision and artistry, creating
+                elegant looks that enhance natural beauty.
+              </p>
+              <span class="category-tag">Hair Cuts & Styling</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="styling">
+            <div class="gallery-image">
+              <img
+                src="Styling/2.jpg"
+                alt="Professional Hair Cut"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Precision Cut</h3>
+              <p>
+                Expertly crafted cuts that add movement, volume, and dimension
+                to create effortless elegance.
+              </p>
+              <span class="category-tag">Hair Cuts & Styling</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="styling">
+            <div class="gallery-image">
+              <img
+                src="Styling/3.jpg"
+                alt="Modern Hair Styling"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Modern Styling</h3>
+              <p>
+                Contemporary styling techniques that showcase confidence and
+                sophisticated style with expert finishing.
+              </p>
+              <span class="category-tag">Hair Cuts & Styling</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="styling">
+            <div class="gallery-image">
+              <img
+                src="Styling/4.jpg"
+                alt="Elegant Hair Design"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Elegant Design</h3>
+              <p>
+                Sophisticated hair designs that combine classic techniques with
+                modern flair for stunning results.
+              </p>
+              <span class="category-tag">Hair Cuts & Styling</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="styling">
+            <div class="gallery-image">
+              <img
+                src="Styling/5.jpg"
+                alt="Professional Styling"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Professional Styling</h3>
+              <p>
+                Expert styling services that transform your look with precision
+                cutting and artistic vision.
+              </p>
+              <span class="category-tag">Hair Cuts & Styling</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="styling">
+            <div class="gallery-image">
+              <img
+                src="Styling/6.jpg"
+                alt="Luxury Hair Styling"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Luxury Styling</h3>
+              <p>
+                Premium styling services that deliver exceptional results with
+                attention to every detail.
+              </p>
+              <span class="category-tag">Hair Cuts & Styling</span>
+            </div>
+          </div>
+
+          <!-- More Hair Cuts & Styling -->
+          <div class="gallery-item" data-category="styling">
+            <div class="gallery-image">
+              <img
+                src="Styling/7.jpg"
+                alt="Creative Hair Styling"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Creative Styling</h3>
+              <p>
+                Innovative styling approaches that bring out your unique
+                personality and style preferences.
+              </p>
+              <span class="category-tag">Hair Cuts & Styling</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="styling">
+            <div class="gallery-image">
+              <img
+                src="Styling/8.jpg"
+                alt="Artistic Hair Design"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Artistic Design</h3>
+              <p>
+                Artistic hair designs that showcase creativity and technical
+                excellence in every cut and style.
+              </p>
+              <span class="category-tag">Hair Cuts & Styling</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="styling">
+            <div class="gallery-image">
+              <img
+                src="Styling/9.jpg"
+                alt="Signature Styling"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Signature Styling</h3>
+              <p>
+                Our signature styling techniques that create distinctive looks
+                tailored to your individual features.
+              </p>
+              <span class="category-tag">Hair Cuts & Styling</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="styling">
+            <div class="gallery-image">
+              <img
+                src="Styling/10.jpg"
+                alt="Premium Hair Styling"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Premium Styling</h3>
+              <p>
+                Premium styling services using the finest techniques and
+                products for exceptional results.
+              </p>
+              <span class="category-tag">Hair Cuts & Styling</span>
+            </div>
+          </div>
+
+          <!-- Hair Coloring -->
+          <div class="gallery-item" data-category="coloring">
+            <div class="gallery-image">
+              <img
+                src="Styling/11.jpg"
+                alt="Hair Color Transformation"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Color Transformation</h3>
+              <p>
+                Stunning color transformations that illuminate and enhance your
+                natural beauty with expert technique.
+              </p>
+              <span class="category-tag">Hair Coloring</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="coloring">
+            <div class="gallery-image">
+              <img
+                src="Styling/12.jpg"
+                alt="Professional Hair Coloring"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Professional Coloring</h3>
+              <p>
+                Expert coloring services creating seamless color transitions and
+                natural-looking luminosity.
+              </p>
+              <span class="category-tag">Hair Coloring</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="coloring">
+            <div class="gallery-image">
+              <img
+                src="Styling/13.jpg"
+                alt="Luxury Hair Color"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Luxury Color</h3>
+              <p>
+                Premium color services with expert color correction and toning
+                for perfect, vibrant results.
+              </p>
+              <span class="category-tag">Hair Coloring</span>
+            </div>
+          </div>
+
+          <!-- More Hair Coloring -->
+          <div class="gallery-item" data-category="coloring">
+            <div class="gallery-image">
+              <img
+                src="Styling/14.jpg"
+                alt="Expert Hair Coloring"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Expert Coloring</h3>
+              <p>
+                Advanced coloring techniques that create beautiful,
+                natural-looking results with lasting vibrancy.
+              </p>
+              <span class="category-tag">Hair Coloring</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="coloring">
+            <div class="gallery-image">
+              <img
+                src="Styling/15.jpg"
+                alt="Color Artistry"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Color Artistry</h3>
+              <p>
+                Artistic color applications that enhance your features and
+                complement your personal style perfectly.
+              </p>
+              <span class="category-tag">Hair Coloring</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="coloring">
+            <div class="gallery-image">
+              <img
+                src="Styling/16.jpg"
+                alt="Premium Color Services"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Premium Color</h3>
+              <p>
+                Premium color services using the finest products and techniques
+                for exceptional, long-lasting results.
+              </p>
+              <span class="category-tag">Hair Coloring</span>
+            </div>
+          </div>
+
+          <!-- Bridal & Events -->
+          <div class="gallery-item" data-category="bridal">
+            <div class="gallery-image">
+              <img
+                src="Bridal/2.jpg"
+                alt="Bridal Hair Styling"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Bridal Elegance</h3>
+              <p>
+                Timeless bridal styling that captures romance and elegance for
+                your most important day.
+              </p>
+              <span class="category-tag">Bridal & Events</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="bridal">
+            <div class="gallery-image">
+              <img
+                src="Bridal/3.jpg"
+                alt="Wedding Hair Design"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Wedding Perfection</h3>
+              <p>
+                Exquisite wedding hair designs that create unforgettable looks
+                for your special celebration.
+              </p>
+              <span class="category-tag">Bridal & Events</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="bridal">
+            <div class="gallery-image">
+              <img
+                src="Bridal/4.jpg"
+                alt="Bridal Updo"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Elegant Updo</h3>
+              <p>
+                Sophisticated bridal updos that combine classic beauty with
+                modern elegance and style.
+              </p>
+              <span class="category-tag">Bridal & Events</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="bridal">
+            <div class="gallery-image">
+              <img
+                src="Bridal/5.jpg"
+                alt="Special Event Styling"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Event Glamour</h3>
+              <p>
+                Glamorous styling perfect for galas, parties, and special
+                celebrations that demand sophistication.
+              </p>
+              <span class="category-tag">Bridal & Events</span>
+            </div>
+          </div>
+
+          <!-- More Bridal & Events -->
+          <div class="gallery-item" data-category="bridal">
+            <div class="gallery-image">
+              <img
+                src="Bridal/6.jpg"
+                alt="Romantic Bridal Style"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Romantic Style</h3>
+              <p>
+                Romantic bridal styling that creates dreamy, ethereal looks
+                perfect for your fairy-tale wedding.
+              </p>
+              <span class="category-tag">Bridal & Events</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="bridal">
+            <div class="gallery-image">
+              <img
+                src="Bridal/7.jpg"
+                alt="Classic Bridal Hair"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Classic Bridal</h3>
+              <p>
+                Timeless classic bridal hairstyles that never go out of style,
+                perfect for traditional ceremonies.
+              </p>
+              <span class="category-tag">Bridal & Events</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="bridal">
+            <div class="gallery-image">
+              <img
+                src="Bridal/8.jpg"
+                alt="Modern Bridal Design"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Modern Bridal</h3>
+              <p>
+                Contemporary bridal designs that blend modern trends with
+                classic elegance for today's bride.
+              </p>
+              <span class="category-tag">Bridal & Events</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="bridal">
+            <div class="gallery-image">
+              <img
+                src="Bridal/9.jpg"
+                alt="Luxury Bridal Styling"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Luxury Bridal</h3>
+              <p>
+                Luxurious bridal styling services that create show-stopping
+                looks for your most important day.
+              </p>
+              <span class="category-tag">Bridal & Events</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="bridal">
+            <div class="gallery-image">
+              <img
+                src="Bridal/10.jpg"
+                alt="Elegant Wedding Hair"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Wedding Elegance</h3>
+              <p>
+                Elegant wedding hairstyles that complement your dress and
+                enhance your natural beauty perfectly.
+              </p>
+              <span class="category-tag">Bridal & Events</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="bridal">
+            <div class="gallery-image">
+              <img
+                src="Bridal/11.jpg"
+                alt="Bridal Hair Artistry"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Bridal Artistry</h3>
+              <p>
+                Artistic bridal hairstyles that showcase creativity and
+                technical excellence for your special day.
+              </p>
+              <span class="category-tag">Bridal & Events</span>
+            </div>
+          </div>
+
+          <!-- Photo Shoots -->
+          <div class="gallery-item" data-category="photoshoots">
+            <div class="gallery-image">
+              <img
+                src="Photo Shoots/1.jpg"
+                alt="Professional Photo Shoot Hair"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Photo Shoot Ready</h3>
+              <p>
+                Professional styling perfect for photo shoots, creating
+                camera-ready looks that photograph beautifully.
+              </p>
+              <span class="category-tag">Photo Shoots</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="photoshoots">
+            <div class="gallery-image">
+              <img
+                src="Photo Shoots/2.jpg"
+                alt="Editorial Hair Styling"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Editorial Styling</h3>
+              <p>
+                High-fashion editorial styling that creates dramatic, artistic
+                looks perfect for professional photography.
+              </p>
+              <span class="category-tag">Photo Shoots</span>
+            </div>
+          </div>
+
+          <!-- More Photo Shoots -->
+          <div class="gallery-item" data-category="photoshoots">
+            <div class="gallery-image">
+              <img
+                src="Photo Shoots/3.jpg"
+                alt="Fashion Photo Shoot"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Fashion Styling</h3>
+              <p>
+                Fashion-forward styling for photo shoots that creates bold,
+                trendy looks perfect for modern photography.
+              </p>
+              <span class="category-tag">Photo Shoots</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="photoshoots">
+            <div class="gallery-image">
+              <img
+                src="Photo Shoots/4.jpg"
+                alt="Creative Photo Shoot Hair"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Creative Vision</h3>
+              <p>
+                Creative styling that brings artistic vision to life, perfect
+                for unique and memorable photo shoots.
+              </p>
+              <span class="category-tag">Photo Shoots</span>
+            </div>
+          </div>
+
+          <!-- More Bridal Images -->
+          <div class="gallery-item" data-category="bridal">
+            <div class="gallery-image">
+              <img
+                src="Bridal/12.jpg"
+                alt="Sophisticated Bridal Style"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Sophisticated Bridal</h3>
+              <p>
+                Sophisticated bridal styling that combines elegance with modern
+                trends for the contemporary bride.
+              </p>
+              <span class="category-tag">Bridal & Events</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="bridal">
+            <div class="gallery-image">
+              <img
+                src="Bridal/13.jpg"
+                alt="Glamorous Wedding Hair"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Glamorous Wedding</h3>
+              <p>
+                Glamorous wedding hairstyles that make a statement and create
+                unforgettable bridal moments.
+              </p>
+              <span class="category-tag">Bridal & Events</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="bridal">
+            <div class="gallery-image">
+              <img
+                src="Bridal/14.jpg"
+                alt="Vintage Bridal Styling"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Vintage Bridal</h3>
+              <p>
+                Vintage-inspired bridal styling that captures timeless romance
+                and classic beauty perfectly.
+              </p>
+              <span class="category-tag">Bridal & Events</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="bridal">
+            <div class="gallery-image">
+              <img
+                src="Bridal/15.jpg"
+                alt="Bohemian Bridal Hair"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Bohemian Bridal</h3>
+              <p>
+                Bohemian bridal styles that embrace natural beauty with relaxed
+                elegance and artistic flair.
+              </p>
+              <span class="category-tag">Bridal & Events</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="bridal">
+            <div class="gallery-image">
+              <img
+                src="Bridal/16.jpg"
+                alt="Royal Bridal Styling"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 20px 20px 0 0;
+                "
+              />
+            </div>
+            <div class="gallery-info">
+              <h3>Royal Bridal</h3>
+              <p>
+                Regal bridal styling fit for royalty, creating majestic looks
+                for your most special day.
+              </p>
+              <span class="category-tag">Bridal & Events</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal">
+      <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <img id="modalImage" src="" alt="" width="1200" height="800" />
+        <div class="modal-caption">
+          <p id="modalCaption"></p>
+        </div>
+        <div class="modal-nav">
+          <button id="prevBtn" class="modal-nav-btn">&#8249;</button>
+          <button id="nextBtn" class="modal-nav-btn">&#8250;</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-grid">
+          <!-- Brand Section -->
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <a href="index.html">
+                <img
+                  src="Photos/Logo (2).png"
+                  alt="Petal Hair Designs"
+                  width="160"
+                  height="80"
+                />
+              </a>
+            </div>
+            <p class="footer-description">
+              Sydney's most prestigious hair salon, where luxury meets
+              expertise. Experience the pinnacle of hair artistry and
+              personalized beauty services.
+            </p>
+            <div class="footer-social">
+              <a href="#" class="social-link" aria-label="Facebook">📘</a>
+              <a href="#" class="social-link" aria-label="Instagram">📷</a>
+              <a href="#" class="social-link" aria-label="Google">🌐</a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Services -->
+          <div class="footer-section">
+            <h3>Services</h3>
+            <ul class="footer-links">
+              <li><a href="services.html">Hair Cutting</a></li>
+              <li><a href="services.html">Hair Coloring</a></li>
+              <li><a href="services.html">Bridal Styling</a></li>
+              <li><a href="services.html">Hair Treatments</a></li>
+              <li><a href="contact.html">Consultation</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="footer-section">
+            <h3>Contact</h3>
+            <div class="footer-contact">
+              <p>125 George Street<br />Sydney NSW 2000</p>
+              <p><a href="tel:0270104829">(02) 7010 4829</a></p>
+              <p>
+                <a href="mailto:petalhairdesigns@gmail.com"
+                  >petalhairdesigns@gmail.com</a
+                >
+              </p>
+              <div class="opening-hours">
+                <div class="hours-row">
+                  <span class="day"><strong>Sunday:</strong></span>
+                  <span class="time">CLOSED</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day"><strong>Monday:</strong></span>
+                  <span class="time">CLOSED</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day"><strong>Tuesday:</strong></span>
+                  <span class="time">9am-5:30pm</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day"><strong>Wednesday:</strong></span>
+                  <span class="time">9am-5:30pm</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day"><strong>Thursday:</strong></span>
+                  <span class="time">9am-7pm</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day"><strong>Friday:</strong></span>
+                  <span class="time">9am-5:30pm</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day"><strong>Saturday:</strong></span>
+                  <span class="time">9am-3pm</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-copyright">
+            &copy; 2025 Petal Hair Designs. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function toggleMenu() {
+        const navMenu = document.getElementById("nav-menu");
+        const menuButton = document.querySelector(".mobile-menu");
+        const isActive = navMenu.classList.toggle("active");
+        if (menuButton) {
+          menuButton.setAttribute("aria-expanded", isActive ? "true" : "false");
+        }
+      }
+
+      // Enhanced scroll effects
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 100) {
+          header.style.background = "rgba(26,26,26,0.98)";
+        } else {
+          header.style.background = "rgba(26,26,26,0.95)";
+        }
+      });
+
+      // Ultra-premium filter functionality
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const galleryItems = document.querySelectorAll(".gallery-item");
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          // Remove active class and aria-pressed from all buttons
+          filterButtons.forEach((btn) => {
+            btn.classList.remove("active");
+            btn.setAttribute("aria-pressed", "false");
+          });
+          // Add active class and aria-pressed to clicked button
+          button.classList.add("active");
+          button.setAttribute("aria-pressed", "true");
+
+          const filterValue = button.getAttribute("data-filter");
+
+          // Fast filter animation
+          galleryItems.forEach((item, index) => {
+            const shouldShow =
+              filterValue === "all" ||
+              item.getAttribute("data-category") === filterValue;
+
+            if (shouldShow) {
+              // Show items immediately with minimal delay
+              item.classList.remove("hidden");
+              item.style.opacity = "1";
+              item.style.transform = "translateY(0)";
+
+              // Optimize image loading for newly visible items
+              const img = item.querySelector("img");
+              if (img && img.loading === "lazy") {
+                img.loading = "eager";
+              }
+            } else {
+              // Hide items quickly
+              item.style.opacity = "0";
+              item.style.transform = "translateY(10px)";
+              setTimeout(() => {
+                item.classList.add("hidden");
+              }, 150);
+            }
+          });
+        });
+      });
+
+      // Performance optimizations
+      document.addEventListener("DOMContentLoaded", function () {
+        // Add lazy loading to all gallery images
+        const galleryImages = document.querySelectorAll(".gallery-item img");
+        galleryImages.forEach((img) => {
+          if (!img.hasAttribute("loading")) {
+            img.setAttribute("loading", "lazy");
+          }
+        });
+
+        // Optimize image loading for visible items
+        const visibleItems = document.querySelectorAll(
+          ".gallery-item:not(.hidden)"
+        );
+        visibleItems.forEach((item) => {
+          const img = item.querySelector("img");
+          if (img && img.loading === "lazy") {
+            img.loading = "eager"; // Load visible images immediately
+          }
+        });
+      });
+
+      // Gallery item animations on scroll
+      document.addEventListener("DOMContentLoaded", function () {
+        const galleryItems = document.querySelectorAll(".gallery-item");
+
+        const observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        galleryItems.forEach((item, index) => {
+          item.style.opacity = "0";
+          item.style.transform = "translateY(40px)";
+          item.style.transition = `all 0.3s cubic-bezier(0.4, 0, 0.2, 1) ${
+            index * 0.02
+          }s`;
+          observer.observe(item);
+        });
+      });
+
+      // Image Modal Functionality
+      let currentImageIndex = 0;
+      let currentImages = [];
+
+      function openModal(imageSrc, imageAlt, imageDescription) {
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+        const modalCaption = document.getElementById("modalCaption");
+
+        // Get all visible images for navigation
+        currentImages = Array.from(
+          document.querySelectorAll(".gallery-item:not(.hidden) img")
+        ).map((img) => ({
+          src: img.src,
+          alt: img.alt,
+          description:
+            img.closest(".gallery-item").querySelector(".gallery-content p")
+              ?.textContent || "",
+        }));
+
+        currentImageIndex = currentImages.findIndex((img) =>
+          img.src.includes(imageSrc)
+        );
+
+        modal.style.display = "block";
+        modalImg.src = imageSrc;
+        modalImg.alt = imageAlt;
+        modalCaption.textContent = imageDescription;
+
+        // Prevent body scroll
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal() {
+        const modal = document.getElementById("imageModal");
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+      }
+
+      function nextImage() {
+        if (currentImages.length > 0) {
+          currentImageIndex = (currentImageIndex + 1) % currentImages.length;
+          const img = currentImages[currentImageIndex];
+          document.getElementById("modalImage").src = img.src;
+          document.getElementById("modalImage").alt = img.alt;
+          document.getElementById("modalCaption").textContent = img.description;
+        }
+      }
+
+      function prevImage() {
+        if (currentImages.length > 0) {
+          currentImageIndex =
+            (currentImageIndex - 1 + currentImages.length) %
+            currentImages.length;
+          const img = currentImages[currentImageIndex];
+          document.getElementById("modalImage").src = img.src;
+          document.getElementById("modalImage").alt = img.alt;
+          document.getElementById("modalCaption").textContent = img.description;
+        }
+      }
+
+      // Modal event listeners
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("prevBtn").addEventListener("click", prevImage);
+        document.getElementById("nextBtn").addEventListener("click", nextImage);
+        document
+          .querySelector(".modal-close")
+          .addEventListener("click", closeModal);
+
+        // Close modal when clicking outside the image
+        document
+          .getElementById("imageModal")
+          .addEventListener("click", function (e) {
+            if (e.target === this) {
+              closeModal();
+            }
+          });
+
+        // Make all gallery images clickable
+        const galleryImages = document.querySelectorAll(".gallery-item");
+        galleryImages.forEach((item) => {
+          const img = item.querySelector("img");
+          const title =
+            item.querySelector(".gallery-content h3")?.textContent || img.alt;
+          const description =
+            item.querySelector(".gallery-content p")?.textContent || "";
+
+          item.style.cursor = "pointer";
+          item.addEventListener("click", function () {
+            openModal(img.src, img.alt, description);
+          });
+        });
+      });
+
+      // Keyboard navigation
+      document.addEventListener("keydown", function (e) {
+        const modal = document.getElementById("imageModal");
+        if (modal.style.display === "block") {
+          if (e.key === "Escape") closeModal();
+          if (e.key === "ArrowLeft") prevImage();
+          if (e.key === "ArrowRight") nextImage();
+        }
+      });
+    </script>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+      <span>↑</span>
+    </button>
+
+    <script>
+      // Scroll to top button functionality
+      const scrollBtn = document.getElementById("scrollToTop");
+
+      function toggleScrollButton() {
+        if (window.scrollY > 100) {
+          scrollBtn.classList.add("visible");
+        } else {
+          scrollBtn.classList.remove("visible");
+        }
+      }
+
+      scrollBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      window.addEventListener("scroll", toggleScrollButton);
+      document.addEventListener("DOMContentLoaded", toggleScrollButton);
+    </script>
+  </body>
+</html>

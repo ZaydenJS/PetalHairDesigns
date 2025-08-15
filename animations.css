@@ -1,0 +1,392 @@
+/* Enhanced Animations and Styling for Enlighten Hair Design */
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Loading animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+/* Apply animations to elements */
+.service-card {
+  animation: fadeInUp 0.6s ease forwards;
+  animation-delay: calc(var(--animation-order, 0) * 0.1s);
+}
+
+.gallery-item {
+  animation: scaleIn 0.5s ease forwards;
+  animation-delay: calc(var(--animation-order, 0) * 0.05s);
+}
+
+.news-article {
+  animation: fadeInLeft 0.6s ease forwards;
+  animation-delay: calc(var(--animation-order, 0) * 0.1s);
+}
+
+.info-card {
+  animation: fadeInUp 0.6s ease forwards;
+  animation-delay: calc(var(--animation-order, 0) * 0.1s);
+}
+
+/* Enhanced hover effects */
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.service-card:hover::before {
+  left: 100%;
+}
+
+/* Elegant text animations */
+.hero h1 {
+  animation: fadeInUp 1s ease 0.5s both;
+}
+
+.hero p {
+  animation: fadeInUp 1s ease 0.7s both;
+}
+
+.cta-button {
+  animation: fadeInUp 1s ease 0.9s both;
+}
+
+/* Smooth transitions for all interactive elements - blur prevention removed */
+* {
+  transition: color 0.3s ease, background-color 0.3s ease,
+    border-color 0.3s ease, opacity 0.3s ease;
+  /* Remove transform-related properties that can cause blur */
+}
+
+/* Enhanced button hover effects - removed scaling to prevent blur */
+.cta-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.3) 0%,
+    transparent 70%
+  );
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cta-button:hover::after {
+  opacity: 1;
+}
+
+/* Parallax effect for hero sections */
+.hero {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Enhanced form animations - removed transform to prevent blur */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-color: var(--luxury-gold, #d4af37);
+}
+
+/* Loading shimmer effect for images */
+.gallery-image::after,
+.article-image::after,
+.about-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+/* Smooth page transitions */
+body {
+  opacity: 0;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+/* Enhanced mobile menu animation */
+.mobile-menu span {
+  transform-origin: center;
+}
+
+.mobile-menu.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Staggered animations for grids */
+.services-grid .service-card:nth-child(1) {
+  --animation-order: 1;
+}
+.services-grid .service-card:nth-child(2) {
+  --animation-order: 2;
+}
+.services-grid .service-card:nth-child(3) {
+  --animation-order: 3;
+}
+.services-grid .service-card:nth-child(4) {
+  --animation-order: 4;
+}
+
+.gallery-grid .gallery-item:nth-child(1) {
+  --animation-order: 1;
+}
+.gallery-grid .gallery-item:nth-child(2) {
+  --animation-order: 2;
+}
+.gallery-grid .gallery-item:nth-child(3) {
+  --animation-order: 3;
+}
+.gallery-grid .gallery-item:nth-child(4) {
+  --animation-order: 4;
+}
+.gallery-grid .gallery-item:nth-child(5) {
+  --animation-order: 5;
+}
+.gallery-grid .gallery-item:nth-child(6) {
+  --animation-order: 6;
+}
+
+/* Enhanced scroll animations */
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Intersection Observer animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.animate-on-scroll.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Enhanced modal animations */
+.modal {
+  /* backdrop-filter removed to eliminate blur */
+}
+
+.modal-content {
+  animation: scaleIn 0.3s ease;
+}
+
+/* Elegant loading states */
+.loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.loading::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+/* Enhanced typography animations */
+.section-title {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #000;
+  transition: all 0.5s ease;
+  transform: translateX(-50%);
+}
+
+.section-title:hover::after {
+  width: 100px;
+}
+
+/* Smooth color transitions */
+.filter-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.filter-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.filter-btn:hover::before,
+.filter-btn.active::before {
+  left: 0;
+}
+
+/* Enhanced card hover effects - removed scaling to prevent blur */
+.value-card,
+.team-member,
+.offer-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.value-card::before,
+.team-member::before,
+.offer-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.value-card:hover::before,
+.team-member:hover::before,
+.offer-card:hover::before {
+  opacity: 1;
+}
+
+/* Responsive animation adjustments */
+@media (max-width: 768px) {
+  .hero {
+    background-attachment: scroll;
+  }
+
+  .service-card,
+  .gallery-item,
+  .news-article,
+  .info-card {
+    animation-delay: 0s;
+  }
+}
+
+/* Accessibility: Respect user preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}

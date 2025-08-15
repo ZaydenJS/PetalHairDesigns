@@ -1,0 +1,2522 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"
+    />
+    <title>Petal Hair Designs - Luxury Hair Salon Sydney</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-black: #000000;
+        --luxury-gold: #d4af37;
+        --soft-white: #fefefe;
+        --pearl-white: #f8f8f8;
+        --charcoal: #1a1a1a;
+        --silver: #c0c0c0;
+        --shadow-light: rgba(0, 0, 0, 0.05);
+        --shadow-medium: rgba(0, 0, 0, 0.15);
+        --shadow-heavy: rgba(0, 0, 0, 0.25);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.7;
+        color: var(--charcoal);
+        background: var(--soft-white);
+        overflow-x: hidden;
+      }
+
+      /* Ultra-Luxury Header - Exact copy from about.html */
+      header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        background: #1a1a1a;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .header-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.8rem 3rem;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+
+      .logo img {
+        height: 108px;
+        width: auto;
+        filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(35deg);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .logo:hover img {
+        filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(35deg)
+          brightness(1.1);
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      nav a {
+        color: var(--soft-white);
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 0.95rem !important;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        position: relative;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      nav a::before {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: var(--luxury-gold);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: translateX(-50%);
+      }
+
+      nav a:hover::before,
+      nav a.active::before {
+        width: 100%;
+      }
+
+      nav a:hover {
+        color: var(--luxury-gold);
+      }
+
+      .mobile-menu {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 5px;
+        background: transparent;
+        border: 0;
+      }
+
+      .mobile-menu span {
+        width: 28px;
+        height: 2px;
+        background: var(--soft-white);
+        margin: 4px 0;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border-radius: 2px;
+      }
+
+      /* Hero Section - Home Page */
+      .hero {
+        height: 100vh;
+        min-height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background: linear-gradient(
+            135deg,
+            rgba(0, 0, 0, 0.7) 0%,
+            rgba(26, 26, 26, 0.5) 50%,
+            rgba(0, 0, 0, 0.8) 100%
+          ),
+          url("Photos/Behind Hero.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="0.5" fill="rgba(255,255,255,0.02)"/><circle cx="75" cy="75" r="0.3" fill="rgba(255,255,255,0.01)"/><circle cx="50" cy="10" r="0.4" fill="rgba(255,255,255,0.015)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        opacity: 0.3;
+        animation: grain 20s linear infinite;
+      }
+
+      @keyframes grain {
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+        10% {
+          transform: translate(-5%, -10%);
+        }
+        20% {
+          transform: translate(-15%, 5%);
+        }
+        30% {
+          transform: translate(7%, -25%);
+        }
+        40% {
+          transform: translate(-5%, 25%);
+        }
+        50% {
+          transform: translate(-15%, 10%);
+        }
+        60% {
+          transform: translate(15%, 0%);
+        }
+        70% {
+          transform: translate(0%, 15%);
+        }
+        80% {
+          transform: translate(3%, 35%);
+        }
+        90% {
+          transform: translate(-10%, 10%);
+        }
+      }
+
+      .hero-content {
+        text-align: center;
+        z-index: 2;
+        max-width: 900px;
+        padding: 0 2rem;
+        animation: heroFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        opacity: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      @keyframes heroFadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(60px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-subtitle {
+        font-family: "Inter", sans-serif;
+        font-size: 0.95rem;
+        font-weight: 400;
+        color: var(--luxury-gold);
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+        animation: slideInFromTop 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s
+          forwards;
+        opacity: 0;
+      }
+
+      @keyframes slideInFromTop {
+        0% {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        100% {
+          opacity: 0.9;
+          transform: translateY(0);
+        }
+      }
+
+      .hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(3rem, 6vw, 5rem);
+        font-weight: 300;
+        color: var(--soft-white);
+        letter-spacing: 3px;
+        line-height: 1.1;
+        margin-bottom: 2.5rem;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        animation: slideInFromBottom 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s
+          forwards;
+        opacity: 0;
+      }
+
+      @keyframes slideInFromBottom {
+        0% {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-description {
+        font-family: "Inter", sans-serif;
+        font-size: 1.25rem;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.8;
+        margin-bottom: 2.5rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
+        opacity: 0;
+      }
+
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        100% {
+          opacity: 0.85;
+          transform: translateY(0);
+        }
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        animation: fadeInUp 1.5s cubic-bezier(0.4, 0, 0.2, 1) 1.4s forwards;
+        opacity: 0;
+      }
+
+      .cta-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.3rem 2.5rem;
+        text-decoration: none;
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 1rem;
+        border-radius: 50px;
+        letter-spacing: 0.5px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        min-width: 200px;
+        justify-content: center;
+      }
+
+      .cta-primary {
+        background: linear-gradient(135deg, var(--luxury-gold), #b8941f);
+        color: var(--primary-black);
+        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        border: 2px solid transparent;
+      }
+
+      .cta-primary::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.3s ease;
+      }
+
+      .cta-primary:hover::before {
+        left: 100%;
+      }
+
+      .cta-primary:hover {
+        box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+        background: linear-gradient(135deg, #b8941f, var(--luxury-gold));
+      }
+
+      .cta-secondary {
+        background: transparent;
+        color: var(--soft-white);
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        box-shadow: 0 5px 20px rgba(255, 255, 255, 0.1);
+      }
+
+      .cta-secondary:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.6);
+        box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+      }
+
+      /* Premium Content Sections */
+      .luxury-section {
+        padding: 8rem 0;
+        position: relative;
+      }
+
+      .luxury-section:nth-child(even) {
+        background: linear-gradient(
+          180deg,
+          var(--soft-white) 0%,
+          var(--pearl-white) 100%
+        );
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 3rem;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 5rem;
+      }
+
+      .section-subtitle {
+        font-family: "Inter", sans-serif;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--luxury-gold);
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+
+      .section-title {
+        font-family: "Playfair Display", serif;
+        font-size: 2.5rem;
+        font-weight: 300;
+        color: var(--primary-black);
+        letter-spacing: 2px;
+        line-height: 1.2;
+        margin-bottom: 2rem;
+      }
+
+      .section-description {
+        font-size: 1.2rem;
+        color: var(--charcoal);
+        line-height: 1.8;
+        max-width: 700px;
+        margin: 0 auto;
+        opacity: 0.9;
+      }
+
+      /* About Preview Section */
+      .about-preview {
+        padding: 8rem 0;
+        background: var(--pearl-white);
+      }
+
+      .about-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 3rem;
+      }
+
+      .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6rem;
+        align-items: start;
+      }
+
+      .about-text-section {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .about-subtitle {
+        font-family: "Inter", sans-serif;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--luxury-gold);
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+
+      .about-title {
+        font-family: "Playfair Display", serif;
+        font-size: 2.8rem;
+        font-weight: 300;
+        color: var(--primary-black);
+        letter-spacing: 2px;
+        line-height: 1.2;
+      }
+
+      .about-description {
+        font-size: 1.1rem;
+        color: var(--charcoal);
+        line-height: 1.8;
+        opacity: 0.9;
+      }
+
+      .about-highlights {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+
+      .highlight-item {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+      }
+
+      .highlight-item:last-child {
+        border-bottom: none;
+      }
+
+      .highlight-icon {
+        width: 45px;
+        height: 45px;
+        background: linear-gradient(135deg, var(--luxury-gold), #b8941f);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        flex-shrink: 0;
+      }
+
+      .highlight-text {
+        font-size: 1rem;
+        color: var(--charcoal);
+        font-weight: 500;
+        opacity: 0.9;
+      }
+
+      .about-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.2rem 2.5rem;
+        background: linear-gradient(135deg, var(--luxury-gold), #b8941f);
+        color: var(--primary-black);
+        text-decoration: none;
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 1rem;
+        border-radius: 50px;
+        letter-spacing: 0.5px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        margin-top: 2rem;
+      }
+
+      .about-cta::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .about-cta:hover::before {
+        left: 100%;
+      }
+
+      .about-cta:hover {
+        box-shadow: 0 12px 48px rgba(212, 175, 55, 0.4);
+      }
+
+      .about-visual {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        height: 100%;
+      }
+
+      .visual-container {
+        position: relative;
+        width: 100%;
+        max-width: 450px;
+      }
+
+      .owner-photo-container {
+        width: 100%;
+        height: 500px;
+        border-radius: 20px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        background: var(--luxury-gold);
+      }
+
+      .owner-photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        transition: all 0.3s ease;
+      }
+
+      .owner-photo-container:hover .owner-photo {
+        filter: brightness(1.1);
+      }
+
+      .photo-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.8) 0%,
+          rgba(0, 0, 0, 0.4) 50%,
+          transparent 100%
+        );
+        padding: 2rem;
+        color: white;
+        transform: translateY(100%);
+        transition: all 0.3s ease;
+      }
+
+      .owner-photo-container:hover .photo-overlay {
+        opacity: 1;
+      }
+
+      .owner-info {
+        text-align: center;
+      }
+
+      .owner-name {
+        font-family: "Playfair Display", serif;
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        color: var(--luxury-gold);
+      }
+
+      .owner-title {
+        font-family: "Inter", sans-serif;
+        font-size: 1rem;
+        opacity: 0.9;
+      }
+
+      /* Services Section */
+      .services {
+        padding: 8rem 0;
+        background: var(--soft-white);
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        margin-top: 4rem;
+      }
+
+      .service-card {
+        background: var(--soft-white);
+        padding: 3rem;
+        border-radius: 0;
+        box-shadow: 0 20px 60px var(--shadow-light);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        border-top: 3px solid var(--luxury-gold);
+      }
+
+      /* Service card hover effects removed per user request */
+
+      .service-icon {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        color: var(--luxury-gold);
+        text-align: center;
+        display: block;
+      }
+
+      .service-card h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.8rem;
+        font-weight: 400;
+        color: var(--primary-black);
+        margin-bottom: 1.5rem;
+        letter-spacing: 1px;
+        text-align: center;
+      }
+
+      .service-card p {
+        color: var(--charcoal);
+        line-height: 1.8;
+        opacity: 0.9;
+        flex-grow: 1;
+        text-align: center;
+      }
+
+      /* Why Choose Us Section */
+      .why-choose-us {
+        padding: 8rem 0;
+        background: linear-gradient(
+          180deg,
+          var(--pearl-white) 0%,
+          var(--soft-white) 100%
+        );
+      }
+
+      .why-choose-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 3rem;
+      }
+
+      .why-choose-header {
+        text-align: center;
+        margin-bottom: 5rem;
+      }
+
+      .why-choose-subtitle {
+        font-family: "Inter", sans-serif;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--luxury-gold);
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+
+      .why-choose-title {
+        font-family: "Playfair Display", serif;
+        font-size: 2.8rem;
+        font-weight: 300;
+        color: var(--primary-black);
+        letter-spacing: 2px;
+        line-height: 1.2;
+        margin-bottom: 2rem;
+      }
+
+      .why-choose-description {
+        font-size: 1.2rem;
+        color: var(--charcoal);
+        line-height: 1.8;
+        max-width: 700px;
+        margin: 0 auto;
+        opacity: 0.9;
+      }
+
+      .features-showcase {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6rem;
+        align-items: center;
+        margin-top: 4rem;
+      }
+
+      .features-content {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 2rem;
+        padding: 2rem;
+        background: var(--soft-white);
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid rgba(212, 175, 55, 0.1);
+      }
+
+      .feature-item:hover {
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        border-color: var(--luxury-gold);
+      }
+
+      .feature-icon-wrapper {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, var(--luxury-gold), #b8941f);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        flex-shrink: 0;
+        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+      }
+
+      .feature-content h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: var(--primary-black);
+        margin-bottom: 1rem;
+        letter-spacing: 0.5px;
+      }
+
+      .feature-content p {
+        color: var(--charcoal);
+        line-height: 1.7;
+        opacity: 0.9;
+      }
+
+      .features-visual {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .visual-container {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        justify-content: center;
+      }
+
+      .visual-square {
+        width: 500px;
+        height: 500px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(212, 175, 55, 0.3);
+      }
+
+      .hair-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 19px;
+      }
+
+      .excellence-badge {
+        background: var(--soft-white);
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        border-radius: 8px;
+        padding: 0.8rem 1.2rem;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+        min-width: 100px;
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        z-index: 10;
+      }
+
+      .badge-number {
+        font-family: "Playfair Display", serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--luxury-gold);
+        line-height: 1;
+        margin-bottom: 0.3rem;
+      }
+
+      .badge-text {
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: var(--primary-black);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        opacity: 0.8;
+        line-height: 1.2;
+      }
+
+      .visual-number {
+        font-family: "Playfair Display", serif;
+        font-size: 4rem;
+        font-weight: 300;
+        color: var(--primary-black);
+        margin-bottom: 0.5rem;
+        line-height: 1;
+      }
+
+      .visual-text {
+        font-family: "Inter", sans-serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--primary-black);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      /* Testimonials Section */
+      .testimonials {
+        padding: 8rem 0;
+        background: var(--soft-white);
+      }
+
+      .testimonials-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 3rem;
+      }
+
+      .testimonials-header {
+        text-align: center;
+        margin-bottom: 5rem;
+      }
+
+      .testimonials-subtitle {
+        font-family: "Inter", sans-serif;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--luxury-gold);
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+
+      .testimonials-title {
+        font-family: "Playfair Display", serif;
+        font-size: 2.8rem;
+        font-weight: 300;
+        color: var(--primary-black);
+        letter-spacing: 2px;
+        line-height: 1.2;
+        margin-bottom: 2rem;
+      }
+
+      .testimonials-description {
+        font-size: 1.2rem;
+        color: var(--charcoal);
+        line-height: 1.8;
+        max-width: 700px;
+        margin: 0 auto;
+        opacity: 0.9;
+      }
+
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 3rem;
+        margin-top: 4rem;
+        align-items: stretch;
+      }
+
+      .testimonial-card {
+        background: var(--soft-white);
+        padding: 3rem 2.5rem;
+        border-radius: 20px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid rgba(212, 175, 55, 0.1);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        min-height: 350px;
+        position: relative;
+      }
+
+      .testimonial-card:hover {
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+        border-color: var(--luxury-gold);
+      }
+
+      .testimonial-quote {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--charcoal);
+        margin-bottom: 2.5rem;
+        flex-grow: 1;
+        position: relative;
+        padding-left: 1.5rem;
+        font-style: italic;
+        opacity: 0.9;
+      }
+
+      .testimonial-quote::before {
+        content: "\201C";
+        position: absolute;
+        top: -0.8rem;
+        left: -0.5rem;
+        font-size: 4rem;
+        color: var(--luxury-gold);
+        font-family: "Playfair Display", serif;
+        line-height: 1;
+        opacity: 0.6;
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .author-avatar {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, var(--luxury-gold), #b8941f);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        color: var(--primary-black);
+        font-size: 1.1rem;
+        flex-shrink: 0;
+      }
+
+      .author-info h4 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: var(--primary-black);
+        margin-bottom: 0.2rem;
+      }
+
+      .author-service {
+        font-size: 0.9rem;
+        color: var(--luxury-gold);
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .testimonial-stars {
+        display: flex;
+        gap: 0.3rem;
+        margin-top: 1rem;
+      }
+
+      .star {
+        color: var(--luxury-gold);
+        font-size: 1.2rem;
+      }
+
+      /* Tablet Responsive */
+      @media (max-width: 1024px) and (min-width: 769px) {
+        .services-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2.5rem;
+        }
+      }
+
+      /* Desktop Navigation Font Size Consistency */
+      @media (min-width: 769px) {
+        nav a {
+          font-size: 0.95rem !important;
+        }
+      }
+
+      /* Mobile Responsive */
+      @media (max-width: 768px) {
+        .header-container {
+          padding: 1rem 2rem;
+        }
+
+        .logo img {
+          height: 70px;
+        }
+
+        .hero {
+          padding-top: 120px;
+          height: 100vh;
+          min-height: 100vh;
+          background-attachment: scroll;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .hero-content {
+          padding: 1rem 2rem;
+          max-width: 100%;
+          gap: 1rem;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+        }
+
+        .hero-subtitle {
+          font-size: 0.8rem;
+          letter-spacing: 2px;
+          margin-bottom: 0.5rem;
+        }
+
+        .hero h1 {
+          font-size: clamp(2rem, 7vw, 3.2rem);
+          letter-spacing: 1px;
+          line-height: 1.1;
+          margin-bottom: 1rem;
+          text-align: center;
+        }
+
+        .hero-description {
+          font-size: 0.95rem;
+          line-height: 1.5;
+          margin-bottom: 1.5rem;
+          text-align: center;
+          max-width: 90%;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+          gap: 1rem;
+          width: 100%;
+          max-width: 280px;
+          align-items: center;
+        }
+
+        .cta-button {
+          width: 100%;
+          padding: 1rem 2rem;
+          font-size: 0.95rem;
+          text-align: center;
+        }
+
+        nav ul {
+          display: none;
+          position: fixed;
+          top: 100px;
+          left: 0;
+          right: 0;
+          width: 100vw;
+          background: #1a1a1a;
+          flex-direction: column;
+          gap: 0;
+          padding: 1rem 0;
+          z-index: 999;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+          margin: 0;
+          max-height: calc(100vh - 100px);
+          overflow-y: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+
+        nav ul.active {
+          display: flex;
+        }
+
+        /* Reorder navigation for mobile - Book Now first */
+        nav ul li:nth-child(1) {
+          order: 2;
+        } /* Home */
+        nav ul li:nth-child(2) {
+          order: 3;
+        } /* About */
+        nav ul li:nth-child(3) {
+          order: 4;
+        } /* Services */
+        nav ul li:nth-child(4) {
+          order: 5;
+        } /* Gallery */
+        nav ul li:nth-child(5) {
+          order: 6;
+        } /* Contact */
+        nav ul li:nth-child(6) {
+          order: 1;
+        } /* Book Now - first */
+
+        .mobile-menu {
+          display: flex;
+        }
+
+        /* Ensure mobile navigation links display like Book Now */
+        nav ul li a {
+          display: block;
+          padding: 1rem 2rem;
+          text-align: center;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        nav ul li:last-child a {
+          border-bottom: none;
+        }
+        /* Align hover highlight with separator lines */
+        nav a::before {
+          display: none;
+        }
+        nav ul li a {
+          transition: border-color 0.3s ease, border-bottom-width 0.2s ease;
+        }
+        nav ul li a:hover,
+        nav ul li a:focus,
+        nav ul li a.active {
+          border-bottom-color: var(--luxury-gold);
+          border-bottom-width: 2px;
+        }
+        nav ul li:last-child a {
+          border-bottom: none !important;
+        }
+
+        .container {
+          padding: 0 2rem;
+          margin: 0 auto;
+          max-width: 100%;
+        }
+
+        /* Section Headers Mobile Centering */
+        .section-header {
+          text-align: center;
+          margin-bottom: 3rem;
+          padding: 0 1rem;
+        }
+
+        .section-subtitle {
+          text-align: center;
+        }
+
+        .section-title {
+          text-align: center;
+          font-size: clamp(2rem, 6vw, 2.8rem);
+        }
+
+        .section-description {
+          text-align: center;
+          max-width: 90%;
+          margin: 0 auto;
+        }
+
+        .about-content {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .about-text-section {
+          order: 1;
+          text-align: center;
+          max-width: 100%;
+        }
+
+        .about-title {
+          text-align: center;
+          font-size: clamp(2rem, 6vw, 2.8rem);
+        }
+
+        .about-subtitle {
+          text-align: center;
+        }
+
+        .about-description {
+          text-align: center;
+          max-width: 95%;
+          margin: 0 auto 2rem auto;
+        }
+
+        .about-visual {
+          order: 2;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 2rem;
+        }
+
+        .about-cta {
+          order: 3;
+          align-self: center;
+          margin: 2rem auto 0 auto;
+          text-align: center;
+          position: static;
+        }
+
+        .owner-photo-container {
+          height: 350px;
+          margin: 0 auto;
+        }
+
+        .about-highlights {
+          gap: 1rem;
+          justify-content: center;
+        }
+
+        .highlight-item {
+          padding: 0.8rem 0;
+          text-align: center;
+        }
+
+        .highlight-icon {
+          width: 35px;
+          height: 35px;
+          font-size: 1rem;
+          margin: 0 auto 0.5rem auto;
+        }
+
+        .highlight-text {
+          text-align: center;
+        }
+
+        .services-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+          justify-items: center;
+          padding: 0 1rem;
+        }
+
+        .service-card {
+          max-width: 100%;
+          width: 100%;
+          text-align: center;
+          margin: 0 auto;
+        }
+
+        .service-card h3 {
+          text-align: center;
+        }
+
+        .service-card p {
+          text-align: center;
+        }
+
+        .service-price {
+          text-align: center;
+        }
+
+        .testimonials {
+          text-align: center;
+          padding: 3rem 0;
+        }
+
+        .testimonials-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+          justify-items: center;
+          padding: 0 0.75rem;
+          align-items: center;
+          display: grid;
+          place-items: center;
+        }
+
+        .testimonials-title {
+          font-size: clamp(1.8rem, 5vw, 2.2rem);
+          text-align: center;
+          margin-bottom: 0.8rem;
+        }
+
+        .testimonials .section-description {
+          text-align: center;
+          margin-bottom: 2rem;
+          font-size: 1rem;
+        }
+
+        .testimonial-card {
+          padding: 1.2rem 1rem;
+          max-width: calc(100% - 1rem);
+          width: calc(100% - 1rem);
+          min-height: 280px;
+          text-align: center;
+          margin: 0 auto 1rem auto;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          box-sizing: border-box;
+        }
+
+        .testimonial-quote {
+          font-size: 0.95rem;
+          margin-bottom: 1.2rem;
+          padding-left: 0.8rem;
+          text-align: center;
+          flex-grow: 1;
+          display: flex;
+          align-items: center;
+          line-height: 1.5;
+        }
+
+        .testimonial-quote::before {
+          font-size: 2.5rem;
+          top: -0.5rem;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        .testimonial-author {
+          justify-content: center;
+          text-align: center;
+          margin-bottom: 1rem;
+          flex-shrink: 0;
+        }
+
+        .author-info {
+          text-align: center;
+        }
+
+        .author-info h4 {
+          font-size: 0.95rem;
+          white-space: normal;
+          text-align: center;
+          margin-bottom: 0.2rem;
+        }
+
+        .author-service {
+          font-size: 0.8rem;
+          white-space: normal;
+          text-align: center;
+        }
+
+        .testimonial-stars {
+          margin-top: 0.3rem;
+          text-align: center;
+          justify-content: center;
+          flex-shrink: 0;
+        }
+
+        .testimonial-stars .star {
+          font-size: 1rem;
+        }
+
+        .features-showcase {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+          text-align: center;
+          align-items: center;
+        }
+
+        .features-visual {
+          order: -1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .features-content {
+          text-align: center;
+          padding: 0 1rem;
+        }
+
+        .visual-container {
+          flex-direction: column;
+          gap: 1.5rem;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .visual-square {
+          width: 350px;
+          height: 350px;
+          margin: 0 auto;
+        }
+
+        .hair-image {
+          object-fit: cover;
+          object-position: center;
+        }
+
+        .excellence-badge {
+          padding: 0.8rem 1.1rem;
+          min-width: 95px;
+          bottom: 15px;
+          right: 15px;
+          border-radius: 6px;
+          transform: translateZ(0);
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+
+        .badge-number {
+          font-size: 1.6rem;
+          font-weight: 700;
+        }
+
+        .badge-text {
+          font-size: 0.7rem;
+          letter-spacing: 0.4px;
+          font-weight: 600;
+        }
+
+        .visual-text {
+          font-size: 1rem;
+          text-align: center;
+        }
+
+        /* Why Choose Petal Section Mobile */
+        .why-choose-us {
+          padding: 4rem 0;
+          text-align: center;
+          width: 100%;
+          margin: 0;
+          box-sizing: border-box;
+        }
+
+        .why-choose-container {
+          padding: 0 1.5rem;
+          max-width: 100%;
+          margin: 0 auto;
+          width: 100%;
+          box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .why-choose-header {
+          text-align: center;
+          margin-bottom: 3rem;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .why-choose-subtitle {
+          text-align: center;
+          font-size: 0.8rem;
+          letter-spacing: 2px;
+          margin: 0 auto;
+          display: block;
+        }
+
+        .why-choose-title {
+          font-size: clamp(2rem, 6vw, 2.5rem);
+          text-align: center;
+          margin: 1rem auto;
+          width: 100%;
+          display: block;
+        }
+
+        .why-choose-description {
+          text-align: center;
+          max-width: 90%;
+          margin: 0 auto;
+          font-size: 1rem;
+          line-height: 1.6;
+          display: block;
+        }
+
+        .features-showcase {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+          text-align: center;
+          align-items: center;
+          justify-items: center;
+          width: 100%;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .features-content {
+          text-align: center;
+          padding: 0;
+          order: 2;
+          width: 100%;
+          max-width: 100%;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+        }
+
+        .features-visual {
+          order: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          margin: 0 auto;
+          box-sizing: border-box;
+        }
+
+        .feature-item {
+          padding: 1.5rem 1rem;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          max-width: 100%;
+          width: 100%;
+          margin: 0 auto 1.5rem auto;
+          display: flex;
+          justify-content: center;
+          box-sizing: border-box;
+        }
+
+        .feature-icon-wrapper {
+          width: 60px;
+          height: 60px;
+          font-size: 1.5rem;
+          margin: 0 auto 1rem auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(135deg, var(--luxury-gold), #b8941f);
+          border-radius: 50%;
+          color: var(--primary-black);
+          flex-shrink: 0;
+        }
+
+        .feature-content {
+          text-align: center;
+          width: 100%;
+          max-width: 100%;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .feature-content h3 {
+          text-align: center;
+          font-size: 1.3rem;
+          margin: 0 auto 1rem auto;
+          color: var(--primary-black);
+          font-family: "Playfair Display", serif;
+          width: 100%;
+          display: block;
+        }
+
+        .feature-content p {
+          text-align: center;
+          margin: 0 auto;
+          max-width: 100%;
+          font-size: 0.95rem;
+          line-height: 1.6;
+          color: var(--charcoal);
+          width: 100%;
+          display: block;
+        }
+
+        /* Booking Section Mobile */
+        .booking-preview {
+          text-align: center;
+          padding: 4rem 0;
+        }
+
+        .booking-preview .section-header {
+          text-align: center;
+          margin-bottom: 2rem;
+        }
+
+        .booking-preview .section-title {
+          font-size: clamp(2rem, 6vw, 2.5rem);
+        }
+
+        .booking-preview .section-description {
+          max-width: 95%;
+          margin: 0 auto 2rem auto;
+        }
+
+        .booking-cta {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 2rem;
+        }
+
+        /* General Mobile Improvements */
+        section {
+          padding: 3rem 0;
+        }
+
+        .container {
+          overflow-x: hidden;
+        }
+
+        /* Ensure all buttons are centered on mobile only */
+        .cta-button,
+        .booking-cta .cta-button {
+          margin: 0 auto;
+          display: block;
+          text-align: center;
+        }
+
+        /* About CTA specific mobile styling */
+        .about-cta {
+          margin: 0 auto;
+          display: block;
+          text-align: center;
+        }
+
+        /* Mobile typography improvements */
+        h1,
+        h2,
+        h3 {
+          text-align: center;
+          word-wrap: break-word;
+          hyphens: auto;
+        }
+
+        p {
+          text-align: center;
+          word-wrap: break-word;
+          hyphens: auto;
+        }
+
+        /* Prevent horizontal scroll */
+        * {
+          max-width: 100%;
+          box-sizing: border-box;
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+
+      /* Ultra-Premium Footer - Exact copy from about.html */
+      footer {
+        background: #1a1a1a;
+        color: var(--soft-white);
+        position: relative;
+        overflow: hidden;
+      }
+
+      footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--luxury-gold),
+          transparent
+        );
+      }
+
+      .footer-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 2.5rem 3rem 1.5rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .footer-brand {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-logo img {
+        height: 80px;
+        width: auto;
+        filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(35deg);
+        transition: all 0.3s ease;
+      }
+
+      .footer-logo:hover img {
+        filter: brightness(1.5) contrast(1.6)
+          drop-shadow(0 3px 10px rgba(212, 175, 55, 0.5));
+      }
+
+      .footer-description {
+        font-size: 1rem;
+        line-height: 1.8;
+        opacity: 0.9;
+        max-width: 300px;
+      }
+
+      .footer-section h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: var(--luxury-gold);
+        margin-bottom: 1rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .footer-links {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+
+      .footer-links a {
+        color: var(--soft-white);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        opacity: 0.8;
+      }
+
+      .footer-links a:hover {
+        color: var(--luxury-gold);
+        opacity: 1;
+      }
+
+      .footer-contact p {
+        margin-bottom: 0.6rem;
+        font-size: 0.95rem;
+        opacity: 0.9;
+      }
+
+      .footer-contact a {
+        color: var(--luxury-gold);
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .footer-contact a:hover {
+        color: var(--soft-white);
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 0.8rem;
+        margin-top: 1rem;
+      }
+
+      .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: var(--soft-white);
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .social-link:hover {
+        background: var(--luxury-gold);
+        color: var(--primary-black);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 1.5rem;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .footer-copyright {
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+
+      .footer-credits {
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+
+      .footer-credits a {
+        color: var(--luxury-gold);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .footer-credits a:hover {
+        color: var(--soft-white);
+      }
+
+      /* Opening Hours Styling */
+      .opening-hours {
+        margin-top: 1rem;
+      }
+
+      .hours-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.4rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .hours-row:last-child {
+        border-bottom: none;
+      }
+
+      .day {
+        font-size: 0.95rem;
+        opacity: 0.9;
+      }
+
+      .time {
+        font-size: 0.95rem;
+        color: var(--luxury-gold);
+        font-weight: 500;
+        text-align: center;
+      }
+
+      @media (max-width: 768px) {
+        .footer-content {
+          padding: 2rem 2rem 1rem;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+          text-align: center;
+        }
+
+        .footer-brand {
+          align-items: center;
+        }
+
+        .footer-description {
+          max-width: 100%;
+        }
+
+        .footer-bottom {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        /* Mobile opening hours styling */
+        .hours-row {
+          padding: 0.6rem 0;
+          font-size: 0.9rem;
+          justify-content: center;
+        }
+
+        .day,
+        .time {
+          font-size: 0.9rem;
+          text-align: center;
+          flex: 1;
+        }
+      }
+
+      /* Scroll to Top Button - Mobile Only, Small Circle Design */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background: rgba(26, 26, 26, 0.9);
+        color: var(--luxury-gold);
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: 600;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px) scale(0.9);
+      }
+
+      .scroll-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) scale(1);
+      }
+
+      .scroll-to-top:hover {
+        background: rgba(212, 175, 55, 0.9);
+        color: var(--primary-black);
+        border-color: var(--luxury-gold);
+        transform: translateY(-2px) scale(1.05);
+        box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+      }
+
+      .scroll-to-top:active {
+        transform: translateY(0) scale(0.95);
+      }
+
+      /* Show only on mobile devices */
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <a href="index.html">
+            <img
+              src="Photos/Logo (2).png"
+              alt="Petal Hair Designs"
+              width="160"
+              height="80"
+            />
+          </a>
+        </div>
+        <nav>
+          <ul id="nav-menu">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="book-now.html">Book Now</a></li>
+          </ul>
+          <button
+            class="mobile-menu"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-controls="nav-menu"
+            aria-expanded="false"
+            onclick="toggleMenu()"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-subtitle">Luxury Hair Salon</div>
+        <h1>Petal Hair Designs</h1>
+        <p class="hero-description">
+          Where artistry meets elegance. Experience the pinnacle of luxury hair
+          design in the heart of Sydney, where every visit is a journey to your
+          most beautiful self.
+        </p>
+        <div class="cta-buttons">
+          <a href="book-now.html" class="cta-button cta-primary">Book Now</a>
+          <a href="gallery.html" class="cta-button cta-secondary"
+            >View Portfolio</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="about-preview">
+      <div class="about-container">
+        <div class="about-content">
+          <div class="about-text-section">
+            <div class="about-subtitle">Our Story</div>
+            <h2 class="about-title">Excellence in Hair Design</h2>
+            <p class="about-description">
+              At Petal Hair Designs, we believe that great hair is the
+              foundation of confidence. Our team of skilled stylists combines
+              years of experience with the latest techniques to deliver
+              exceptional results that exceed expectations.
+            </p>
+
+            <div class="about-highlights">
+              <div class="highlight-item">
+                <div class="highlight-icon">🏆</div>
+                <div class="highlight-text">
+                  Award-winning stylists with 15+ years experience
+                </div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-icon">💎</div>
+                <div class="highlight-text">
+                  Premium luxury products and cutting-edge techniques
+                </div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-icon">📍</div>
+                <div class="highlight-text">
+                  Located in vibrant Sydney with personalized service
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-visual">
+            <div class="visual-container">
+              <div class="owner-photo-container">
+                <img
+                  src="Photos/Excellence in hair design.jpg"
+                  alt="Excellence in Hair Design"
+                  class="owner-photo"
+                />
+                <div class="photo-overlay">
+                  <div class="owner-info">
+                    <div class="owner-name">Expert Team</div>
+                    <div class="owner-title">Professional Excellence</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="about.html" class="about-cta">
+            Discover Our Story
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="services">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-subtitle">Our Expertise</div>
+          <h2 class="section-title">Premium Services</h2>
+          <p class="section-description">
+            Discover our comprehensive range of luxury hair services, each
+            designed to enhance your natural beauty and boost your confidence.
+          </p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">✂️</div>
+            <h3>Hair Cuts & Styling</h3>
+            <p>
+              Expert cuts and styling tailored to your unique features and
+              lifestyle. From classic to contemporary, we create looks that
+              enhance your natural beauty.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🎨</div>
+            <h3>Hair Coloring</h3>
+            <p>
+              Professional coloring services using premium products. From subtle
+              highlights to bold transformations, we bring your vision to life.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">👰</div>
+            <h3>Bridal & Events</h3>
+            <p>
+              Make your special day unforgettable with our bridal and event
+              styling services. We create elegant looks that photograph
+              beautifully.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">💆</div>
+            <h3>Hair Treatments</h3>
+            <p>
+              Restore and rejuvenate your hair with our luxurious treatment
+              services. Deep conditioning, repair, and nourishing treatments
+              available.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-choose-us">
+      <div class="why-choose-container">
+        <div class="why-choose-header">
+          <div class="why-choose-subtitle">Excellence Defined</div>
+          <h2 class="why-choose-title">Why Choose Petal</h2>
+          <p class="why-choose-description">
+            Experience the difference that sets us apart from ordinary salons.
+            Our commitment to luxury, expertise, and personalized service
+            creates an unmatched beauty experience.
+          </p>
+        </div>
+
+        <div class="features-showcase">
+          <div class="features-content">
+            <div class="feature-item">
+              <div class="feature-icon-wrapper">💎</div>
+              <div class="feature-content">
+                <h3>Premium Products</h3>
+                <p>
+                  We exclusively use the finest professional-grade products from
+                  leading luxury brands, ensuring exceptional results and
+                  optimal hair health for every client.
+                </p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon-wrapper">✨</div>
+              <div class="feature-content">
+                <h3>Master Stylists</h3>
+                <p>
+                  Our team of expert stylists brings years of experience and
+                  ongoing education to deliver cutting-edge techniques and
+                  timeless artistry that enhances your natural beauty.
+                </p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon-wrapper">🏆</div>
+              <div class="feature-content">
+                <h3>Award-Winning Service</h3>
+                <p>
+                  Recognized for excellence in the beauty industry, we
+                  consistently deliver results that exceed expectations and
+                  create lasting relationships with our valued clients.
+                </p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon-wrapper">👑</div>
+              <div class="feature-content">
+                <h3>Luxury Experience</h3>
+                <p>
+                  From consultation to final styling, every moment is curated to
+                  provide an indulgent, relaxing experience in our elegant salon
+                  environment designed for your comfort.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="features-visual">
+            <div class="visual-container">
+              <div class="visual-square">
+                <img
+                  src="Photos/Why Choose Petal.webp"
+                  alt="Why Choose Petal Hair Designs"
+                  class="hair-image"
+                />
+              </div>
+              <div class="excellence-badge">
+                <div class="badge-number">15+</div>
+                <div class="badge-text">Years Excellence</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="testimonials-container">
+        <div class="testimonials-header">
+          <div class="testimonials-subtitle">Client Stories</div>
+          <h2 class="testimonials-title">What Our Clients Say</h2>
+          <p class="testimonials-description">
+            Discover why our clients trust us with their most important moments.
+            From everyday elegance to special occasions, we create
+            transformations that exceed expectations.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <p class="testimonial-quote">
+              "Absolutely incredible experience! The team at Petal Hair Designs
+              transformed my hair beyond my wildest dreams. The attention to
+              detail and luxury service made me feel like royalty. I've never
+              felt more confident!"
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">SM</div>
+              <div class="author-info">
+                <h4>Sarah Mitchell</h4>
+                <div class="author-service">Hair Color & Cut</div>
+              </div>
+            </div>
+            <div class="testimonial-stars">
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <p class="testimonial-quote">
+              "My wedding day hair was absolutely perfect! The stylists
+              understood exactly what I wanted and created a look that was both
+              timeless and stunning. Every photo was magazine-worthy. Thank you
+              for making my day so special!"
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">EJ</div>
+              <div class="author-info">
+                <h4>Emma Johnson</h4>
+                <div class="author-service">Bridal Styling</div>
+              </div>
+            </div>
+            <div class="testimonial-stars">
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <p class="testimonial-quote">
+              "The luxury treatment I received was exceptional. From the moment
+              I walked in, I felt pampered and cared for. My hair has never
+              looked or felt better. This salon truly sets the standard for
+              excellence."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">MR</div>
+              <div class="author-info">
+                <h4>Maria Rodriguez</h4>
+                <div class="author-service">Hair Treatment</div>
+              </div>
+            </div>
+            <div class="testimonial-stars">
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-grid">
+          <!-- Brand Section -->
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <a href="index.html">
+                <img
+                  src="Photos/Logo (2).png"
+                  alt="Petal Hair Designs"
+                  width="160"
+                  height="80"
+                />
+              </a>
+            </div>
+            <p class="footer-description">
+              Sydney's most prestigious hair salon, where luxury meets
+              expertise. Experience the pinnacle of hair artistry and
+              personalized beauty services.
+            </p>
+            <div class="footer-social">
+              <a href="#" class="social-link" aria-label="Facebook">📘</a>
+              <a href="#" class="social-link" aria-label="Instagram">📷</a>
+              <a href="#" class="social-link" aria-label="Google">🌐</a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Services -->
+          <div class="footer-section">
+            <h3>Services</h3>
+            <ul class="footer-links">
+              <li><a href="services.html">Hair Cutting</a></li>
+              <li><a href="services.html">Hair Coloring</a></li>
+              <li><a href="services.html">Bridal Styling</a></li>
+              <li><a href="services.html">Hair Treatments</a></li>
+              <li><a href="contact.html">Consultation</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="footer-section">
+            <h3>Contact</h3>
+            <div class="footer-contact">
+              <p>125 George Street<br />Sydney NSW 2000</p>
+              <p><a href="tel:0270104829">(02) 7010 4829</a></p>
+              <p>
+                <a href="mailto:petalhairdesigns@gmail.com"
+                  >petalhairdesigns@gmail.com</a
+                >
+              </p>
+              <div class="opening-hours">
+                <div class="hours-row">
+                  <span class="day"><strong>Sunday:</strong></span>
+                  <span class="time">CLOSED</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day"><strong>Monday:</strong></span>
+                  <span class="time">CLOSED</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day"><strong>Tuesday:</strong></span>
+                  <span class="time">9am-5:30pm</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day"><strong>Wednesday:</strong></span>
+                  <span class="time">9am-5:30pm</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day"><strong>Thursday:</strong></span>
+                  <span class="time">9am-7pm</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day"><strong>Friday:</strong></span>
+                  <span class="time">9am-5:30pm</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day"><strong>Saturday:</strong></span>
+                  <span class="time">9am-3pm</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-copyright">
+            &copy; 2025 Petal Hair Designs. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function toggleMenu() {
+        const navMenu = document.getElementById("nav-menu");
+        const menuButton = document.querySelector(".mobile-menu");
+        const isActive = navMenu.classList.toggle("active");
+        if (menuButton) {
+          menuButton.setAttribute("aria-expanded", isActive ? "true" : "false");
+        }
+      }
+
+      // Enhanced scroll effects
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 100) {
+          header.style.background = "rgba(26,26,26,0.98)";
+        } else {
+          header.style.background = "rgba(26,26,26,0.95)";
+        }
+      });
+
+      // Intersection Observer for animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      }, observerOptions);
+
+      // Observe cards for animation
+      document.addEventListener("DOMContentLoaded", function () {
+        const cards = document.querySelectorAll(
+          ".service-card, .testimonial-card, .feature-item"
+        );
+        cards.forEach((card) => {
+          card.style.opacity = "0";
+          card.style.transform = "translateY(30px)";
+          card.style.transition = "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)";
+          observer.observe(card);
+        });
+      });
+    </script>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+      <span>↑</span>
+    </button>
+
+    <script>
+      // Scroll to top button functionality
+      const scrollBtn = document.getElementById("scrollToTop");
+
+      function toggleScrollButton() {
+        if (window.scrollY > 100) {
+          scrollBtn.classList.add("visible");
+        } else {
+          scrollBtn.classList.remove("visible");
+        }
+      }
+
+      scrollBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      window.addEventListener("scroll", toggleScrollButton);
+      document.addEventListener("DOMContentLoaded", toggleScrollButton);
+    </script>
+  </body>
+</html>

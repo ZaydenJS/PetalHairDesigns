@@ -1,0 +1,1884 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"
+    />
+    <title>Services - Petal Hair Designs | Luxury Hair Salon Sydney</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-black: #000000;
+        --luxury-gold: #d4af37;
+        --soft-white: #fefefe;
+        --pearl-white: #f8f8f8;
+        --charcoal: #1a1a1a;
+        --silver: #c0c0c0;
+        --shadow-light: rgba(0, 0, 0, 0.05);
+        --shadow-medium: rgba(0, 0, 0, 0.15);
+        --shadow-heavy: rgba(0, 0, 0, 0.25);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.7;
+        color: var(--charcoal);
+        background: var(--soft-white);
+        overflow-x: hidden;
+      }
+
+      /* Ultra-Luxury Header */
+      header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        background: #1a1a1a;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .header-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.8rem 3rem;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+
+      .logo img {
+        height: 108px;
+        width: auto;
+        filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(35deg);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .logo:hover img {
+        filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(35deg)
+          brightness(1.1);
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      nav a {
+        color: var(--soft-white);
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 0.95rem !important;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        position: relative;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      nav a::before {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: var(--luxury-gold);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: translateX(-50%);
+      }
+
+      nav a:hover::before,
+      nav a.active::before {
+        width: 100%;
+      }
+
+      nav a:hover {
+        color: var(--luxury-gold);
+      }
+
+      .mobile-menu {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 5px;
+        background: transparent;
+        border: 0;
+      }
+
+      .mobile-menu span {
+        width: 28px;
+        height: 2px;
+        background: var(--soft-white);
+        margin: 4px 0;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border-radius: 2px;
+      }
+
+      /* Ultra-Premium Hero Section - Base */
+      .hero {
+        height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      /* Home Page Hero with Background Image */
+      .hero-home {
+        background: linear-gradient(
+            135deg,
+            rgba(0, 0, 0, 0.7) 0%,
+            rgba(26, 26, 26, 0.5) 50%,
+            rgba(0, 0, 0, 0.8) 100%
+          ),
+          url("Photos/Behind Hero.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+
+      /* Other Pages Hero with Gradient Background */
+      .hero-page {
+        height: 70svh; /* Improved mobile viewport handling */
+        min-height: 480px; /* Reduce excessive height on small devices */
+        background: linear-gradient(
+          135deg,
+          var(--primary-black) 0%,
+          var(--charcoal) 50%,
+          var(--primary-black) 100%
+        );
+        /* Ensure perfect centering */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="0.5" fill="rgba(255,255,255,0.02)"/><circle cx="75" cy="75" r="0.3" fill="rgba(255,255,255,0.01)"/><circle cx="50" cy="10" r="0.4" fill="rgba(255,255,255,0.015)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        opacity: 0.3;
+        animation: grain 20s linear infinite;
+      }
+
+      @keyframes grain {
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+        10% {
+          transform: translate(-5%, -10%);
+        }
+        20% {
+          transform: translate(-15%, 5%);
+        }
+        30% {
+          transform: translate(7%, -25%);
+        }
+        40% {
+          transform: translate(-5%, 25%);
+        }
+        50% {
+          transform: translate(-15%, 10%);
+        }
+        60% {
+          transform: translate(15%, 0%);
+        }
+        70% {
+          transform: translate(0%, 15%);
+        }
+        80% {
+          transform: translate(3%, 35%);
+        }
+        90% {
+          transform: translate(-10%, 10%);
+        }
+      }
+
+      .hero-content {
+        text-align: center;
+        z-index: 2;
+        max-width: 900px;
+        padding: 0 2rem;
+        animation: heroFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        opacity: 0;
+        /* Ensure content is perfectly centered */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      @keyframes heroFadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(60px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-subtitle {
+        font-family: "Inter", sans-serif;
+        font-size: 0.95rem;
+        font-weight: 400;
+        color: var(--luxury-gold);
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+        animation: slideInFromTop 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s
+          forwards;
+        opacity: 0;
+      }
+
+      @keyframes slideInFromTop {
+        0% {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        100% {
+          opacity: 0.9;
+          transform: translateY(0);
+        }
+      }
+
+      .hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(3rem, 6vw, 5rem);
+        font-weight: 300;
+        color: var(--soft-white);
+        letter-spacing: 3px;
+        line-height: 1.1;
+        margin-bottom: 2.5rem;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        animation: slideInFromBottom 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s
+          forwards;
+        opacity: 0;
+      }
+
+      @keyframes slideInFromBottom {
+        0% {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-description {
+        font-family: "Inter", sans-serif;
+        font-size: 1.25rem;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.8;
+        margin-bottom: 2.5rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
+        opacity: 0;
+      }
+
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        100% {
+          opacity: 0.85;
+          transform: translateY(0);
+        }
+      }
+
+      /* Ultra-Premium Services Section */
+      .services-section {
+        padding: 10rem 0;
+        position: relative;
+        background: linear-gradient(
+          180deg,
+          var(--soft-white) 0%,
+          var(--pearl-white) 50%,
+          var(--soft-white) 100%
+        );
+        overflow: hidden;
+      }
+
+      .services-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><pattern id="services-pattern" width="80" height="80" patternUnits="userSpaceOnUse"><circle cx="40" cy="40" r="1" fill="rgba(212,175,55,0.03)"/><circle cx="20" cy="20" r="0.5" fill="rgba(0,0,0,0.02)"/><circle cx="60" cy="60" r="0.8" fill="rgba(212,175,55,0.04)"/></pattern></defs><rect width="200" height="200" fill="url(%23services-pattern)"/></svg>');
+        opacity: 0.6;
+        animation: float 25s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0) rotate(0deg);
+        }
+        33% {
+          transform: translateY(-20px) rotate(1deg);
+        }
+        66% {
+          transform: translateY(10px) rotate(-0.5deg);
+        }
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 3rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 8rem;
+        position: relative;
+      }
+
+      .section-subtitle {
+        font-family: "Inter", sans-serif;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--luxury-gold);
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-subtitle::before,
+      .section-subtitle::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 40px;
+        height: 1px;
+        background: var(--luxury-gold);
+        transform: translateY(-50%);
+      }
+
+      .section-subtitle::before {
+        left: -60px;
+      }
+
+      .section-subtitle::after {
+        right: -60px;
+      }
+
+      .section-title {
+        font-family: "Playfair Display", serif;
+        font-size: 2.5rem;
+        font-weight: 300;
+        color: var(--primary-black);
+        letter-spacing: 2px;
+        line-height: 1.1;
+        margin-bottom: 2rem;
+        position: relative;
+      }
+
+      .section-description {
+        font-size: 1.3rem;
+        color: var(--charcoal);
+        opacity: 0.8;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.8;
+      }
+
+      /* Revolutionary Service Grid */
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 4rem;
+        margin-bottom: 2rem;
+        /* Ensure all cards have equal height */
+        align-items: stretch;
+      }
+
+      .service-card {
+        background: var(--soft-white);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+        position: relative;
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        transform-style: preserve-3d;
+        /* Ensure equal height and proper flex layout */
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      /* Service card ::before element removed to eliminate blur effects */
+
+      /* Hover effects removed to eliminate blur */
+
+      .service-card-header {
+        background: linear-gradient(
+          135deg,
+          var(--primary-black) 0%,
+          var(--charcoal) 100%
+        );
+        color: var(--soft-white);
+        padding: 3rem 2.5rem 2rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .service-card-header::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(212, 175, 55, 0.1) 0%,
+          transparent 70%
+        );
+        animation: pulse 4s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1) rotate(0deg);
+          opacity: 0.3;
+        }
+        50% {
+          transform: scale(1.1) rotate(180deg);
+          opacity: 0.6;
+        }
+      }
+
+      .service-icon {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+        color: var(--luxury-gold);
+        position: relative;
+        z-index: 2;
+        display: inline-block;
+        animation: bounce 2s ease-in-out infinite;
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .service-card-title {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        font-weight: 400;
+        letter-spacing: 2px;
+        margin-bottom: 0.5rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .service-card-subtitle {
+        font-size: 0.9rem;
+        opacity: 0.8;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        position: relative;
+        z-index: 2;
+      }
+
+      .service-card-content {
+        padding: 3rem 2.5rem;
+        /* Make content area expand to fill available space */
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .service-items {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        /* Make service items expand to fill available space */
+        flex: 1;
+        justify-content: space-between;
+      }
+
+      .service-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 1.5rem;
+        background: var(--pearl-white);
+        border-radius: 15px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        /* Ensure consistent minimum height for better alignment */
+        min-height: 120px;
+        flex: 1;
+      }
+
+      /* Service item ::before element removed to eliminate blur effects */
+
+      /* Simple hover effect for individual service items only - removed scaling to prevent blur */
+      .service-item:hover {
+        background: rgba(212, 175, 55, 0.08) !important;
+        color: var(--luxury-gold) !important;
+        border-color: var(--luxury-gold) !important;
+      }
+
+      .service-item::after {
+        content: "Click to book →";
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        transform: translateY(-50%);
+        font-size: 0.8rem;
+        color: var(--luxury-gold);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        font-weight: 500;
+      }
+
+      /* Service item ::after hover effect removed to eliminate blur */
+
+      .service-details {
+        flex: 1;
+        position: relative;
+        z-index: 2;
+      }
+
+      .service-name {
+        font-family: "Playfair Display", serif;
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: var(--primary-black);
+        margin-bottom: 0.5rem;
+        letter-spacing: 1px;
+      }
+
+      .service-description {
+        color: var(--charcoal);
+        opacity: 0.8;
+        line-height: 1.6;
+        font-size: 0.95rem;
+      }
+
+      .service-price {
+        font-family: "Inter", sans-serif;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--luxury-gold);
+        text-align: right;
+        white-space: nowrap;
+        position: relative;
+        z-index: 2;
+      }
+
+      .price-range {
+        font-size: 0.8rem;
+        color: var(--charcoal);
+        opacity: 0.6;
+        margin-top: 0.3rem;
+        font-weight: 400;
+      }
+
+      /* Modern CTA Section */
+      .modern-cta {
+        padding: 8rem 0;
+        background: linear-gradient(
+          135deg,
+          var(--pearl-white) 0%,
+          var(--soft-white) 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+
+      .modern-cta::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="cta-pattern" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="0.8" fill="rgba(212,175,55,0.05)"/><circle cx="10" cy="40" r="0.4" fill="rgba(212,175,55,0.03)"/></pattern></defs><rect width="100" height="100" fill="url(%23cta-pattern)"/></svg>');
+        opacity: 0.6;
+      }
+
+      .cta-content {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+      }
+
+      .cta-title {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        font-weight: 300;
+        color: var(--primary-black);
+        margin-bottom: 1.5rem;
+        letter-spacing: 2px;
+        line-height: 1.2;
+      }
+
+      .cta-description {
+        font-size: 1.2rem;
+        color: var(--charcoal);
+        line-height: 1.8;
+        margin-bottom: 3rem;
+        opacity: 0.9;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cta-actions {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .cta-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.3rem 2.5rem;
+        text-decoration: none;
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 1rem;
+        border-radius: 50px;
+        letter-spacing: 0.5px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        min-width: 200px;
+        justify-content: center;
+      }
+
+      .cta-button.primary {
+        background: linear-gradient(135deg, var(--luxury-gold), #b8941f);
+        color: var(--primary-black);
+        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        border: 2px solid transparent;
+      }
+
+      .cta-button.primary::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .cta-button.primary:hover::before {
+        left: 100%;
+      }
+
+      .cta-button.primary:hover {
+        box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+        background: linear-gradient(135deg, #b8941f, var(--luxury-gold));
+      }
+
+      .cta-button.secondary {
+        background: transparent;
+        color: var(--primary-black);
+        border: 2px solid var(--primary-black);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .cta-button.secondary:hover {
+        background: var(--primary-black);
+        color: var(--soft-white);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .button-text {
+        font-weight: 600;
+      }
+
+      .button-icon {
+        font-size: 1.2rem;
+        transition: transform 0.3s ease;
+      }
+
+      .cta-button:hover .button-icon {
+        color: var(--luxury-gold);
+      }
+
+      /* Desktop Navigation Font Size Consistency */
+      @media (min-width: 769px) {
+        nav a {
+          font-size: 0.95rem !important;
+        }
+      }
+
+      /* Mobile Responsive */
+      @media (max-width: 768px) {
+        .header-container {
+          padding: 1rem 2rem;
+        }
+
+        .logo img {
+          height: 70px;
+        }
+
+        .hero {
+          padding-top: 120px;
+          height: 100vh;
+          min-height: 100vh;
+          background-attachment: scroll;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .hero-content {
+          padding: 1rem 2rem;
+          max-width: 100%;
+          gap: 1rem;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+        }
+
+        .hero-subtitle {
+          font-size: 0.8rem;
+          letter-spacing: 2px;
+          margin-bottom: 0.5rem;
+        }
+
+        .hero h1 {
+          font-size: clamp(2rem, 7vw, 3.2rem);
+          letter-spacing: 1px;
+          line-height: 1.1;
+          margin-bottom: 1rem;
+          text-align: center;
+        }
+
+        .hero-description {
+          font-size: 0.95rem;
+          line-height: 1.5;
+          margin-bottom: 1.5rem;
+          text-align: center;
+          max-width: 90%;
+        }
+
+        nav ul {
+          display: none;
+          position: fixed;
+          top: 100px;
+          left: 0;
+          right: 0;
+          width: 100vw;
+          background: #1a1a1a;
+          flex-direction: column;
+          gap: 0;
+          padding: 1rem 0;
+          z-index: 999;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+          margin: 0;
+          max-height: calc(100vh - 100px);
+          overflow-y: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+
+        nav ul.active {
+          display: flex;
+        }
+
+        /* Reorder navigation for mobile - Book Now first */
+        nav ul li:nth-child(1) {
+          order: 2;
+        } /* Home */
+        nav ul li:nth-child(2) {
+          order: 3;
+        } /* About */
+        nav ul li:nth-child(3) {
+          order: 4;
+        } /* Services */
+        nav ul li:nth-child(4) {
+          order: 5;
+        } /* Gallery */
+        nav ul li:nth-child(5) {
+          order: 6;
+        } /* Contact */
+        /* Ensure mobile navigation links display like Book Now */
+        nav ul li a {
+          display: block;
+          padding: 1rem 2rem;
+          text-align: center;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+          width: 100%;
+          box-sizing: border-box;
+        }
+        nav ul li:last-child a {
+          border-bottom: none;
+        }
+
+        nav ul li:nth-child(6) {
+          order: 1;
+        } /* Book Now - first */
+
+        /* Align hover highlight with separator lines */
+        nav a::before {
+          display: none;
+        }
+        nav ul li a {
+          transition: border-color 0.3s ease, border-bottom-width 0.2s ease;
+        }
+        nav ul li a:hover,
+        nav ul li a:focus,
+        nav ul li a.active {
+          border-bottom-color: var(--luxury-gold);
+          border-bottom-width: 2px;
+        }
+        nav ul li:last-child a {
+          border-bottom: none !important;
+        }
+
+        .mobile-menu {
+          display: flex;
+        }
+
+        .container {
+          padding: 0 2rem;
+        }
+
+        .services-section {
+          padding: 6rem 0;
+        }
+
+        .section-header {
+          margin-bottom: 5rem;
+        }
+
+        .section-subtitle::before,
+        .section-subtitle::after {
+          display: none;
+        }
+
+        .services-grid {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .service-card {
+          border-radius: 15px;
+        }
+
+        /* Mobile hover effects removed to eliminate blur */
+
+        .service-card-header {
+          padding: 2.5rem 2rem 1.5rem;
+        }
+
+        .service-card-content {
+          padding: 2rem 1.5rem;
+        }
+
+        .service-item {
+          flex-direction: column;
+          text-align: center;
+          gap: 1rem;
+          padding: 1.5rem;
+          min-height: 120px;
+          cursor: pointer;
+          /* Maintain flex properties for mobile */
+          flex: 1;
+        }
+
+        /* Mobile service item hover effect - removed scaling to prevent blur */
+        .service-item:hover {
+          background: rgba(212, 175, 55, 0.08) !important;
+          color: var(--luxury-gold) !important;
+          border-color: var(--luxury-gold) !important;
+        }
+
+        .service-item::after {
+          content: "Tap to book";
+          position: static;
+          transform: none;
+          margin-top: 0.5rem;
+          opacity: 0.7;
+          font-size: 0.75rem;
+          text-align: center;
+          width: 100%;
+          display: block;
+        }
+
+        .service-price {
+          text-align: center !important;
+          width: 100%;
+          display: block;
+          margin: 0 auto;
+        }
+
+        .modern-cta {
+          padding: 5rem 0;
+        }
+
+        .cta-title {
+          font-size: 2.2rem;
+          margin-bottom: 1rem;
+        }
+
+        .cta-description {
+          font-size: 1.1rem;
+          margin-bottom: 2.5rem;
+        }
+
+        .cta-actions {
+          flex-direction: column;
+          align-items: center;
+          gap: 1.5rem;
+        }
+
+        .cta-button {
+          width: 100%;
+          max-width: 280px;
+          padding: 1.2rem 2rem;
+          font-size: 0.95rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .services-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .service-card-header {
+          padding: 2rem 1.5rem 1rem;
+        }
+
+        .service-card-title {
+          font-size: 1.6rem;
+        }
+
+        .service-icon {
+          font-size: 2.5rem;
+          margin-bottom: 1rem;
+        }
+
+        .service-card-content {
+          padding: 1.5rem 1rem;
+        }
+
+        .service-items {
+          gap: 1.5rem;
+        }
+
+        .service-item {
+          padding: 1rem;
+        }
+
+        .service-name {
+          font-size: 1.1rem;
+        }
+
+        .service-description {
+          font-size: 0.9rem;
+        }
+
+        .service-price {
+          font-size: 1.2rem;
+        }
+      }
+
+      /* Ultra-Premium Footer */
+      footer {
+        background: #1a1a1a;
+        color: var(--soft-white);
+        position: relative;
+        overflow: hidden;
+      }
+
+      footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--luxury-gold),
+          transparent
+        );
+      }
+
+      .footer-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 2.5rem 3rem 1.5rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .footer-brand {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-logo img {
+        height: 80px;
+        width: auto;
+        filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(35deg);
+        transition: all 0.3s ease;
+      }
+
+      .footer-logo:hover img {
+        filter: brightness(1.5) contrast(1.6)
+          drop-shadow(0 3px 10px rgba(212, 175, 55, 0.5));
+      }
+
+      .footer-description {
+        font-size: 1rem;
+        line-height: 1.8;
+        opacity: 0.9;
+        max-width: 300px;
+      }
+
+      .footer-section h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: var(--luxury-gold);
+        margin-bottom: 1rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .footer-links {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+
+      .footer-links a {
+        color: var(--soft-white);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        opacity: 0.8;
+      }
+
+      .footer-links a:hover {
+        color: var(--luxury-gold);
+        opacity: 1;
+        transform: translateX(5px);
+      }
+
+      .footer-contact p {
+        margin-bottom: 0.6rem;
+        font-size: 0.95rem;
+        opacity: 0.9;
+      }
+
+      .footer-contact a {
+        color: var(--luxury-gold);
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .footer-contact a:hover {
+        color: var(--soft-white);
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 0.8rem;
+        margin-top: 1rem;
+      }
+
+      .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: var(--soft-white);
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .social-link:hover {
+        background: var(--luxury-gold);
+        color: var(--primary-black);
+        transform: translateY(-3px);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 1.5rem;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .footer-copyright {
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+
+      .footer-credits {
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+
+      .footer-credits a {
+        color: var(--luxury-gold);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .footer-credits a:hover {
+        color: var(--soft-white);
+      }
+
+      /* Opening Hours Styling */
+      .opening-hours {
+        margin-top: 1rem;
+      }
+
+      .hours-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.4rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .hours-row:last-child {
+        border-bottom: none;
+      }
+
+      .day {
+        font-size: 0.95rem;
+        opacity: 0.9;
+      }
+
+      .time {
+        font-size: 0.95rem;
+        color: var(--luxury-gold);
+        font-weight: 500;
+        text-align: center;
+      }
+
+      @media (max-width: 768px) {
+        .footer-content {
+          padding: 2rem 2rem 1rem;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+          text-align: center;
+        }
+
+        .footer-brand {
+          align-items: center;
+        }
+
+        .footer-description {
+          max-width: 100%;
+        }
+
+        .footer-bottom {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        /* Mobile opening hours styling */
+        .hours-row {
+          padding: 0.6rem 0;
+          font-size: 0.9rem;
+          justify-content: center;
+        }
+
+        .day,
+        .time {
+          font-size: 0.9rem;
+          text-align: center;
+          flex: 1;
+        }
+      }
+
+      /* Scroll to Top Button - Mobile Only, Small Circle Design */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background: rgba(26, 26, 26, 0.9);
+        color: var(--luxury-gold);
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: 600;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px) scale(0.9);
+      }
+
+      .scroll-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) scale(1);
+      }
+
+      .scroll-to-top:hover {
+        background: rgba(212, 175, 55, 0.9);
+        color: var(--primary-black);
+        border-color: var(--luxury-gold);
+        transform: translateY(-2px) scale(1.05);
+        box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+      }
+
+      .scroll-to-top:active {
+        transform: translateY(0) scale(0.95);
+      }
+
+      /* Show only on mobile devices */
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <a href="index.html">
+            <img
+              src="Photos/Logo (2).png"
+              alt="Petal Hair Designs"
+              width="160"
+              height="80"
+            />
+          </a>
+        </div>
+        <nav>
+          <ul id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html" class="active">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="book-now.html">Book Now</a></li>
+          </ul>
+          <button
+            class="mobile-menu"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-controls="nav-menu"
+            aria-expanded="false"
+            onclick="toggleMenu()"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero hero-page">
+      <div class="hero-content">
+        <div class="hero-subtitle">Luxury Services</div>
+        <h1>Our Services</h1>
+        <p class="hero-description">
+          Experience the pinnacle of hair artistry with our comprehensive range
+          of luxury services, each designed to enhance your natural beauty and
+          elevate your confidence.
+        </p>
+      </div>
+    </section>
+
+    <section class="services-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-subtitle">Luxury Artistry</div>
+          <h2 class="section-title">Signature Services</h2>
+          <p class="section-description">
+            Discover our comprehensive collection of premium hair services, each
+            meticulously crafted to deliver exceptional results and an
+            unparalleled luxury experience.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Cutting & Styling Card -->
+          <div class="service-card" data-category="cutting">
+            <div class="service-card-header">
+              <div class="service-icon">✂️</div>
+              <h3 class="service-card-title">Cutting & Styling</h3>
+              <p class="service-card-subtitle">Precision Artistry</p>
+            </div>
+            <div class="service-card-content">
+              <div class="service-items">
+                <div class="service-item">
+                  <div class="service-details">
+                    <h4 class="service-name">Signature Cut & Style</h4>
+                    <p class="service-description">
+                      Precision cutting with personalized styling, tailored to
+                      your unique features and lifestyle
+                    </p>
+                  </div>
+                  <div class="service-price">$65</div>
+                </div>
+                <div class="service-item">
+                  <div class="service-details">
+                    <h4 class="service-name">Luxury Wash & Blowdry</h4>
+                    <p class="service-description">
+                      Professional styling service with premium products and
+                      expert techniques
+                    </p>
+                  </div>
+                  <div class="service-price">
+                    $45 - $55
+                    <div class="price-range">Based on length</div>
+                  </div>
+                </div>
+                <div class="service-item">
+                  <div class="service-details">
+                    <h4 class="service-name">Precision Dry Cut</h4>
+                    <p class="service-description">
+                      Expert cutting technique on dry hair for ultimate
+                      precision and natural movement
+                    </p>
+                  </div>
+                  <div class="service-price">$55</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Color Artistry Card -->
+          <div class="service-card" data-category="coloring">
+            <div class="service-card-header">
+              <div class="service-icon">🎨</div>
+              <h3 class="service-card-title">Color Artistry</h3>
+              <p class="service-card-subtitle">Creative Excellence</p>
+            </div>
+            <div class="service-card-content">
+              <div class="service-items">
+                <div class="service-item">
+                  <div class="service-details">
+                    <h4 class="service-name">Full Head Highlights</h4>
+                    <p class="service-description">
+                      Complete highlighting service for stunning dimension and
+                      luminosity throughout
+                    </p>
+                  </div>
+                  <div class="service-price">
+                    $125 - $150
+                    <div class="price-range">Based on length</div>
+                  </div>
+                </div>
+                <div class="service-item">
+                  <div class="service-details">
+                    <h4 class="service-name">Partial Highlights</h4>
+                    <p class="service-description">
+                      Strategic highlighting for natural-looking brightness and
+                      subtle enhancement
+                    </p>
+                  </div>
+                  <div class="service-price">
+                    $75 - $97.50
+                    <div class="price-range">Based on length</div>
+                  </div>
+                </div>
+                <div class="service-item">
+                  <div class="service-details">
+                    <h4 class="service-name">Creative Color Design</h4>
+                    <p class="service-description">
+                      Bespoke color transformations and artistic techniques for
+                      unique expressions
+                    </p>
+                  </div>
+                  <div class="service-price">From $200</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bridal & Events Card -->
+          <div class="service-card" data-category="bridal">
+            <div class="service-card-header">
+              <div class="service-icon">👰</div>
+              <h3 class="service-card-title">Bridal & Events</h3>
+              <p class="service-card-subtitle">Special Occasions</p>
+            </div>
+            <div class="service-card-content">
+              <div class="service-items">
+                <div class="service-item">
+                  <div class="service-details">
+                    <h4 class="service-name">Bridal Hair Design</h4>
+                    <p class="service-description">
+                      Elegant bridal styling for your perfect day, including
+                      trial session
+                    </p>
+                  </div>
+                  <div class="service-price">$110</div>
+                </div>
+                <div class="service-item">
+                  <div class="service-details">
+                    <h4 class="service-name">Special Occasion Styling</h4>
+                    <p class="service-description">
+                      Glamorous styling for events, parties, and celebrations
+                    </p>
+                  </div>
+                  <div class="service-price">From $65</div>
+                </div>
+                <div class="service-item">
+                  <div class="service-details">
+                    <h4 class="service-name">Bridal Party Package</h4>
+                    <p class="service-description">
+                      Complete styling service for the entire bridal party with
+                      group discounts
+                    </p>
+                  </div>
+                  <div class="service-price">Contact Us</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Premium Treatments Card -->
+          <div class="service-card" data-category="treatments">
+            <div class="service-card-header">
+              <div class="service-icon">✨</div>
+              <h3 class="service-card-title">Premium Treatments</h3>
+              <p class="service-card-subtitle">Restoration & Care</p>
+            </div>
+            <div class="service-card-content">
+              <div class="service-items">
+                <div class="service-item">
+                  <div class="service-details">
+                    <h4 class="service-name">Deep Conditioning Treatment</h4>
+                    <p class="service-description">
+                      Intensive nourishing treatment to restore moisture and
+                      vitality
+                    </p>
+                  </div>
+                  <div class="service-price">$35</div>
+                </div>
+                <div class="service-item">
+                  <div class="service-details">
+                    <h4 class="service-name">Keratin Smoothing</h4>
+                    <p class="service-description">
+                      Professional smoothing treatment for frizz control and
+                      shine
+                    </p>
+                  </div>
+                  <div class="service-price">From $180</div>
+                </div>
+                <div class="service-item">
+                  <div class="service-details">
+                    <h4 class="service-name">Scalp Therapy</h4>
+                    <p class="service-description">
+                      Rejuvenating scalp treatment for healthy hair growth and
+                      relaxation
+                    </p>
+                  </div>
+                  <div class="service-price">$45</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="modern-cta">
+      <div class="container">
+        <div class="cta-content">
+          <div class="cta-text">
+            <h2 class="cta-title">Ready to Book Your Service?</h2>
+            <p class="cta-description">
+              Choose from our premium services and let our expert stylists bring
+              your vision to life. Book now for the ultimate luxury experience.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a href="book-now.html" class="cta-button primary">
+              <span class="button-text">Book Now</span>
+              <span class="button-icon">✨</span>
+            </a>
+            <a href="contact.html" class="cta-button secondary">
+              <span class="button-text">Get Consultation</span>
+              <span class="button-icon">💬</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-grid">
+          <!-- Brand Section -->
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <a href="index.html">
+                <img
+                  src="Photos/Logo (2).png"
+                  alt="Petal Hair Designs"
+                  width="160"
+                  height="80"
+                />
+              </a>
+            </div>
+            <p class="footer-description">
+              Sydney's most prestigious hair salon, where luxury meets
+              expertise. Experience the pinnacle of hair artistry and
+              personalized beauty services.
+            </p>
+            <div class="footer-social">
+              <a href="#" class="social-link" aria-label="Facebook">📘</a>
+              <a href="#" class="social-link" aria-label="Instagram">📷</a>
+              <a href="#" class="social-link" aria-label="Google">🌐</a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Services -->
+          <div class="footer-section">
+            <h3>Services</h3>
+            <ul class="footer-links">
+              <li><a href="services.html">Hair Cutting</a></li>
+              <li><a href="services.html">Hair Coloring</a></li>
+              <li><a href="services.html">Bridal Styling</a></li>
+              <li><a href="services.html">Hair Treatments</a></li>
+              <li><a href="contact.html">Consultation</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="footer-section">
+            <h3>Contact</h3>
+            <div class="footer-contact">
+              <p>125 George Street<br />Sydney NSW 2000</p>
+              <p><a href="tel:0270104829">(02) 7010 4829</a></p>
+              <p>
+                <a href="mailto:petalhairdesigns@gmail.com"
+                  >petalhairdesigns@gmail.com</a
+                >
+              </p>
+              <div class="opening-hours">
+                <div class="hours-row">
+                  <span class="day"><strong>Sunday:</strong></span>
+                  <span class="time">CLOSED</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day"><strong>Monday:</strong></span>
+                  <span class="time">CLOSED</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day"><strong>Tuesday:</strong></span>
+                  <span class="time">9am-5:30pm</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day"><strong>Wednesday:</strong></span>
+                  <span class="time">9am-5:30pm</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day"><strong>Thursday:</strong></span>
+                  <span class="time">9am-7pm</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day"><strong>Friday:</strong></span>
+                  <span class="time">9am-5:30pm</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day"><strong>Saturday:</strong></span>
+                  <span class="time">9am-3pm</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-copyright">
+            &copy; 2025 Petal Hair Designs. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+      <span>↑</span>
+    </button>
+
+    <script>
+      function toggleMenu() {
+        const navMenu = document.getElementById("nav-menu");
+        const menuButton = document.querySelector(".mobile-menu");
+        const isActive = navMenu.classList.toggle("active");
+        if (menuButton) {
+          menuButton.setAttribute("aria-expanded", isActive ? "true" : "false");
+        }
+      }
+
+      // Enhanced scroll effects
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 100) {
+          header.style.background = "rgba(26,26,26,0.98)";
+        } else {
+          header.style.background = "rgba(26,26,26,0.95)";
+        }
+      });
+
+      // Enhanced service card animations
+      document.addEventListener("DOMContentLoaded", function () {
+        const serviceCards = document.querySelectorAll(".service-card");
+        const serviceItems = document.querySelectorAll(".service-item");
+
+        // Service card entrance animations
+        const cardObserver = new IntersectionObserver(
+          function (entries) {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0) rotateX(0)";
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        serviceCards.forEach((card, index) => {
+          card.style.opacity = "0";
+          card.style.transform = "translateY(50px) rotateX(10deg)";
+          card.style.transition = `all 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${
+            index * 0.2
+          }s`;
+          cardObserver.observe(card);
+        });
+
+        // Service item stagger animations
+        const itemObserver = new IntersectionObserver(
+          function (entries) {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateX(0)";
+              }
+            });
+          },
+          { threshold: 0.2 }
+        );
+
+        serviceItems.forEach((item, index) => {
+          item.style.opacity = "0";
+          item.style.transform = "translateX(-20px)";
+          item.style.transition = `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${
+            (index % 3) * 0.1
+          }s`;
+          itemObserver.observe(item);
+        });
+
+        // Interactive card effects removed to eliminate blur
+
+        // Service name to booking ID mapping
+        const serviceMapping = {
+          "Signature Cut & Style": "haircut-basic",
+          "Luxury Wash & Blowdry": "haircut-premium",
+          "Precision Dry Cut": "haircut-basic",
+          "Full Head Highlights": "color-highlights",
+          "Partial Highlights": "color-highlights",
+          "Creative Color Design": "color-full",
+          "Bridal Hair Design": "bridal-trial",
+          "Special Occasion Styling": "event-updo",
+          "Bridal Party Package": "wedding-hair",
+          "Deep Conditioning Treatment": "treatment-deep",
+          "Keratin Smoothing": "treatment-keratin",
+          "Scalp Therapy": "treatment-deep",
+        };
+
+        // Add click handlers to individual service items
+        serviceItems.forEach((item) => {
+          item.addEventListener("click", function (e) {
+            e.stopPropagation(); // Prevent card click
+
+            const serviceName =
+              this.querySelector(".service-name").textContent.trim();
+            const serviceId = serviceMapping[serviceName];
+
+            if (serviceId) {
+              // Redirect to booking page with selected service
+              window.location.href = `book-now.html?service=${serviceId}`;
+            }
+          });
+
+          // Add cursor pointer and hover effect
+          item.style.cursor = "pointer";
+        });
+
+        // Add click interaction for mobile (keep existing functionality)
+        serviceCards.forEach((card) => {
+          card.addEventListener("click", function () {
+            // Toggle active state for mobile interactions
+            this.classList.toggle("active");
+
+            // Smooth scroll to center the card on mobile
+            if (window.innerWidth <= 768) {
+              this.scrollIntoView({
+                behavior: "smooth",
+                block: "center",
+              });
+            }
+          });
+        });
+      });
+    </script>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+      <span>↑</span>
+    </button>
+
+    <script>
+      // Scroll to top button functionality
+      const scrollBtn = document.getElementById("scrollToTop");
+
+      function toggleScrollButton() {
+        if (window.scrollY > 100) {
+          scrollBtn.classList.add("visible");
+        } else {
+          scrollBtn.classList.remove("visible");
+        }
+      }
+
+      scrollBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      window.addEventListener("scroll", toggleScrollButton);
+      document.addEventListener("DOMContentLoaded", toggleScrollButton);
+    </script>
+  </body>
+</html>
