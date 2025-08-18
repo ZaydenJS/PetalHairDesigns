@@ -9,9 +9,24 @@
     <title>About - Petal Hair Designs | Luxury Hair Salon Sydney</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Load web fonts only on tablet/desktop to maximize mobile speed -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;500&family=Inter:wght@400;600&display=swap"
+      media="(min-width: 769px)"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        media="(min-width: 769px)"
+      />
+    </noscript>
+    <link
+      rel="preload"
+      as="image"
+      href="Photos/Logo (2).png"
+      fetchpriority="high"
     />
     <style>
       :root {
@@ -1371,6 +1386,8 @@
               alt="Petal Hair Designs"
               width="160"
               height="80"
+              fetchpriority="high"
+              decoding="async"
             />
           </a>
         </div>
@@ -1539,6 +1556,9 @@
                 src="Photos/1.jpg"
                 alt="Senior Stylist - Sarah Thompson"
                 class="member-photo"
+                loading="lazy"
+                width="400"
+                height="500"
               />
               <div class="member-name">Senior Stylist</div>
             </div>
@@ -1564,6 +1584,9 @@
                 src="Photos/2.webp"
                 alt="Master Colorist - Michelle Chen"
                 class="member-photo"
+                loading="lazy"
+                width="400"
+                height="500"
               />
               <div class="member-name">Master Colorist</div>
             </div>
@@ -1589,6 +1612,9 @@
                 src="Photos/4.webp"
                 alt="Treatment Specialist - Emma Rodriguez"
                 class="member-photo"
+                loading="lazy"
+                width="400"
+                height="500"
               />
               <div class="member-name">Treatment Specialist</div>
             </div>
@@ -1714,6 +1740,8 @@
                   alt="Petal Hair Designs"
                   width="160"
                   height="80"
+                  loading="lazy"
+                  decoding="async"
                 />
               </a>
             </div>
@@ -1816,15 +1844,28 @@
         }
       }
 
-      // Enhanced scroll effects
-      window.addEventListener("scroll", function () {
+      // Enhanced scroll effects - throttled for performance
+      let ticking = false;
+      function updateHeader() {
         const header = document.querySelector("header");
         if (window.scrollY > 100) {
           header.style.background = "rgba(26,26,26,0.98)";
         } else {
           header.style.background = "rgba(26,26,26,0.95)";
         }
-      });
+        ticking = false;
+      }
+
+      window.addEventListener(
+        "scroll",
+        function () {
+          if (!ticking) {
+            requestAnimationFrame(updateHeader);
+            ticking = true;
+          }
+        },
+        { passive: true }
+      );
 
       // Intersection Observer for animations
       const observerOptions = {
@@ -1870,11 +1911,10 @@
         }
       }
 
+      window.addEventListener("scroll", toggleScrollButton, { passive: true });
       scrollBtn.addEventListener("click", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
-
-      window.addEventListener("scroll", toggleScrollButton);
       document.addEventListener("DOMContentLoaded", toggleScrollButton);
     </script>
   </body>

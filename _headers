@@ -1,0 +1,26 @@
+/*
+  X-Content-Type-Options: nosniff
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/Photos/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/Styling/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/Bridal/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/Photo Shoots/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+

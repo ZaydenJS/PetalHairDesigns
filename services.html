@@ -9,9 +9,17 @@
     <title>Services - Petal Hair Designs | Luxury Hair Salon Sydney</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Load web fonts only on tablet/desktop to maximize mobile speed -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;500&family=Inter:wght@400;600&display=swap"
       rel="stylesheet"
+      media="(min-width: 769px)"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="Photos/Logo (2).png"
+      fetchpriority="high"
     />
     <style>
       :root {
@@ -1363,6 +1371,8 @@
               alt="Petal Hair Designs"
               width="160"
               height="80"
+              fetchpriority="high"
+              decoding="async"
             />
           </a>
         </div>
