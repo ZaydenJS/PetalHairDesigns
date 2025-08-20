@@ -26,7 +26,7 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;500&family=Inter:wght@400;600&display=swap"
       />
     </noscript>
-    <link rel="preload" as="image" href="Styling/1.jpg" />
+    <link rel="preload" as="image" href="Styling/1.jpg" fetchpriority="high" />
 
     <style>
       :root {
@@ -351,6 +351,7 @@
           var(--pearl-white) 100%
         );
         position: relative;
+        z-index: 3;
       }
 
       .filter-section::before {
@@ -484,10 +485,13 @@
         border-radius: 20px;
         overflow: hidden;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease,
+          transform 0.3s ease;
         cursor: pointer;
         position: relative;
         border: 1px solid rgba(212, 175, 55, 0.1);
+        opacity: 1;
+        transform: translateY(0);
       }
 
       .gallery-item::before {
@@ -1307,7 +1311,7 @@
             Hair Cuts & Styling
           </button>
           <button class="filter-btn" data-filter="coloring">
-            Hair Coloring
+            Hair Colouring
           </button>
           <button class="filter-btn" data-filter="bridal">
             Bridal & Events
@@ -2430,57 +2434,76 @@
         }
         ticking = false;
       }
-      window.addEventListener("scroll", function(){
-        if (!ticking) {
-          requestAnimationFrame(updateHeader);
-          ticking = true;
-        }
-      }, { passive: true });
-        }
-      });
+      window.addEventListener(
+        "scroll",
+        function () {
+          if (!ticking) {
+            requestAnimationFrame(updateHeader);
+            ticking = true;
+          }
+        },
+        { passive: true }
+      );
 
-      // Ultra-premium filter functionality
-      const filterButtons = document.querySelectorAll(".filter-btn");
-      const galleryItems = document.querySelectorAll(".gallery-item");
+      // Ultra-premium filter functionality - wrapped in DOMContentLoaded
+      document.addEventListener("DOMContentLoaded", function () {
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        const galleryItems = document.querySelectorAll(".gallery-item");
 
-      filterButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          // Remove active class and aria-pressed from all buttons
-          filterButtons.forEach((btn) => {
-            btn.classList.remove("active");
-            btn.setAttribute("aria-pressed", "false");
-          });
-          // Add active class and aria-pressed to clicked button
-          button.classList.add("active");
-          button.setAttribute("aria-pressed", "true");
+        console.log("Filter buttons found:", filterButtons.length);
+        console.log("Gallery items found:", galleryItems.length);
 
-          const filterValue = button.getAttribute("data-filter");
+        filterButtons.forEach((button) => {
+          button.addEventListener("click", (e) => {
+            e.preventDefault();
+            console.log(
+              "Filter button clicked:",
+              button.getAttribute("data-filter")
+            );
 
-          // Fast filter animation
-          galleryItems.forEach((item, index) => {
-            const shouldShow =
-              filterValue === "all" ||
-              item.getAttribute("data-category") === filterValue;
+            // Remove active class and aria-pressed from all buttons
+            filterButtons.forEach((btn) => {
+              btn.classList.remove("active");
+              btn.setAttribute("aria-pressed", "false");
+            });
+            // Add active class and aria-pressed to clicked button
+            button.classList.add("active");
+            button.setAttribute("aria-pressed", "true");
 
-            if (shouldShow) {
-              // Show items immediately with minimal delay
-              item.classList.remove("hidden");
-              item.style.opacity = "1";
-              item.style.transform = "translateY(0)";
+            const filterValue = button.getAttribute("data-filter");
 
-              // Optimize image loading for newly visible items
-              const img = item.querySelector("img");
-              if (img && img.loading === "lazy") {
-                img.loading = "eager";
+            // Fast filter animation with improved logic
+            galleryItems.forEach((item, index) => {
+              const itemCategory = item.getAttribute("data-category");
+              const shouldShow =
+                filterValue === "all" || itemCategory === filterValue;
+
+              console.log(
+                `Item ${index}: category="${itemCategory}", filter="${filterValue}", shouldShow=${shouldShow}`
+              );
+
+              if (shouldShow) {
+                // Show items immediately
+                item.classList.remove("hidden");
+                item.style.display = "block";
+                item.style.opacity = "1";
+                item.style.transform = "translateY(0)";
+
+                // Optimize image loading for newly visible items
+                const img = item.querySelector("img");
+                if (img && img.loading === "lazy") {
+                  img.loading = "eager";
+                }
+              } else {
+                // Hide items with animation
+                item.style.opacity = "0";
+                item.style.transform = "translateY(10px)";
+                setTimeout(() => {
+                  item.classList.add("hidden");
+                  item.style.display = "none";
+                }, 150);
               }
-            } else {
-              // Hide items quickly
-              item.style.opacity = "0";
-              item.style.transform = "translateY(10px)";
-              setTimeout(() => {
-                item.classList.add("hidden");
-              }, 150);
-            }
+            });
           });
         });
       });
@@ -2549,7 +2572,7 @@
           src: img.src,
           alt: img.alt,
           description:
-            img.closest(".gallery-item").querySelector(".gallery-content p")
+            img.closest(".gallery-item").querySelector(".gallery-info p")
               ?.textContent || "",
         }));
 
@@ -2616,9 +2639,9 @@
         galleryImages.forEach((item) => {
           const img = item.querySelector("img");
           const title =
-            item.querySelector(".gallery-content h3")?.textContent || img.alt;
+            item.querySelector(".gallery-info h3")?.textContent || img.alt;
           const description =
-            item.querySelector(".gallery-content p")?.textContent || "";
+            item.querySelector(".gallery-info p")?.textContent || "";
 
           item.style.cursor = "pointer";
           item.addEventListener("click", function () {

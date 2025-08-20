@@ -9,19 +9,22 @@
     <title>Petal Hair Designs - Luxury Hair Salon Sydney</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Load web fonts only on tablet/desktop to maximize mobile speed -->
+    <!-- Optimized font loading for better performance -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;500&family=Inter:wght@400;600&display=swap"
+    />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;500&family=Inter:wght@400;600&display=swap"
-      media="(min-width: 769px)"
+      media="print"
+      onload="this.media='all'"
     />
     <noscript>
       <link
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;500&family=Inter:wght@400;600&display=swap"
-        media="(min-width: 769px)"
       />
     </noscript>
 
@@ -697,6 +700,8 @@
         flex-direction: column;
         height: 100%;
         border-top: 3px solid var(--luxury-gold);
+        align-items: center;
+        justify-content: space-between;
       }
 
       /* Service card hover effects removed per user request */
@@ -1003,18 +1008,6 @@
         padding-left: 1.5rem;
         font-style: italic;
         opacity: 0.9;
-      }
-
-      .testimonial-quote::before {
-        content: "\201C";
-        position: absolute;
-        top: -0.8rem;
-        left: -0.5rem;
-        font-size: 4rem;
-        color: var(--luxury-gold);
-        font-family: "Playfair Display", serif;
-        line-height: 1;
-        opacity: 0.6;
       }
 
       .testimonial-author {
@@ -1434,13 +1427,6 @@
           display: flex;
           align-items: center;
           line-height: 1.5;
-        }
-
-        .testimonial-quote::before {
-          font-size: 2.5rem;
-          top: -0.5rem;
-          left: 50%;
-          transform: translateX(-50%);
         }
 
         .testimonial-author {
@@ -2246,10 +2232,11 @@
           </div>
           <div class="service-card">
             <div class="service-icon">🎨</div>
-            <h3>Hair Coloring</h3>
+            <h3>Hair Colouring</h3>
             <p>
-              Professional coloring services using premium products. From subtle
-              highlights to bold transformations, we bring your vision to life.
+              Expert colouring and styling tailored to your unique features and
+              lifestyle. From classic to contemporary, we create looks that
+              enhance your natural beauty.
             </p>
           </div>
           <div class="service-card">

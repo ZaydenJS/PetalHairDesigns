@@ -667,12 +667,27 @@
       .member-specialties span {
         background: linear-gradient(135deg, var(--luxury-gold), #b8941f);
         color: var(--primary-black);
-        padding: 0.5rem 1rem;
         border-radius: 20px;
-        font-size: 0.8rem;
         font-weight: 600;
         letter-spacing: 0.5px;
         text-transform: uppercase;
+        transition: all 0.3s ease;
+      }
+
+      /* Badge sizes - smallest to largest (pyramid effect) */
+      .member-specialties span:nth-child(1) {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+      }
+
+      .member-specialties span:nth-child(2) {
+        padding: 0.55rem 1.1rem;
+        font-size: 0.85rem;
+      }
+
+      .member-specialties span:nth-child(3) {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
       }
 
       /* Values Grid */
@@ -1533,6 +1548,17 @@
               </p>
             </div>
           </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2025</div>
+            <div class="timeline-content">
+              <h3>Future Vision</h3>
+              <p>
+                Looking ahead, we embrace new horizons in sustainable luxury and
+                cutting-edge techniques, continuing our legacy of transformative
+                beauty experiences for the next generation.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1571,8 +1597,8 @@
                 vision to every client experience.
               </p>
               <div class="member-specialties">
-                <span>Color Specialist</span>
                 <span>Bridal Expert</span>
+                <span>Color Specialist</span>
                 <span>Cutting Techniques</span>
               </div>
             </div>
@@ -1599,9 +1625,9 @@
                 cutting-edge artistry to every service.
               </p>
               <div class="member-specialties">
+                <span>Modern Cuts</span>
                 <span>Balayage Expert</span>
                 <span>Color Correction</span>
-                <span>Modern Cuts</span>
               </div>
             </div>
           </div>
@@ -1627,9 +1653,9 @@
                 enhance hair health and beauty.
               </p>
               <div class="member-specialties">
-                <span>Keratin Treatments</span>
-                <span>Hair Restoration</span>
                 <span>Scalp Health</span>
+                <span>Hair Restoration</span>
+                <span>Keratin Treatments</span>
               </div>
             </div>
           </div>
