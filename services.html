@@ -27,6 +27,14 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;500&family=Inter:wght@400;600&display=swap"
       />
     </noscript>
+
+    <!-- Critical Image Preloading for Instant Display -->
+    <link
+      rel="preload"
+      as="image"
+      href="Photos/Logo (2).png"
+      fetchpriority="high"
+    />
     <link
       rel="preload"
       as="image"
@@ -1384,7 +1392,8 @@
               width="160"
               height="80"
               fetchpriority="high"
-              decoding="async"
+              decoding="sync"
+              loading="eager"
             />
           </a>
         </div>
@@ -1884,18 +1893,54 @@
     </button>
 
     <script>
-      // Performance optimizations
+      // Universal Instant Loading - ALL IMAGES LOAD IMMEDIATELY
       document.addEventListener("DOMContentLoaded", function () {
-        // Optimize images with lazy loading
+        // Force ALL images to load instantly - no lazy loading
         const images = document.querySelectorAll("img");
         images.forEach((img) => {
-          if (
-            !img.hasAttribute("loading") &&
-            !img.hasAttribute("fetchpriority")
-          ) {
-            img.setAttribute("loading", "lazy");
+          img.setAttribute("loading", "eager");
+          img.setAttribute("fetchpriority", "high");
+          img.setAttribute("decoding", "sync");
+
+          // Remove lazy loading classes
+          img.classList.remove("lazy");
+
+          // Load data-src immediately if present
+          if (img.dataset.src && !img.src) {
+            img.src = img.dataset.src;
           }
         });
+
+        // UNIVERSAL INSTANT LOADING - FORCE ALL IMAGES TO LOAD IMMEDIATELY
+        (function forceInstantImageLoading() {
+          function makeAllImagesInstant() {
+            const allImages = document.querySelectorAll("img");
+
+            allImages.forEach((img) => {
+              img.loading = "eager";
+              img.fetchPriority = "high";
+              img.decoding = "sync";
+
+              img.removeAttribute("loading");
+              img.setAttribute("loading", "eager");
+              img.setAttribute("fetchpriority", "high");
+              img.setAttribute("decoding", "sync");
+
+              img.classList.remove("lazy");
+
+              if (img.dataset.src && !img.src) {
+                img.src = img.dataset.src;
+              }
+            });
+          }
+
+          makeAllImagesInstant();
+          if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", makeAllImagesInstant);
+          }
+          setTimeout(makeAllImagesInstant, 100);
+          setTimeout(makeAllImagesInstant, 500);
+        })();
 
         // Optimize animations with Intersection Observer
         const animatedElements = document.querySelectorAll(

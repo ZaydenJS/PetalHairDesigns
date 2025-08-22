@@ -317,22 +317,38 @@ function validateField(field) {
   return isValid;
 }
 
-// Lazy loading for images
-function initLazyLoading() {
-  const images = document.querySelectorAll("img[data-src]");
+// Universal instant image loading - ALL IMAGES LOAD IMMEDIATELY
+function initUniversalInstantLoading() {
+  const images = document.querySelectorAll("img");
 
-  const imageObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const img = entry.target;
-        img.src = img.dataset.src;
-        img.classList.remove("lazy");
-        observer.unobserve(img);
-      }
-    });
+  images.forEach((img) => {
+    // Force ALL images to load instantly - no exceptions
+    img.loading = "eager";
+    img.fetchPriority = "high";
+    img.decoding = "sync";
+
+    // Remove any lazy loading classes
+    img.classList.remove("lazy");
+
+    // Handle data-src lazy loading if present - load immediately
+    if (img.dataset.src && !img.src) {
+      img.src = img.dataset.src;
+    }
+
+    // Ensure image is visible and not hidden
+    if (img.style.display === 'none') {
+      img.style.display = 'block';
+    }
   });
 
-  images.forEach((img) => imageObserver.observe(img));
+  // Also handle any background images that might be lazy loaded
+  const elementsWithBgImages = document.querySelectorAll('[data-bg]');
+  elementsWithBgImages.forEach((element) => {
+    if (element.dataset.bg) {
+      element.style.backgroundImage = `url(${element.dataset.bg})`;
+      delete element.dataset.bg;
+    }
+  });
 }
 
 // Initialize all enhancements when DOM is loaded
@@ -340,7 +356,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initGalleryFilter();
   initModalEnhancements();
   initFormEnhancements();
-  initLazyLoading();
+  initUniversalInstantLoading();
 });
 
 // Utility functions

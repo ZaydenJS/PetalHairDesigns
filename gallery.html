@@ -26,7 +26,29 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;500&family=Inter:wght@400;600&display=swap"
       />
     </noscript>
+    <!-- Universal Image Preloading for Instant Display - ALL IMAGES -->
+    <link
+      rel="preload"
+      as="image"
+      href="Photos/Logo (2).png"
+      fetchpriority="high"
+    />
     <link rel="preload" as="image" href="Styling/1.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="Styling/2.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="Styling/3.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="Styling/4.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="Styling/5.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="Styling/6.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="Styling/7.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="Styling/8.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="Styling/9.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="Styling/10.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="Styling/11.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="Styling/12.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="Styling/13.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="Styling/14.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="Styling/15.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="Styling/16.jpg" fetchpriority="high" />
 
     <style>
       :root {
@@ -1248,7 +1270,8 @@
               width="160"
               height="80"
               fetchpriority="high"
-              decoding="async"
+              decoding="sync"
+              loading="eager"
             />
           </a>
         </div>
@@ -1360,7 +1383,9 @@
               <img
                 src="Styling/2.jpg"
                 alt="Professional Hair Cut"
-                loading="lazy"
+                loading="eager"
+                fetchpriority="high"
+                decoding="sync"
                 width="800"
                 height="1200"
                 style="
@@ -2508,27 +2533,52 @@
         });
       });
 
-      // Performance optimizations
-      document.addEventListener("DOMContentLoaded", function () {
-        // Add lazy loading to all gallery images
-        const galleryImages = document.querySelectorAll(".gallery-item img");
-        galleryImages.forEach((img) => {
-          if (!img.hasAttribute("loading")) {
-            img.setAttribute("loading", "lazy");
-          }
-        });
+      // UNIVERSAL INSTANT LOADING - FORCE ALL IMAGES TO LOAD IMMEDIATELY
+      // Execute immediately, don't wait for DOMContentLoaded
+      (function forceInstantImageLoading() {
+        function makeAllImagesInstant() {
+          // Get ALL images on the page
+          const allImages = document.querySelectorAll("img");
 
-        // Optimize image loading for visible items
-        const visibleItems = document.querySelectorAll(
-          ".gallery-item:not(.hidden)"
-        );
-        visibleItems.forEach((item) => {
-          const img = item.querySelector("img");
-          if (img && img.loading === "lazy") {
-            img.loading = "eager"; // Load visible images immediately
-          }
-        });
-      });
+          allImages.forEach((img) => {
+            // Force instant loading attributes
+            img.loading = "eager";
+            img.fetchPriority = "high";
+            img.decoding = "sync";
+
+            // Remove lazy loading attributes
+            img.removeAttribute("loading");
+            img.setAttribute("loading", "eager");
+            img.setAttribute("fetchpriority", "high");
+            img.setAttribute("decoding", "sync");
+
+            // Remove lazy classes
+            img.classList.remove("lazy");
+
+            // Load data-src immediately
+            if (img.dataset.src && !img.src) {
+              img.src = img.dataset.src;
+            }
+
+            // Ensure image is visible
+            if (img.style.display === "none") {
+              img.style.display = "block";
+            }
+          });
+        }
+
+        // Run immediately
+        makeAllImagesInstant();
+
+        // Run again when DOM is ready
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", makeAllImagesInstant);
+        }
+
+        // Run again after a short delay to catch any dynamically added images
+        setTimeout(makeAllImagesInstant, 100);
+        setTimeout(makeAllImagesInstant, 500);
+      })();
 
       // Gallery item animations on scroll
       document.addEventListener("DOMContentLoaded", function () {

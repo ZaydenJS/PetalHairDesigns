@@ -28,6 +28,26 @@
       />
     </noscript>
 
+    <!-- Critical Image Preloading for Instant Display -->
+    <link
+      rel="preload"
+      as="image"
+      href="Photos/Logo (2).png"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="Photos/Behind Hero.jpg"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="Photos/Why Choose Petal.webp"
+      fetchpriority="high"
+    />
+
     <style>
       :root {
         --primary-black: #000000;
@@ -1319,7 +1339,7 @@
         }
 
         .about-cta {
-          order: 3;
+          order: 4;
           align-self: center;
           margin: 2rem auto 0 auto;
           text-align: center;
@@ -1332,6 +1352,7 @@
         }
 
         .about-highlights {
+          order: 3;
           gap: 1rem;
           justify-content: center;
         }
@@ -2097,8 +2118,9 @@
               alt="Petal Hair Designs"
               width="160"
               height="80"
-              fetchpriority="low"
-              decoding="async"
+              fetchpriority="high"
+              decoding="sync"
+              loading="eager"
             />
           </a>
         </div>
@@ -2157,27 +2179,6 @@
               years of experience with the latest techniques to deliver
               exceptional results that exceed expectations.
             </p>
-
-            <div class="about-highlights">
-              <div class="highlight-item">
-                <div class="highlight-icon">🏆</div>
-                <div class="highlight-text">
-                  Award-winning stylists with 15+ years experience
-                </div>
-              </div>
-              <div class="highlight-item">
-                <div class="highlight-icon">💎</div>
-                <div class="highlight-text">
-                  Premium luxury products and cutting-edge techniques
-                </div>
-              </div>
-              <div class="highlight-item">
-                <div class="highlight-icon">📍</div>
-                <div class="highlight-text">
-                  Located in vibrant Sydney with personalized service
-                </div>
-              </div>
-            </div>
           </div>
 
           <div class="about-visual">
@@ -2198,6 +2199,27 @@
                     <div class="owner-title">Professional Excellence</div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <div class="highlight-icon">🏆</div>
+              <div class="highlight-text">
+                Award-winning stylists with 15+ years experience
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon">💎</div>
+              <div class="highlight-text">
+                Premium luxury products and cutting-edge techniques
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon">📍</div>
+              <div class="highlight-text">
+                Located in vibrant Sydney with personalized service
               </div>
             </div>
           </div>
@@ -2331,8 +2353,9 @@
                   src="Photos/Why Choose Petal.webp"
                   alt="Why Choose Petal Hair Designs"
                   class="hair-image"
-                  loading="lazy"
-                  decoding="async"
+                  loading="eager"
+                  decoding="sync"
+                  fetchpriority="high"
                   width="500"
                   height="500"
                 />
@@ -2618,6 +2641,37 @@
       } else {
         setTimeout(initAnimations, 100);
       }
+
+      // UNIVERSAL INSTANT LOADING - FORCE ALL IMAGES TO LOAD IMMEDIATELY
+      (function forceInstantImageLoading() {
+        function makeAllImagesInstant() {
+          const allImages = document.querySelectorAll("img");
+
+          allImages.forEach((img) => {
+            img.loading = "eager";
+            img.fetchPriority = "high";
+            img.decoding = "sync";
+
+            img.removeAttribute("loading");
+            img.setAttribute("loading", "eager");
+            img.setAttribute("fetchpriority", "high");
+            img.setAttribute("decoding", "sync");
+
+            img.classList.remove("lazy");
+
+            if (img.dataset.src && !img.src) {
+              img.src = img.dataset.src;
+            }
+          });
+        }
+
+        makeAllImagesInstant();
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", makeAllImagesInstant);
+        }
+        setTimeout(makeAllImagesInstant, 100);
+        setTimeout(makeAllImagesInstant, 500);
+      })();
     </script>
 
     <!-- Scroll to Top Button -->

@@ -1174,7 +1174,8 @@
               width="160"
               height="80"
               fetchpriority="high"
-              decoding="async"
+              decoding="sync"
+              loading="eager"
             />
           </a>
         </div>
@@ -1606,6 +1607,37 @@
 
       window.addEventListener("scroll", toggleScrollButton);
       document.addEventListener("DOMContentLoaded", toggleScrollButton);
+
+      // UNIVERSAL INSTANT LOADING - FORCE ALL IMAGES TO LOAD IMMEDIATELY
+      (function forceInstantImageLoading() {
+        function makeAllImagesInstant() {
+          const allImages = document.querySelectorAll("img");
+
+          allImages.forEach((img) => {
+            img.loading = "eager";
+            img.fetchPriority = "high";
+            img.decoding = "sync";
+
+            img.removeAttribute("loading");
+            img.setAttribute("loading", "eager");
+            img.setAttribute("fetchpriority", "high");
+            img.setAttribute("decoding", "sync");
+
+            img.classList.remove("lazy");
+
+            if (img.dataset.src && !img.src) {
+              img.src = img.dataset.src;
+            }
+          });
+        }
+
+        makeAllImagesInstant();
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", makeAllImagesInstant);
+        }
+        setTimeout(makeAllImagesInstant, 100);
+        setTimeout(makeAllImagesInstant, 500);
+      })();
     </script>
   </body>
 </html>

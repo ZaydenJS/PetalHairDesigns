@@ -22,12 +22,16 @@
         media="(min-width: 769px)"
       />
     </noscript>
+    <!-- Critical Image Preloading for Instant Display -->
     <link
       rel="preload"
       as="image"
       href="Photos/Logo (2).png"
       fetchpriority="high"
     />
+    <link rel="preload" as="image" href="Photos/1.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="Photos/2.webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="Photos/4.webp" fetchpriority="high" />
     <style>
       :root {
         --primary-black: #000000;
@@ -1402,7 +1406,8 @@
               width="160"
               height="80"
               fetchpriority="high"
-              decoding="async"
+              decoding="sync"
+              loading="eager"
             />
           </a>
         </div>
@@ -1582,7 +1587,9 @@
                 src="Photos/1.jpg"
                 alt="Senior Stylist - Sarah Thompson"
                 class="member-photo"
-                loading="lazy"
+                loading="eager"
+                fetchpriority="high"
+                decoding="sync"
                 width="400"
                 height="500"
               />
@@ -1610,7 +1617,9 @@
                 src="Photos/2.webp"
                 alt="Master Colorist - Michelle Chen"
                 class="member-photo"
-                loading="lazy"
+                loading="eager"
+                fetchpriority="high"
+                decoding="sync"
                 width="400"
                 height="500"
               />
@@ -1638,7 +1647,9 @@
                 src="Photos/4.webp"
                 alt="Treatment Specialist - Emma Rodriguez"
                 class="member-photo"
-                loading="lazy"
+                loading="eager"
+                fetchpriority="high"
+                decoding="sync"
                 width="400"
                 height="500"
               />
@@ -1942,6 +1953,37 @@
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
       document.addEventListener("DOMContentLoaded", toggleScrollButton);
+
+      // UNIVERSAL INSTANT LOADING - FORCE ALL IMAGES TO LOAD IMMEDIATELY
+      (function forceInstantImageLoading() {
+        function makeAllImagesInstant() {
+          const allImages = document.querySelectorAll("img");
+
+          allImages.forEach((img) => {
+            img.loading = "eager";
+            img.fetchPriority = "high";
+            img.decoding = "sync";
+
+            img.removeAttribute("loading");
+            img.setAttribute("loading", "eager");
+            img.setAttribute("fetchpriority", "high");
+            img.setAttribute("decoding", "sync");
+
+            img.classList.remove("lazy");
+
+            if (img.dataset.src && !img.src) {
+              img.src = img.dataset.src;
+            }
+          });
+        }
+
+        makeAllImagesInstant();
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", makeAllImagesInstant);
+        }
+        setTimeout(makeAllImagesInstant, 100);
+        setTimeout(makeAllImagesInstant, 500);
+      })();
     </script>
   </body>
 </html>
