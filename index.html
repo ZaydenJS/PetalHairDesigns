@@ -1310,9 +1310,8 @@
         }
 
         .about-text-section {
-          order: 1;
-          text-align: center;
-          max-width: 100%;
+          display: contents; /* Flatten so children can be reordered around the image */
+          /* order is ignored when using display: contents */
         }
 
         .about-title {
@@ -1331,7 +1330,7 @@
         }
 
         .about-visual {
-          order: 2;
+          order: 4; /* Move image before highlights/CTA */
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -1340,7 +1339,7 @@
         }
 
         .about-cta {
-          order: 4;
+          order: 6; /* Place after highlights */
           align-self: center;
           margin: 2rem auto 0 auto;
           text-align: center;
@@ -1353,7 +1352,7 @@
         }
 
         .about-highlights {
-          order: 3;
+          order: 5; /* Move below image */
           gap: 1rem;
           justify-content: center;
           margin: 1.5rem 0 2rem 0;
