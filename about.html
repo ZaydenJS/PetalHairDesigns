@@ -155,6 +155,8 @@
         padding: 5px;
         background: transparent;
         border: 0;
+        align-items: center;
+        justify-content: center;
       }
 
       .mobile-menu span {
@@ -902,6 +904,7 @@
 
         .logo img {
           height: 70px;
+          margin-top: 8px;
         }
 
         .hero {
@@ -1044,26 +1047,57 @@
           padding: 2rem;
         }
 
+        /* Keep centered mobile layout but add center line */
         .story-timeline::before {
-          left: 2rem;
+          left: 50%;
+          transform: translateX(-50%);
         }
 
         .timeline-item {
           flex-direction: column !important;
-          align-items: flex-start;
-          margin-left: 2rem;
+          align-items: center !important;
+          margin-left: 0;
+        }
+
+        .timeline-item:nth-child(odd),
+        .timeline-item:nth-child(even) {
+          flex-direction: column !important;
+          align-items: center !important;
         }
 
         .timeline-year {
-          width: 80px;
-          height: 80px;
-          font-size: 1.2rem;
+          width: 100px;
+          height: 100px;
+          font-size: 1.1rem;
           margin-bottom: 1rem;
         }
 
         .timeline-content {
+          text-align: center !important;
           margin: 0;
-          width: 100%;
+          width: 90%;
+          max-width: 400px;
+        }
+
+        .timeline-content h3,
+        .timeline-item:nth-child(odd) .timeline-content h3,
+        .timeline-item:nth-child(even) .timeline-content h3 {
+          text-align: center !important;
+          font-family: "Playfair Display", serif !important;
+          font-size: 1.6rem !important;
+          font-weight: 500 !important;
+          color: var(--primary-black) !important;
+          margin-bottom: 1rem !important;
+          letter-spacing: 0.5px !important;
+        }
+
+        .timeline-content p,
+        .timeline-item:nth-child(odd) .timeline-content p,
+        .timeline-item:nth-child(even) .timeline-content p {
+          text-align: center !important;
+          color: var(--charcoal) !important;
+          line-height: 1.7 !important;
+          opacity: 0.9 !important;
         }
 
         .team-grid {
@@ -1352,6 +1386,19 @@
           font-size: 0.9rem;
           text-align: center;
           flex: 1;
+        }
+
+        /* Timeline mobile centering - duplicate to ensure it applies */
+        .timeline-content {
+          text-align: center !important;
+        }
+
+        .timeline-content h3 {
+          text-align: center !important;
+        }
+
+        .timeline-content p {
+          text-align: center !important;
         }
       }
 
