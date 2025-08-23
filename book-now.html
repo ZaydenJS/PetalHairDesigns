@@ -270,6 +270,45 @@
           max-width: 90%;
         }
 
+        /* Speed up LCP on mobile by removing hero animations and making content visible immediately */
+        .hero-content,
+        .hero-subtitle,
+        .hero h1,
+        .hero-description,
+        .cta-buttons {
+          animation: none !important;
+          opacity: 1 !important;
+          transform: none !important;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+          gap: 1rem;
+          width: 100%;
+          max-width: 280px;
+          align-items: center;
+        }
+
+        .cta-button {
+          width: 100%;
+          padding: 1rem 2rem;
+          font-size: 0.95rem;
+          text-align: center;
+        }
+
+        /* Reduce paint work on mobile: remove heavy shadows/filters in the hero */
+        .hero h1 {
+          text-shadow: none !important;
+        }
+        .cta-primary,
+        .cta-secondary,
+        .about-cta {
+          box-shadow: none !important;
+        }
+        nav a {
+          transition: none !important;
+        }
+
         nav ul {
           display: none;
           position: fixed;
