@@ -503,10 +503,14 @@
           var(--charcoal) 100%
         );
         color: var(--soft-white);
-        padding: 3rem 2.5rem 2rem;
+        padding: 2.5rem 2.5rem;
         text-align: center;
         position: relative;
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
       }
 
       .service-card-header::before {
@@ -1020,7 +1024,25 @@
         /* Mobile hover effects removed to eliminate blur */
 
         .service-card-header {
-          padding: 2.5rem 2rem 1.5rem;
+          padding: 2rem 2rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          gap: 0.25rem;
+        }
+
+        /* Ensure service icon is visually centered on mobile */
+        .service-icon {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 3rem;
+          height: 3rem;
+          line-height: 1;
+          margin-left: auto;
+          margin-right: auto;
         }
 
         .service-card-content {
@@ -1099,7 +1121,7 @@
         }
 
         .service-card-header {
-          padding: 2rem 1.5rem 1rem;
+          padding: 1.5rem 1.5rem;
         }
 
         .service-card-title {
