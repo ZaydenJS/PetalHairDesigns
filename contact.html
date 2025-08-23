@@ -17,6 +17,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.google.com" crossorigin />
     <!-- Load web fonts only on tablet/desktop to maximize mobile speed -->
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;500&family=Inter:wght@400;600&display=swap"
@@ -1417,7 +1418,9 @@
           title="Petal Hair Designs Map"
           src="https://www.google.com/maps?q=125+George+Street,+Sydney+NSW+2000&output=embed"
           allowfullscreen=""
-          loading="lazy"
+          loading="eager"
+          fetchpriority="high"
+          decoding="sync"
           referrerpolicy="no-referrer-when-downgrade"
         >
         </iframe>

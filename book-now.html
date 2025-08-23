@@ -746,8 +746,9 @@
                   alt="Petal Hair Designs"
                   width="160"
                   height="80"
-                  loading="lazy"
-                  decoding="async"
+                  loading="eager"
+                  fetchpriority="high"
+                  decoding="sync"
                 />
               </a>
             </div>
@@ -907,7 +908,7 @@
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
 
-      window.addEventListener("scroll", toggleScrollButton);
+      window.addEventListener("scroll", toggleScrollButton, { passive: true });
       document.addEventListener("DOMContentLoaded", toggleScrollButton);
 
       // UNIVERSAL INSTANT LOADING - FORCE ALL IMAGES TO LOAD IMMEDIATELY
