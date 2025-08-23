@@ -546,8 +546,45 @@
         color: var(--luxury-gold);
         position: relative;
         z-index: 2;
-        display: inline-block;
-        animation: bounce 2s ease-in-out infinite;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        line-height: 1;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .service-icon .emoji {
+        display: block;
+        line-height: 1;
+        animation: emoji-bounce 2s ease-in-out infinite;
+        will-change: transform;
+      }
+
+      @keyframes emoji-bounce {
+        0%,
+        100% {
+          transform: translate(var(--icon-x-offset, 0), 0);
+        }
+        50% {
+          transform: translate(var(--icon-x-offset, 0), -10px);
+        }
+      }
+
+      /* Optical centering offsets per icon */
+      .service-card[data-category="cutting"] .service-icon .emoji {
+        --icon-x-offset: -2px;
+      }
+      .service-card[data-category="coloring"] .service-icon .emoji {
+        --icon-x-offset: -1px;
+      }
+      .service-card[data-category="bridal"] .service-icon .emoji {
+        --icon-x-offset: 1px;
+      }
+      .service-card[data-category="treatments"] .service-icon .emoji {
+        --icon-x-offset: 0px;
       }
 
       @keyframes bounce {
@@ -1522,7 +1559,9 @@
           <!-- Cutting & Styling Card -->
           <div class="service-card" data-category="cutting">
             <div class="service-card-header">
-              <div class="service-icon">✂️</div>
+              <div class="service-icon">
+                <span class="emoji" role="img" aria-label="scissors">✂️</span>
+              </div>
               <h3 class="service-card-title">Cutting & Styling</h3>
               <p class="service-card-subtitle">Precision Artistry</p>
             </div>
@@ -1568,7 +1607,9 @@
           <!-- Colour Artistry Card -->
           <div class="service-card" data-category="coloring">
             <div class="service-card-header">
-              <div class="service-icon">🎨</div>
+              <div class="service-icon">
+                <span class="emoji" role="img" aria-label="palette">🎨</span>
+              </div>
               <h3 class="service-card-title">Colour Artistry</h3>
               <p class="service-card-subtitle">Creative Excellence</p>
             </div>
@@ -1617,7 +1658,9 @@
           <!-- Bridal & Events Card -->
           <div class="service-card" data-category="bridal">
             <div class="service-card-header">
-              <div class="service-icon">👰</div>
+              <div class="service-icon">
+                <span class="emoji" role="img" aria-label="bride">👰</span>
+              </div>
               <h3 class="service-card-title">Bridal & Events</h3>
               <p class="service-card-subtitle">Special Occasions</p>
             </div>
@@ -1659,7 +1702,9 @@
           <!-- Premium Treatments Card -->
           <div class="service-card" data-category="treatments">
             <div class="service-card-header">
-              <div class="service-icon">✨</div>
+              <div class="service-icon">
+                <span class="emoji" role="img" aria-label="sparkles">✨</span>
+              </div>
               <h3 class="service-card-title">Premium Treatments</h3>
               <p class="service-card-subtitle">Restoration & Care</p>
             </div>
