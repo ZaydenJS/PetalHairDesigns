@@ -525,6 +525,14 @@
         appearance: none;
       }
 
+      /* Ensure dropdown text matches site color (fix blue text) */
+      .form-group select {
+        color: var(--charcoal);
+      }
+      .form-group select option {
+        color: var(--charcoal);
+      }
+
       .form-group input:focus,
       .form-group select:focus,
       .form-group textarea:focus {
@@ -1453,9 +1461,7 @@
               personalized beauty services.
             </p>
             <div class="footer-social">
-              <a href="#" class="social-link" aria-label="Facebook">📘</a>
-              <a href="#" class="social-link" aria-label="Instagram">📷</a>
-              <a href="#" class="social-link" aria-label="Google">🌐</a>
+              <span class="coming-soon">Socials: Coming Soon</span>
             </div>
           </div>
 
