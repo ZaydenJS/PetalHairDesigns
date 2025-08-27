@@ -993,6 +993,10 @@
         nav ul li:nth-child(5) {
           order: 6;
         } /* Contact */
+        nav ul li:nth-child(6) {
+          order: 1;
+        } /* Book Now - first */
+
         /* Ensure mobile navigation links display like Book Now */
         nav ul li a {
           display: block;
@@ -1005,10 +1009,6 @@
         nav ul li:last-child a {
           border-bottom: none;
         }
-
-        nav ul li:nth-child(6) {
-          order: 1;
-        } /* Book Now - first */
 
         /* Align hover highlight with separator lines */
         nav a::before {
@@ -1338,6 +1338,12 @@
         transform: translateY(-3px);
       }
 
+      /* Style for simple "Coming Soon" placeholder in footer */
+      .footer-social .coming-soon {
+        color: var(--soft-white);
+        opacity: 0.8;
+      }
+
       .footer-bottom {
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         padding-top: 1.5rem;
@@ -1569,7 +1575,7 @@
               <div class="service-items">
                 <div class="service-item">
                   <div class="service-details">
-                    <h4 class="service-name">Precision Dry Cut</h4>
+                    <h4 class="service-name">Basic Haircut</h4>
                     <p class="service-description">
                       Expert cutting technique on dry hair for ultimate
                       precision and natural movement
@@ -1579,7 +1585,7 @@
                 </div>
                 <div class="service-item">
                   <div class="service-details">
-                    <h4 class="service-name">Signature Cut & Style</h4>
+                    <h4 class="service-name">Premium Cut & Style</h4>
                     <p class="service-description">
                       Precision cutting with personalized styling, tailored to
                       your unique features and lifestyle
@@ -1589,7 +1595,7 @@
                 </div>
                 <div class="service-item">
                   <div class="service-details">
-                    <h4 class="service-name">Luxury Wash & Blowdry</h4>
+                    <h4 class="service-name">Special Event Updo</h4>
                     <p class="service-description">
                       Professional styling service with premium products and
                       expert techniques
@@ -1604,20 +1610,20 @@
             </div>
           </div>
 
-          <!-- Colour Artistry Card -->
+          <!-- Hair Colouring Card -->
           <div class="service-card" data-category="coloring">
             <div class="service-card-header">
               <div class="service-icon">
                 <span class="emoji" role="img" aria-label="palette">🎨</span>
               </div>
-              <h3 class="service-card-title">Colour Artistry</h3>
+              <h3 class="service-card-title">Hair Colouring</h3>
               <p class="service-card-subtitle">Creative Excellence</p>
             </div>
             <div class="service-card-content">
               <div class="service-items">
                 <div class="service-item">
                   <div class="service-details">
-                    <h4 class="service-name">Partial Highlights</h4>
+                    <h4 class="service-name">Highlights</h4>
                     <p class="service-description">
                       Strategic highlighting for natural-looking brightness and
                       subtle enhancement
@@ -1630,7 +1636,7 @@
                 </div>
                 <div class="service-item">
                   <div class="service-details">
-                    <h4 class="service-name">Full Head Highlights</h4>
+                    <h4 class="service-name">Full Colour</h4>
                     <p class="service-description">
                       Complete highlighting service for stunning dimension and
                       luminosity throughout
@@ -1643,7 +1649,7 @@
                 </div>
                 <div class="service-item">
                   <div class="service-details">
-                    <h4 class="service-name">Creative Colour Design</h4>
+                    <h4 class="service-name">Balayage</h4>
                     <p class="service-description">
                       Bespoke colour transformations and artistic techniques for
                       unique expressions
@@ -1783,6 +1789,8 @@
                   alt="Petal Hair Designs"
                   width="160"
                   height="80"
+                  loading="lazy"
+                  decoding="async"
                 />
               </a>
             </div>
@@ -1801,7 +1809,7 @@
             <h3>Quick Links</h3>
             <ul class="footer-links">
               <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About Us</a></li>
+              <li><a href="about.html">About</a></li>
               <li><a href="services.html">Services</a></li>
               <li><a href="gallery.html">Gallery</a></li>
               <li><a href="contact.html">Contact</a></li>
@@ -1812,11 +1820,10 @@
           <div class="footer-section">
             <h3>Services</h3>
             <ul class="footer-links">
-              <li><a href="services.html">Hair Cutting</a></li>
+              <li><a href="services.html">Cutting &amp; Styling</a></li>
               <li><a href="services.html">Hair Colouring</a></li>
-              <li><a href="services.html">Bridal Styling</a></li>
-              <li><a href="services.html">Hair Treatments</a></li>
-              <li><a href="contact.html">Consultation</a></li>
+              <li><a href="services.html">Bridal &amp; Events</a></li>
+              <li><a href="services.html">Premium Treatments</a></li>
             </ul>
           </div>
 
@@ -1834,31 +1841,15 @@
               <div class="opening-hours">
                 <div class="hours-row">
                   <span class="day"><strong>Sunday:</strong></span>
-                  <span class="time">CLOSED</span>
+                  <span class="time">10am-4pm</span>
                 </div>
                 <div class="hours-row">
-                  <span class="day"><strong>Monday:</strong></span>
-                  <span class="time">CLOSED</span>
-                </div>
-                <div class="hours-row">
-                  <span class="day"><strong>Tuesday:</strong></span>
-                  <span class="time">9am-5:30pm</span>
-                </div>
-                <div class="hours-row">
-                  <span class="day"><strong>Wednesday:</strong></span>
-                  <span class="time">9am-5:30pm</span>
-                </div>
-                <div class="hours-row">
-                  <span class="day"><strong>Thursday:</strong></span>
+                  <span class="day"><strong>Mon–Fri:</strong></span>
                   <span class="time">9am-7pm</span>
                 </div>
                 <div class="hours-row">
-                  <span class="day"><strong>Friday:</strong></span>
-                  <span class="time">9am-5:30pm</span>
-                </div>
-                <div class="hours-row">
                   <span class="day"><strong>Saturday:</strong></span>
-                  <span class="time">9am-3pm</span>
+                  <span class="time">8am-5pm</span>
                 </div>
               </div>
             </div>
@@ -1951,12 +1942,12 @@
 
         // Service name to booking ID mapping
         const serviceMapping = {
-          "Signature Cut & Style": "haircut-basic",
-          "Luxury Wash & Blowdry": "haircut-premium",
-          "Precision Dry Cut": "haircut-basic",
-          "Full Head Highlights": "color-highlights",
-          "Partial Highlights": "color-highlights",
-          "Creative Colour Design": "color-full",
+          "Premium Cut & Style": "haircut-premium",
+          "Special Event Updo": "styling-updo",
+          "Basic Haircut": "haircut-basic",
+          Highlights: "color-highlights",
+          "Full Colour": "color-full",
+
           "Bridal Hair Design": "bridal-trial",
           "Special Occasion Styling": "event-updo",
           "Bridal Party Package": "wedding-hair",

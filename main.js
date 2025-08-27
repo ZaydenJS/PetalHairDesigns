@@ -217,7 +217,7 @@ function initModalEnhancements() {
 
     const categoryNames = {
       cuts: "Hair Cuts & Styling",
-      coloring: "Hair Coloring",
+      coloring: "Hair Colouring",
       bridal: "Bridal & Events",
       treatments: "Hair Treatments",
       "before-after": "Before & After",

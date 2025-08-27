@@ -1,0 +1,6 @@
+# Block legacy archived page from search indexing
+User-agent: *
+Disallow: /Colours/
+
+# Allow everything else
+Allow: /

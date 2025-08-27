@@ -28,7 +28,7 @@ An absolutely stunning, ultra-luxury website for Enlighten Hair Design - the mos
 
 - **All Work** - Complete portfolio showcase
 - **Hair Cuts & Styling** - Precision cutting and styling artistry
-- **Hair Coloring** - Color mastery and highlighting techniques
+- **Hair Colouring** - Colour mastery and highlighting techniques
 - **Bridal & Events** - Special occasion elegance
 - **Hair Treatments** - Restoration and conditioning services
 - **Before & After** - Dramatic transformation showcases

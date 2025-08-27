@@ -1,4 +1,4 @@
-// Booking System JavaScript - Enlighten Hair Design
+// Booking System JavaScript - Petal Hair Designs
 
 // Service data with pricing
 const services = [
@@ -25,10 +25,10 @@ const services = [
   },
   {
     id: "color-full",
-    name: "Full Color",
+    name: "Full Colour",
     price: 125,
     duration: "90 min",
-    description: "Complete color transformation with professional products",
+    description: "Complete colour transformation with professional products",
   },
   {
     id: "color-balayage",
@@ -79,7 +79,7 @@ const staff = [
   {
     id: "sarah",
     name: "Sarah Mitchell",
-    specialty: "Color Specialist",
+    specialty: "Colour Specialist",
     experience: "12 years",
     avatar: "🎨",
   },
@@ -347,12 +347,14 @@ function initializeTimeSlots() {
   });
 }
 
-// Format time for display
+// Format time for display (compact: 9am, 9:30am)
 function formatTime(time24) {
-  const [hours, minutes] = time24.split(":");
-  const hour12 = hours % 12 || 12;
-  const ampm = hours < 12 ? "AM" : "PM";
-  return `${hour12}:${minutes} ${ampm}`;
+  const [h, m] = time24.split(":");
+  const hour = parseInt(h, 10);
+  const hour12 = hour % 12 || 12;
+  const ampm = hour < 12 ? "am" : "pm";
+  const minutes = m === "00" ? "" : `:${m}`;
+  return `${hour12}${minutes}${ampm}`;
 }
 
 // Select time slot
